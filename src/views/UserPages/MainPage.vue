@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>sdkfmgfdkgf</h1>
+    <h1>variko</h1>
     <h1>sdkfmgfdkgf</h1>
     <h1>sdkfmgfdkgf</h1>
     <h1>sdkfmgfdkgf</h1>
