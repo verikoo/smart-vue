@@ -1,67 +1,84 @@
 <template>
-  <div class="Head" >
-         <div class="navbarContainer">
-          <div class="first_line">
-            <div>
-              <li><router-link to="/">KA</router-link></li>
-            </div>
-            <div class="first_line_right">
-              <ul>
-                <li><router-link to="/" exact>მთავარი</router-link></li>
-                <li><router-link to="/csr" exact>csr</router-link></li>
-                <li><router-link to="/career" exact>კარიერა</router-link></li>
-              </ul>
-            </div>
+  <div class="Head">
+    <div class="navbarContainer">
+      <div class="first_line">
+        <div>
+          <li><router-link to="/">KA</router-link></li>
+        </div>
+        <div class="first_line_right">
+          <ul>
+            <li><router-link to="/" exact>მთავარი</router-link></li>
+            <li><router-link to="/csr" exact>csr</router-link></li>
+            <li><router-link to="/career" exact>კარიერა</router-link></li>
+          </ul>
+        </div>
+      </div>
+      <div class="Second_line">
+        <div class="second-line-content">
+          <div class="photo_side">
+            <img src="../../../../public/assets/eschool.png" />
           </div>
-          <div class="Second_line">
-            <div class="second-line-content">
-              <div class="photo_side">
-                <img src="../../../../public/assets/eschool.png" />
-              </div>
-              <ul class="navLinks">
-                <li class="aboutUs">
-                  <a class="navbarDropdown"> ჩვენს შესახებ 
-                    <!-- <i style="font-size: 30px; color: white;" class="fa fa-caret-down"></i> -->
-                  </a>
+          <ul class="navLinks">
+            <li class="aboutUs">
+              <a class="navbarDropdown">
+                ჩვენს შესახებ
+                <!-- <i style="font-size: 30px; color: white;" class="fa fa-caret-down"></i> -->
+              </a>
 
-                  <ul class="dropdownMenu">
-                    <li><router-link to="/team" exact>გუნდი</router-link></li>
-                    <li>
-                      <router-link to="/history" exact>ისტორია</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/values" exact>ღირებულებები</router-link>
-                    </li>
-                    <li>
-                      <router-link to="/company" exact
-                        >კომოპანია-მისია</router-link
-                      >
-                    </li>
-                  </ul>
-                </li>                  
-
-                <li><router-link to="/contact" exact>კონტაქტი</router-link></li>
-
+              <ul class="dropdownMenu">
+                <li><router-link to="/team" exact>გუნდი</router-link></li>
                 <li>
-                  <router-link to="/partners" exact>პარტნიორები</router-link>
+                  <router-link to="/history" exact>ისტორია</router-link>
                 </li>
-                <li><router-link to="/news" exact>სიახლე</router-link></li>
-                <li><router-link to="/blog" exact>ბლოგი</router-link></li>
-                <li><input type="text" placeholder="Search.."></li>
+                <li>
+                  <router-link to="/values" exact>ღირებულებები</router-link>
+                </li>
+                <li>
+                  <router-link to="/company" exact>კომოპანია-მისია</router-link>
+                </li>
               </ul>
-              <div class="responsive-navbar">
+            </li>
+             <li class="aboutUs">
+              <a class="navbarDropdown">
+                პარტნიორები
+                <!-- <i style="font-size: 30px; color: white;" class="fa fa-caret-down"></i> -->
+              </a>
+
+              <ul class="dropdownMenu">
+                <li><router-link to="/local" exact>ადგილობრივი პარტნიორები</router-link></li>
+                <li>
+                  <router-link to="/ForeignPartners" exact>უცხოელი პარტნიორები</router-link>
+                </li>
+               
                 
-              </div>
+              </ul>
+            </li>
+            <li>
+              <router-link to="/exclusive"> ექსკლუზიური ბრენდები</router-link>
+            </li>
+            <li><router-link to="/news" exact>სიახლე</router-link></li>
+            <li><router-link to="/blog" exact>ბლოგი</router-link></li>
+            <li><router-link to="/contact" exact>კონტაქტი</router-link></li>
+
+           
+            <!-- <li><input type="text" placeholder="Search.." /></li> -->
+          </ul>
+          <div class="responsive-navbar">
+            <div>
+              <img src="../../../../public/assets/icons/burger.png" alt="">
             </div>
+
           </div>
-         </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'NavbarContent',
-}
+  name: "NavbarContent",
+};
 </script>
 
 <style scoped>
@@ -73,12 +90,15 @@ export default {
   left: 0;
   width: 100%;
   color: white;
+  font-size: 16px !important;
 }
-.navbarContainer{
-  width: 100%;
+.navbarContainer {
+  /* width: 100%; */
   max-width: 1920px;
+  margin: 0 30px 0 30px;
   margin: 0 auto;
- 
+   /* border: 2px solid red; */
+  
 }
 
 .navLinks {
@@ -90,7 +110,7 @@ export default {
 
 .navLinks li a {
   padding: 10px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 ul {
@@ -114,6 +134,7 @@ a:active {
 .aboutUs {
   float: left;
   overflow: hidden;
+  
 }
 
 .aboutUs .navbarDropdown {
@@ -131,24 +152,22 @@ a:active {
 .dropdownMenu {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #591a92;
+  color:teal !important;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-.navLink {
-  font-size: 18px;
-  color: red;
-}
 
 .dropdownMenu a {
   float: none;
-  color: black;
+  color:white;
   padding: 14px 18px;
   text-decoration: none;
   display: block;
   text-align: left;
+  
 }
 
 .aboutUs:hover .dropdownMenu {
@@ -174,24 +193,25 @@ a:active {
 
 .first_line {
   padding: 5px 15px;
-  height: 1.7vw;
+  /* height: 1.7vw; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px,
     rgba(255, 255, 255, 0.3) 0px 30px 60px -30px,
     rgba(196, 159, 206, 0.35) 0px -2px 6px 0px inset;
+    
 }
-.first_line li{
+.first_line li {
   list-style-type: none;
+  font-size: 12px !important;
 }
 
-
-.first_line_right ul{
-  display:flex; gap: 10px !important;
-  margin:0;
+.first_line_right ul {
+  display: flex;
+  gap: 10px !important;
+  margin: 0;
 }
-
 
 ul a.router-link-exact-active.router-link-active {
   border-top: 1px solid white;
@@ -222,7 +242,7 @@ a:hover::after {
   padding: 0 15px;
 }
 .second-line-content {
-  display: flex; 
+  display: flex;
   justify-content: space-between;
 }
 .Second_line ul {
@@ -233,7 +253,7 @@ a:hover::after {
   /* border: solid 1px red; */
 }
 .photo_side {
-  display: flex !important; 
+  display: flex !important;
   align-items: center !important;
 }
 
@@ -243,7 +263,7 @@ a:hover::after {
 }
 
 /* search form */
-.second-line-content input[type=text] {
+.second-line-content input[type="text"] {
   float: right;
   padding: 6px;
   border: none;
@@ -253,28 +273,31 @@ a:hover::after {
 }
 /* search form */
 
-
 /* Responsive navbar */
 .responsive-navbar {
   display: none;
+  border: 2px solid red;
 }
+.responsive-navbar img{
+  width: 100%;
+  display: flex;
+  text-align: center;
+} 
 
 .responsive-navbar svg {
   z-index: 999;
   border: solid 1px red;
 }
 
-
 @media screen and (max-width: 800px) {
   .navLinks {
     display: none;
   }
   .photo_side {
-    margin: 5px 0px
+    margin: 5px 0px;
   }
   .responsive-navbar {
     display: block;
   }
 }
-
 </style>

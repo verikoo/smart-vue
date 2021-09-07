@@ -15,11 +15,7 @@ const VueRouter = new router({
             name:"csr",
             component:()=> import("./views/UserPages/CsrPage.vue") 
         },
-        {
-            path:"/csr",
-            name:"csr",
-            component:()=> import("./views/UserPages/CsrPage.vue")
-        },
+        
         {
             path: "/career",
             name:"career",
@@ -73,6 +69,26 @@ const VueRouter = new router({
             path:"/team",
             name:"team",
             component:()=>import("./views/UserPages/TeamPage.vue")
+        },
+        {
+            path: "/fo",
+            name:"fo",
+            component: ()=>import("./components/Header/Navbar/Footer.vue")
+        },
+        {
+            path: "/exclusive",
+            name: "exclusive",
+            component: ()=>import("./views/UserPages/ExclusiveBrand.vue")
+        },
+        {
+            path:"/local",
+            name:"local",
+            component:()=>import("./views/UserPages/LocalPartners.vue")
+        },
+        {
+            path:"/foreign",
+            name:"foreign",
+            component:()=>import("./views/UserPages/ForeignPartners.vue")
         }
         
         

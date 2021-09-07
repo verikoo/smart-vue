@@ -1,91 +1,102 @@
 <template>
   <div class="footer">
     <div class="footerContainer">
-      <div class="footGrid">
-        <div class="footVert1">
-          <div class="footRow1">
-            <p><router-link to="/" exact>მთავარი</router-link></p>
-            <p><router-link to="/career" exact>კარიერა</router-link></p>
+      <div class="footerGrid">
+        <div class="navLinks">
+          <div class="resFold">
+            <p>გაეცანით </p>
           </div>
-          <div class="footRow2">
-            <p><router-link to="/about" exact
-                    >ჩვენს შესახებ</router-link></p>
-            <p><router-link to="/partners" exact>პარტნიორები</router-link></p>
-            <p><router-link to="/csr" exact>მხარდაჭერა</router-link></p>
-          </div>
-          <div>
-            <p>გუნდი</p>
-            <p><router-link to="/blog" exact>ბლოგი</router-link></p>
-            <p>ისტორია</p>
+          <div class="navLinksGrid">
+            <div>
+            <ul>
+               <li><router-link to="/" exact>მთავარი</router-link></li>
+               <li><router-link to="/history" exact>ისტორია</router-link></li>
+              <li><router-link to="/team" exact>გუნდი</router-link></li>
+            </ul>
           </div>
           <div>
-            <p><router-link to="/news" exact>სიახლე</router-link></p>
-            <p> <router-link to="/contact" exact>კონტაქტი</router-link></p>
+            <ul>
+              <li><router-link to="/news" exact>სიახლე</router-link></li>
+               <li><router-link to="/partners" exact>პარტნიორები</router-link></li>
+              <li><router-link to="/exclusive" exact>ექსკლუზიური <br>  ბრენდები</router-link></li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li><router-link to="/career" exact>კარიერა</router-link></li>
+              <li><router-link to="/csr" exact>მხარდაჭერა</router-link></li>
+             <li><router-link to="/კონტაქტი" exact>კონტაქტი</router-link></li>
+            </ul>
+          </div>
           </div>
         </div>
 
-        <div class="footVert2">
-          <img src="../../public/assets/logo.png" />
+        <div class="footerLogo">
+          <img src="../../public/assets/logo.png" alt="" />
         </div>
+        <div class="footerSocial">
+          
+          <div>
+            <p>დაგვიკავშირდით</p>
 
-        <div class="footVert3">
-          <div class="footVert3_hor1">
-            <div class="footerIcones">
-              <div>
-                <p>
-                  <img src="../../public/assets/icons/facebook.png" /> facebook
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="../../public/assets/icons/whatsapp.png" /> whatsapp
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="../../public/assets/icons/twitter.png" /> ფარნავაზის
-                  ქ N66
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="../../public/assets/icons/whatsapp.png" /> instagram
-                </p>
-              </div>
-              <div>
-                <p>
-                  <img src="../../public/assets/icons/twitter.png" /> twitter
-                </p>
-              </div>
-              <div><p>
-                <img src="../../public/assets/icons/twitter.png" /> +995 555 55
-                55 55
-              </p></div>
-              
+          </div>
+          <div class="footerSocialLinks">
+            <div>
+              <ul>
+            <li>
+              <img src="../../public/assets/icons/facebook.png" alt="" />
+              facebook
+            </li>
+            <li>
+              <img src="../../public/assets/icons/twitter.png" alt="" /> twitter
+            </li>
+            <li>
+              <img src="../../public/assets/icons/location.png" alt="" />
+              ფარნავაზის 66
+            </li>
+          </ul>
             </div>
+          <div>
+            <ul>
+            <li>
+              <img src="../../public/assets/icons/facebook.png" alt="" />
+              facebook
+            </li>
+            <li>
+              <img src="../../public/assets/icons/whatsapp.png" alt="" />
+              whatsapp
+            </li>
+            <li>
+              <img src="../../public/assets/icons/call-back.png" alt="" /> +995
+              555 55 55 55
+            </li>
+          </ul>
+          </div>
           </div>
         </div>
+       
       </div>
+    <div>
+    </div>
+     
+    <div class="createdByFooter">
+      
+      <div>
+        
+         <p>2021 &#169; ყველა უფლება დაცულია</p>  
 
-      <div class="endTitle">
-        <div>
-          <p>2021 &#169; ყველა უფლება დაცულია</p>
-        </div>
-        <div class="createdBy">
-          <p>შექმნილია Cyber Solutions-ის მიერ</p>
-        </div>
+      </div>
+      <div>
+         <p>შექმნილია Cyber Solutions-ის მიერ</p>
+
       </div>
     </div>
-
+    </div>
   </div>
 </template>
 
 <script>
-export default{
-  
-}
-
-
+export default {};
 </script>
 
 
@@ -93,42 +104,123 @@ export default{
 .footer {
   background-color: #591a92;
   color: white;
+  font-size: 16px;
+   justify-content: center !important;
+    margin: auto;
+    font-size: 15px !important;
+  
 }
 
-.footer a{
-  color: white;
+.footerContainer {
+  /* border: 2px solid red; */
+ max-width: 1920px;
+ margin: 0 30px 0 30px;
+ margin: auto;
+}
+
+.footerGrid {
+  display: flex;
+ 
+  justify-content:space-between;
+  margin:0 auto ;
+  padding: 0 auto;
+  /* border: 2px solid rgb(238, 255, 0); */
+   border-bottom: 1px solid white;
+}
+
+.footerGrid ul {
+  list-style-type: none;
+}
+/* .footerLogo {
+  border: 3px solid red;
+} */
+
+
+
+.footerLogo {
+  
+  /* border-top: 1px solid white; */
+  display: flex;
+  align-items: center;
+  
+
+}
+.footerLogo img {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  
+  /* justify-content: center !important; */
+  /* text-align: center; */
+   /* vertical-align:auto; */
+}
+.navLinks{
+  display: flex;
+  display: inline-block;
+  /* border: 1px solid pink; */
+  padding: 0 !important;
+}
+.navLinks p{
+  display: flex;
+  justify-content: center;
+}
+.navLinksGrid {
+  display: flex;
+  /* border: 2px solid red; */
+  border-top: 1px solid rgb(255, 255, 255);
+  
+}
+.navLinksGrid ul{
+  text-align: left;
+  justify-content: start;
+  padding: 15px !important;
+
+}
+.navLinksGrid  li {
+  padding-top: 4px;
+  /* border: 2px solid yellowgreen; */
+}
+
+
+
+.footerSocial ul{
+  padding: 20px !important;
+}
+.footerSocialLinks {
+  display: flex;
+ border-top: 1px solid white;
+ 
+}
+
+.footerSocial p{
+  display: flex;
+  justify-content: center;
+
+}
+
+.footerSocialLinks img {
+  width: 20px;
+}
+.createdByFooter{
+  /* border: 2px solid red; */
+  display: flex;
+  padding: 0 10px 0 10px !important;
+  justify-content: space-between;
+  
+}
+
+
+
+li a {
   text-decoration: none;
   background-color: none;
 }
-.footerContainer {
-  width: 100%;
-  max-width: 1920px;
-  margin: auto;
-}
-
-
-.footGrid {
- padding-top: 2vw;
- 
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-.footVert3 img {
-  margin-bottom: -0.5vw;
-}
-
-.footVert1 {
-  border-top: 1px solid white;
-  /* border: 2px solid yellow; */
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-   grid-gap: 30px;
-}
-
-.footVert2 img {
-  width: 10vw;
-  margin-top: -0vw;
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  cursor: pointer;
 }
 
 ul a.router-link-exact-active.router-link-active {
@@ -155,36 +247,44 @@ a:hover::after {
   width: 100%;
   transition-delay: 0s;
 }
-.footVert3 {
-  border-top: 1px solid white;
-  /* border: 2px solid yellow; */
-   grid-gap: 2px;
- 
+
+/* responsive foo */
+@media only screen and (max-width: 950px) {
+  .footerGrid, .createdByFooter {
+    display: grid !important;
+    grid-template-columns: auto !important;
+    /* border: solid 1px red; */
+    justify-content: space-around;
+  }
+  .footerLogo {
+    width: 50%;
+    margin: auto;
+  }
 }
 
+@media only screen and (max-width: 360px) {
+  .navLinksGrid {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-around;
+   
+  }
+  .navLinksGrid ul{
+    text-align: center;
+    padding: 0px !important;
 
-.footVert3 img {
-  width: 1.5vw;
-  padding-left: 0.5vw;
-  /* margin-bottom: -0.5vw; */
-}
-.createdBy {
-  /* border: 2px solid blue; */
-  float: right;
-  margin-left: auto;
-}
+  }
+  
+  .footerSocialLinks{
+     display: grid;
+    grid-template-columns: auto;
+    
 
-.endTitle {
-  border-top: 1px solid white;
-  display: flex;
- padding-left: 50px;
- padding-right: 50px;
-}
-.footerIcones {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
+  }
 
-
+  .footerSocialLinks ul{
+    padding: 0px !important;
+  }
+}
 
 </style>
