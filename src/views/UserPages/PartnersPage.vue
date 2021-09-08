@@ -1,13 +1,15 @@
 <template>
-    <div>
+    <div class="partnersPageContainer">
 
-        <h2>partners</h2></div>
+    </div>
 </template>
 
 <style scoped>
-
- h2{
-    font-size: 12vw;
+.newsPageContainer {
+  border: 2px solid red;
+  max-width: 1920px;
+  margin: 0 30px 0 30px;
+  min-height: calc(100vh-258px);
 }
 
 </style>

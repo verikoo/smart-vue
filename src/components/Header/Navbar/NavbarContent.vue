@@ -14,17 +14,16 @@
         </div>
       </div>
       <div class="Second_line">
-        <div class="second-line-content" style="border:2px solid red">
+        <div class="second-line-content">
           <div class="photo_side">
             <img src="../../../../public/assets/eschool.png" />
           </div>
-            <div class="responsive-navbar" v-if="mobileNav"  >
-            <button   style="background:none; border:none">
-              <img  src="../../../../public/assets/icons/burger32.png" alt="">
+          <div class="responsive-navbar">
+            <button class="button" style="background: none; border: none">
+              <img src="../../../../public/assets/icons/burger32.png" alt="" />
             </button>
-
           </div>
-          <ul class="navLinks" style="border: 2px solid red">
+          <ul class="navLinks">
             <li class="aboutUs">
               <a class="navbarDropdown">
                 ჩვენს შესახებ
@@ -44,19 +43,23 @@
                 </li>
               </ul>
             </li>
-             <li class="aboutUs">
+            <li class="aboutUs">
               <a class="navbarDropdown">
                 პარტნიორები
                 <!-- <i style="font-size: 30px; color: white;" class="fa fa-caret-down"></i> -->
               </a>
 
               <ul class="dropdownMenu">
-                <li><router-link to="/local" exact>ადგილობრივი პარტნიორები</router-link></li>
                 <li>
-                  <router-link to="/ForeignPartners" exact>უცხოელი პარტნიორები</router-link>
+                  <router-link to="/local" exact
+                    >ადგილობრივი პარტნიორები</router-link
+                  >
                 </li>
-               
-                
+                <li>
+                  <router-link to="/ForeignPartners" exact
+                    >უცხოელი პარტნიორები</router-link
+                  >
+                </li>
               </ul>
             </li>
             <li>
@@ -66,10 +69,8 @@
             <li><router-link to="/blog" exact>ბლოგი</router-link></li>
             <li><router-link to="/contact" exact>კონტაქტი</router-link></li>
 
-           
             <li><input type="text" placeholder="Search.." /></li>
           </ul>
-        
         </div>
       </div>
     </div>
@@ -79,19 +80,19 @@
 <script>
 export default {
   name: "NavbarContent",
-  data(){
-    return{
-    mobileNav:true,
-    shownav:false
-
-    }
-
+  mounted() {
+    this.showNavBar();
   },
-  methods:{
-    showNavBar(){
-    }
-  }
+  methods: {
+    showNavBar() {
+      const toggleButton = document.getElementsByClassName("button")[0];
+      const navbarLinks = document.getElementsByClassName("navLinks")[0];
 
+      toggleButton.addEventListener("click", () => {
+        navbarLinks.classList.toggle("activeNav");
+      });
+    },
+  },
 };
 </script>
 
@@ -111,8 +112,7 @@ export default {
   max-width: 1920px;
   margin: 0 30px 0 30px;
   margin: 0 auto;
-   /* border: 2px solid red; */
-  
+  /* border: 2px solid red; */
 }
 
 .navLinks {
@@ -148,7 +148,6 @@ a:active {
 .aboutUs {
   float: left;
   overflow: hidden;
-  
 }
 
 .aboutUs .navbarDropdown {
@@ -167,21 +166,19 @@ a:active {
   display: none;
   position: absolute;
   background-color: #591a92;
-  color:teal !important;
+  color: teal !important;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-
 .dropdownMenu a {
   float: none;
-  color:white;
+  color: white;
   padding: 14px 18px;
   text-decoration: none;
   display: block;
   text-align: left;
-  
 }
 
 .aboutUs:hover .dropdownMenu {
@@ -203,6 +200,10 @@ a:active {
   padding: 0px !important;
 }
 
+.navLinks.activeNav {
+  display: flex;
+}
+
 /*drop down   */
 
 .first_line {
@@ -214,7 +215,6 @@ a:active {
   box-shadow: rgba(255, 255, 255, 0.25) 0px 50px 100px -20px,
     rgba(255, 255, 255, 0.3) 0px 30px 60px -30px,
     rgba(196, 159, 206, 0.35) 0px -2px 6px 0px inset;
-    
 }
 .first_line li {
   list-style-type: none;
@@ -228,37 +228,38 @@ a:active {
 }
 
 ul .router-link-active {
-  box-shadow: rgba(124, 255, 255, 0.25) 0px 2px 1px, rgba(124, 255, 255, 0.25) 0px 4px 2px, rgba(124, 255, 255, 0.25) 0px 0px 4px, rgba(124, 255, 255, 0.25) 0px 0px 8px, rgba(124, 255, 255, 0.25) 0px 2px 16px;
-  color:#7CFFFF;
-  transition: 0.4s ;
+  /* box-shadow: rgba(255, 255, 255, 0.25) 0px 2px 1px, rgba(255, 255, 255, 0.25) 0px 4px 2px, rgba(255, 255, 255, 0.25) 0px 0px 4px, rgba(255, 255, 255, 0.25) 0px 0px 8px, rgba(255, 255, 255, 0.25) 0px 2px 16px; */
+  color: #ffffff;
+  transition: 0.4s;
+  border-top: 1px solid white;
 }
 a {
   display: inline-block;
-  position:relative;
- 
+  position: relative;
 }
 
-a::after {
+/* a::after {
   content: "";
   width: 0;
   height: 0.5px;
   position: absolute;
   transition: all 0.2s ;
-  background: #7CFFFF;
+  background: #ffffff;
   left: 0;
   bottom: 0;
-  transition-delay: 0.1s ease all;
-}
-a:hover{
-  color: #7CFFFF;
-  /* box-shadow: rgba(124, 255, 255, 0.25) 0px 0px 28px, rgba(124, 255, 255, 0.25) 0px 0px 28px; */
-  box-shadow: rgba(124, 255, 255, 0.25) 0px 2px 1px, rgba(124, 255, 255, 0.25) 0px 4px 2px, rgba(124, 255, 255, 0.25) 0px 0px 4px, rgba(124, 255, 255, 0.25) 0px 0px 8px, rgba(124, 255, 255, 0.25) 0px 2px 16px;
+  transition-delay: 0.1s ease all; 
+}*/
+a:hover {
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: #ffffff40 0px 2px 1px, #ffffff40 0px 4px 2px,
+    #ffffff40 0px 0px 4px, #ffffff40 0px 0px 8px, #ffffff40 0px 2px 16px;
 }
 a:hover::after {
   width: 100%;
   transition-delay: 0s;
 }
-a{
+a {
   transition: 0.5s;
 }
 
@@ -274,7 +275,6 @@ a{
 }
 .first_line li {
   font-size: 16px;
-  /* border: solid 1px red; */
 }
 .photo_side {
   display: flex !important;
@@ -286,7 +286,6 @@ a{
   object-fit: cover;
 }
 
-/* search form */
 .second-line-content input[type="text"] {
   float: right;
   padding: 6px;
@@ -294,75 +293,68 @@ a{
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
-   width: 80%;
-   border-radius: 20px;
-   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-   
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
-input[type="text"]:focus{
-  outline:none;
+input[type="text"]:focus {
+  outline: none;
 }
 
-
-/* search form */
-
-/* Responsive navbar */
 .responsive-navbar {
-  position:absolute;
+  position: absolute;
   top: 2.5rem;
   right: 1rem;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid red;
 }
- 
- .responsive-navbar img{
- text-align: center;
- width:100%;
- height: auto;
- }
+
+.responsive-navbar img {
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
 
 .responsive-navbar svg {
   z-index: 999;
-  border: solid 1px red;
 }
 
 @media screen and (max-width: 800px) {
-   .responsive-navbar {
+  .responsive-navbar {
     display: flex;
   }
 
   .second-line-content {
-    border: 10px solid yellowgreen !important;
-    /* display: none; */
     flex-direction: column;
     align-items: flex-start;
-    /* padding: 0px !important; */
-    
   }
   .navLinks {
-  
+    display: none;
     flex-direction: column;
     width: 100%;
-    /* padding: 0px !important; */
-    
   }
   .navLinks a {
     padding: 0px !important;
-  
   }
-  /* .navLinks li, .navlinks a{
-    padding: 0px;
-  } */
-  
+
   .photo_side {
     margin: 5px 0px;
   }
- 
+
+  a:hover {
+  
+    border-radius: inherit ;
+    box-shadow:none;
+  }
+
+  ul .router-link-active {
+  transition: 0.4s;
+  border-top: 1px solid white;
 }
-
-
+}
 </style>
