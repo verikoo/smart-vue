@@ -56,7 +56,7 @@
                   >
                 </li>
                 <li>
-                  <router-link to="/ForeignPartners" exact
+                  <router-link to="/Foreign" exact
                     >უცხოელი პარტნიორები</router-link
                   >
                 </li>
@@ -324,7 +324,7 @@ input[type="text"]:focus {
   z-index: 999;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 992px) {
   .responsive-navbar {
     display: flex;
   }

@@ -71,11 +71,6 @@ const VueRouter = new router({
             component:()=>import("./views/UserPages/TeamPage.vue")
         },
         {
-            path: "/fo",
-            name:"fo",
-            component: ()=>import("./components/Header/Navbar/Footer.vue")
-        },
-        {
             path: "/exclusive",
             name: "exclusive",
             component: ()=>import("./views/UserPages/ExclusiveBrand.vue")
@@ -90,11 +85,7 @@ const VueRouter = new router({
             name:"foreign",
             component:()=>import("./views/UserPages/ForeignPartners.vue")
         },
-        {
-            path:"/mobilenav",
-            name:"mobilenav",
-            component: ()=>import("./components/Header/Navbar/MobNavbar.vue")
-        }
+       
         
         
        
