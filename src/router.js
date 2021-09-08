@@ -89,6 +89,11 @@ const VueRouter = new router({
             path:"/foreign",
             name:"foreign",
             component:()=>import("./views/UserPages/ForeignPartners.vue")
+        },
+        {
+            path:"/mobilenav",
+            name:"mobilenav",
+            component: ()=>import("./components/Header/Navbar/MobNavbar.vue")
         }
         
         

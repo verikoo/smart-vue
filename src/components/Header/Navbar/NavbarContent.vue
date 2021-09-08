@@ -14,11 +14,17 @@
         </div>
       </div>
       <div class="Second_line">
-        <div class="second-line-content">
+        <div class="second-line-content" style="border:2px solid red">
           <div class="photo_side">
             <img src="../../../../public/assets/eschool.png" />
           </div>
-          <ul class="navLinks">
+            <div class="responsive-navbar" v-if="mobileNav"  >
+            <button   style="background:none; border:none">
+              <img  src="../../../../public/assets/icons/burger32.png" alt="">
+            </button>
+
+          </div>
+          <ul class="navLinks" style="border: 2px solid red">
             <li class="aboutUs">
               <a class="navbarDropdown">
                 ჩვენს შესახებ
@@ -61,14 +67,9 @@
             <li><router-link to="/contact" exact>კონტაქტი</router-link></li>
 
            
-            <!-- <li><input type="text" placeholder="Search.." /></li> -->
+            <li><input type="text" placeholder="Search.." /></li>
           </ul>
-          <div class="responsive-navbar">
-            <div>
-              <img src="../../../../public/assets/icons/burger.png" alt="">
-            </div>
-
-          </div>
+        
         </div>
       </div>
     </div>
@@ -78,6 +79,19 @@
 <script>
 export default {
   name: "NavbarContent",
+  data(){
+    return{
+    mobileNav:true,
+    shownav:false
+
+    }
+
+  },
+  methods:{
+    showNavBar(){
+    }
+  }
+
 };
 </script>
 
@@ -213,13 +227,15 @@ a:active {
   margin: 0;
 }
 
-ul a.router-link-exact-active.router-link-active {
-  border-top: 1px solid white;
-  transition: 0.3s;
+ul .router-link-active {
+  box-shadow: rgba(124, 255, 255, 0.25) 0px 2px 1px, rgba(124, 255, 255, 0.25) 0px 4px 2px, rgba(124, 255, 255, 0.25) 0px 0px 4px, rgba(124, 255, 255, 0.25) 0px 0px 8px, rgba(124, 255, 255, 0.25) 0px 2px 16px;
+  color:#7CFFFF;
+  transition: 0.4s ;
 }
 a {
   display: inline-block;
-  position: relative;
+  position:relative;
+ 
 }
 
 a::after {
@@ -227,15 +243,23 @@ a::after {
   width: 0;
   height: 0.5px;
   position: absolute;
-  transition: all 0.2s linear;
-  background: #ffffff;
+  transition: all 0.2s ;
+  background: #7CFFFF;
   left: 0;
   bottom: 0;
-  transition-delay: 0.2s;
+  transition-delay: 0.1s ease all;
+}
+a:hover{
+  color: #7CFFFF;
+  /* box-shadow: rgba(124, 255, 255, 0.25) 0px 0px 28px, rgba(124, 255, 255, 0.25) 0px 0px 28px; */
+  box-shadow: rgba(124, 255, 255, 0.25) 0px 2px 1px, rgba(124, 255, 255, 0.25) 0px 4px 2px, rgba(124, 255, 255, 0.25) 0px 0px 4px, rgba(124, 255, 255, 0.25) 0px 0px 8px, rgba(124, 255, 255, 0.25) 0px 2px 16px;
 }
 a:hover::after {
   width: 100%;
   transition-delay: 0s;
+}
+a{
+  transition: 0.5s;
 }
 
 .Second_line {
@@ -270,19 +294,36 @@ a:hover::after {
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
+   width: 80%;
+   border-radius: 20px;
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+   
 }
+
+input[type="text"]:focus{
+  outline:none;
+}
+
+
 /* search form */
 
 /* Responsive navbar */
 .responsive-navbar {
+  position:absolute;
+  top: 2.5rem;
+  right: 1rem;
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   border: 2px solid red;
 }
-.responsive-navbar img{
-  width: 100%;
-  display: flex;
-  text-align: center;
-} 
+ 
+ .responsive-navbar img{
+ text-align: center;
+ width:100%;
+ height: auto;
+ }
 
 .responsive-navbar svg {
   z-index: 999;
@@ -290,14 +331,38 @@ a:hover::after {
 }
 
 @media screen and (max-width: 800px) {
-  .navLinks {
-    display: none;
+   .responsive-navbar {
+    display: flex;
   }
+
+  .second-line-content {
+    border: 10px solid yellowgreen !important;
+    /* display: none; */
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 0px !important; */
+    
+  }
+  .navLinks {
+  
+    flex-direction: column;
+    width: 100%;
+    /* padding: 0px !important; */
+    
+  }
+  .navLinks a {
+    padding: 0px !important;
+  
+  }
+  /* .navLinks li, .navlinks a{
+    padding: 0px;
+  } */
+  
   .photo_side {
     margin: 5px 0px;
   }
-  .responsive-navbar {
-    display: block;
-  }
+ 
 }
+
+
 </style>
