@@ -1,13 +1,13 @@
 <template>
   <div class="contactContainer">
     <div class="contactUsTitle">
-      <div>
+      <div class="contactIlustrat">
         <img
           src="../../../public/assets/ilustrations/undraw_Profile_data_re_v81r.svg"
           alt=""
         />
       </div>
-      <div>
+      <div style="border:2px solid red">
         <h2>დაგვიკავშირდით</h2>
       </div>
     </div>
@@ -28,53 +28,48 @@
       </div>
     </div>
 
+    <div class="form" style="border: 2px solid green">
+      <div class="formTitle" style="border: 2px solid red">
+        <h2>გამოაგზავნეთ შეკითხვა ფორმის მეშვეობით</h2>
+      </div>
+      <div class="login-box">
+        <form>
+          <div class="user-box">
+            <input type="text" name="" required="" />
+            <label>სახელი</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="" required="" />
+            <label>გვარი</label>
+          </div>
+          <div class="user-box">
+            <input type="email" name="" required="" />
+            <label>ფოსტა</label>
+          </div>
+          <div class="user-box">
+            <input type="number" name="" required="" />
+            <label>საკონტაქტო ნომერი</label>
+          </div>
+          <div class="user-box">
+            <select name="category" id="category">
+              <option value="kategory1 ">თემა: პარტრნიორობა</option>
+              <option value="kategory1 ">თემა: პარტრნიორობა</option>
+              <option value="kategory1 ">თემა: პარტრნიორობა</option>
+              <option value="kategory1 ">თემა: პარტრნიორობა</option>
+            </select>
+            <!-- <label for="category">airchiet tematika:</label> -->
+          </div>
 
-   
-   <div class="form" style="border: 2px solid green">
-   <div class="formTitle" style="border:2px solid red" >
-     <h2>გამოაგზავნეთ შეკითხვა ფორმის მეშვეობით </h2>
-   </div>
-   <div class="login-box">
-  <form>
-    <div class="user-box" >
-      <input type="text" name="" required="">
-      <label>სახელი</label>
+          <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a>
+        </form>
+      </div>
     </div>
-    <div class="user-box" >
-      <input type="text" name="" required="">
-      <label>გვარი</label>
-    </div>
-    <div class="user-box">
-      <input type="email" name="" required="">
-      <label>ფოსტა</label>
-    </div>
-     <div class="user-box">
-      <input type="number" name="" required="">
-      <label>საკონტაქტო ნომერი</label>
-    </div>
-    <div class="user-box">
-      <select name="category" id="category">
-        <option value="kategory1 "> თემა: პარტრნიორობა</option>
-        <option value="kategory1 "> თემა: პარტრნიორობა</option>
-        <option value="kategory1 "> თემა: პარტრნიორობა</option>
-        <option value="kategory1 "> თემა: პარტრნიორობა</option>
-      </select>
-      <!-- <label for="category">airchiet tematika:</label> -->
-
-    
-    </div>
-  
-    <a href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Submit
-    </a>
-  </form>
-</div>
-   </div>
-
   </div>
 </template>
 
@@ -101,9 +96,7 @@
   /* border: 2px solid red; */
   margin-left: 10px;
 }
-.socialIconeInside h3{
-  font-size: 1vw;
-}
+
 .contactUsTitle img {
   /* border: 2px solid red; */
   display: flex;
@@ -134,16 +127,16 @@
 /* social icones */
 
 /* contact-form */
-.form{
+.form {
   padding: 60px;
 }
 .login-box {
   /* position: absolute; */
 
   justify-content: center !important;
-   position: relative;
-  margin:auto  !important;
-  width: 40%;
+  position: relative;
+  margin: auto !important;
+  width: 50%;
   padding: 40px;
   margin-top: 40px !important;
   background: #591a92;
@@ -162,10 +155,11 @@
 
 .login-box .user-box {
   position: relative;
-/* border:2px solid yellow; */
+  /* border:2px solid yellow; */
 }
 
-.login-box .user-box input, select {
+.login-box .user-box input,
+select {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -177,53 +171,47 @@
   background: transparent;
 }
 
-
-
 .login-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
   top: -20px;
   left: 0;
-  color: #AB4DF7;
+  color: #ab4df7;
   font-size: 12px;
 }
-
-
 
 .login-box form a {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
-  color: #AB4DF7;
+  color: #ab4df7;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
-  transition: .5s;
+  transition: 0.5s;
   margin-top: 40px;
-  letter-spacing: 4px
+  letter-spacing: 4px;
 }
 
-.login-box a:hover, select{
-  background: #AB4DF7;
+.login-box a:hover,
+select {
+  background: #ab4df7;
   color: rgb(255, 255, 255);
   border-radius: 1px;
-  box-shadow: 0 0 5px #AB4DF7,
-              0 0 5px #AB4DF7,
-              0 0 10px #AB4DF7,
-              0 0 50px #AB4DF7;
+  box-shadow: 0 0 5px #ab4df7, 0 0 5px #ab4df7, 0 0 10px #ab4df7,
+    0 0 50px #ab4df7;
 }
-
 
 .login-box a span {
   position: absolute;
@@ -235,7 +223,7 @@
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #AB4DF7);
+  background: linear-gradient(90deg, transparent, #ab4df7);
   animation: btn-anim1 1s linear infinite;
 }
 
@@ -243,7 +231,8 @@
   0% {
     left: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -253,16 +242,17 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #AB4DF7);
+  background: linear-gradient(180deg, transparent, #ab4df7);
   animation: btn-anim2 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: 0.25s;
 }
 
 @keyframes btn-anim2 {
   0% {
     top: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -272,16 +262,17 @@
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #AB4DF7);
+  background: linear-gradient(270deg, transparent, #ab4df7);
   animation: btn-anim3 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 0.5s;
 }
 
 @keyframes btn-anim3 {
   0% {
     right: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -291,30 +282,73 @@
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #AB4DF7);
+  background: linear-gradient(360deg, transparent, #ab4df7);
   animation: btn-anim4 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 0.75s;
 }
 
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
   }
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
 
-
-
-
-.formTitle{
+.formTitle {
   padding: 20px;
   color: #591a92;
   display: flex;
   justify-content: center;
 }
 
-
 /* contact-form */
+
+@media only screen and (max-width: 992px) {
+  .socialIcones {
+    padding: 0px;
+    margin-top: 30px;
+
+    padding: 0px;
+  }
+  .socialIconeInside {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .socialIcones {
+    display: flow-root;
+    padding: 0px;
+    margin-top: 30px;
+
+    padding: 0px;
+  }
+  .contactUsTitle {
+    display: flow-root;
+    justify-content: center;
+    align-items: center;
+   
+  }
+
+  .contactUsTitle  h2{
+    text-align: center;
+  }
+
+ .contactIlustrat img{
+   margin: auto !important;
+ }
+
+ .form{
+   padding: 10px;
+ }
+
+  .login-box {
+    width: 100%;
+   
+    width: 100%;
+  }
+}
 </style>
