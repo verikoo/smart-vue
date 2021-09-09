@@ -364,7 +364,8 @@ select {
   }
 
   .socialIcones2{
-   padding: 10px;
+   padding-top: 20px;
+   padding-bottom: 20px;
   }
 
   .locationSIde {
