@@ -7,7 +7,7 @@
           alt=""
         />
       </div>
-      <div style="border:2px solid red">
+      <div >
         <h2>დაგვიკავშირდით</h2>
       </div>
     </div>
@@ -28,8 +28,8 @@
       </div>
     </div>
 
-    <div class="form" style="border: 2px solid green">
-      <div class="formTitle" style="border: 2px solid red">
+    <div class="form">
+      <div class="formTitle">
         <h2>გამოაგზავნეთ შეკითხვა ფორმის მეშვეობით</h2>
       </div>
       <div class="login-box">
@@ -57,7 +57,6 @@
               <option value="kategory1 ">თემა: პარტრნიორობა</option>
               <option value="kategory1 ">თემა: პარტრნიორობა</option>
             </select>
-            <!-- <label for="category">airchiet tematika:</label> -->
           </div>
 
           <a href="#">
@@ -70,6 +69,34 @@
         </form>
       </div>
     </div>
+
+    <div class="socialIcones2">
+      <div><img src="../../../public/assets/icons/linkedin.png" alt="" /></div>
+      <div><img src="../../../public/assets/icons/youtube.png" alt="" /></div>
+      <div>
+        <img src="../../../public/assets/icons/facebookCont.png" alt="" />
+      </div>
+      <div>
+        <img src="../../../public/assets/icons/twitterCont.png" alt="" />
+      </div>
+    </div>
+
+    <div class="locationMap">
+      <div class="mapIlustration">
+        <img
+          src="../../../public/assets/ilustrations/undraw_right_direction_tge8.svg"
+          alt=""
+        />
+      </div>
+      <div class="locationSIde">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.368546245063!2d41.63369701543379!3d41.6477785792411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406787a6b8a7e515%3A0xf66f06747969ee30!2sLLC%20Cyber%20Solutions!5e0!3m2!1ska!2sge!4v1631194349265!5m2!1ska!2sge"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -78,45 +105,39 @@
 
 <style scoped>
 .contactContainer {
-  border: 2px solid red;
   min-height: calc(100vh - 258px);
 }
-/* contact us title */
+/* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
 .contactUsTitle {
   padding: 20px;
   background-color: #8d4dc9;
   color: white;
-  /* border: 2px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .contactUsTitle h2 {
   margin-top: 4vw;
-  /* border: 2px solid red; */
   margin-left: 10px;
 }
 
 .contactUsTitle img {
-  /* border: 2px solid red; */
   display: flex;
   width: 200px;
 }
-/* contact us title */
-/* social icones */
+/* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
+
+/* social iconesssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
 .socialIcones {
   display: flex;
   justify-content: space-evenly;
-  /* padding: 20px 0px 20px 0px; */
   padding: 30px;
-  border: 2px solid red;
 }
 
 .socialIcones img {
   width: 50px;
 }
 .socialIconeInside {
-  /* border: 2px solid rgb(129, 131, 30); */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -124,15 +145,13 @@
   padding: 50px 100px 50px 100px;
 }
 
-/* social icones */
+/* social iconesssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
 
-/* contact-form */
+/* contact-formmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
 .form {
   padding: 60px;
 }
 .login-box {
-  /* position: absolute; */
-
   justify-content: center !important;
   position: relative;
   margin: auto !important;
@@ -143,7 +162,6 @@
   box-sizing: border-box;
   box-shadow: 0 15px 25px #591a92;
   border-radius: 10px;
-  border: 2px solid rgb(5, 233, 92);
 }
 
 .login-box h2 {
@@ -155,7 +173,6 @@
 
 .login-box .user-box {
   position: relative;
-  /* border:2px solid yellow; */
 }
 
 .login-box .user-box input,
@@ -304,7 +321,58 @@ select {
   justify-content: center;
 }
 
-/* contact-form */
+/* contact-formmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
+
+/* socialicones 22222222222222222222222222222222 */
+.locationMap {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ab4df7;
+}
+.socialIcones2 {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px;
+}
+.socialIcones2 img {
+  width: 50px;
+}
+
+.mapIlustration {
+  display: flex;
+  align-items: center;
+  background: #ab4df7;
+}
+.mapIlustration img {
+  width: 200px;
+}
+
+.locationSIde {
+  width: 1000px;
+  height: 200px;
+  margin-left: 20px;
+}
+
+.locationSIde iframe {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 532px) {
+  .mapIlustration img {
+    width: 150px;
+  }
+
+  .socialIcones2{
+   padding: 10px;
+  }
+
+  .locationSIde {
+    height: 150px;
+  }
+}
+
+/* socialicones 22222222222222222222222222222222 */
 
 @media only screen and (max-width: 992px) {
   .socialIcones {
@@ -323,31 +391,28 @@ select {
     display: flow-root;
     padding: 0px;
     margin-top: 30px;
-
     padding: 0px;
   }
   .contactUsTitle {
     display: flow-root;
     justify-content: center;
     align-items: center;
-   
   }
 
-  .contactUsTitle  h2{
+  .contactUsTitle h2 {
     text-align: center;
   }
 
- .contactIlustrat img{
-   margin: auto !important;
- }
+  .contactIlustrat img {
+    margin: auto !important;
+  }
 
- .form{
-   padding: 10px;
- }
+  .form {
+    padding: 10px;
+  }
 
   .login-box {
     width: 100%;
-   
     width: 100%;
   }
 }
