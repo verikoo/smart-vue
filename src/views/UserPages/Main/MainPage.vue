@@ -567,6 +567,9 @@ export default {
   .video h1 {
     padding: 0px 30px 30px 30px;
   }
+  .description {
+    padding: 0px;
+  }
 }
 @media all and (max-width: 531px) {
   .description {

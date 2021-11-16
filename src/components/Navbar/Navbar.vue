@@ -223,9 +223,7 @@ a:active {
 .first_line {
   background-color:#e6e6e6;
   display: flex;
-  box-shadow: #3b174ea6 0px 2px 8px 0px;
-    /* box-shadow: #3b174e 0px 10px 10px -10px;
-  box-shadow: #3b174e(17, 17, 26, 0.1) 0px 1px 0px; */
+  
 
 }
 
@@ -399,7 +397,7 @@ input[type="text"]:focus {
     box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 15px -3px,
       rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
     margin-left: -20px !important;
-    background: #3b174e;
+    background: #543864;
     box-shadow: 0px 1px 3px #e3bff256, 0px -1px 3px #e3bff256;
   }
 

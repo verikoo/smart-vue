@@ -90,9 +90,7 @@ export default {
   background: #e6e6e6;
   background: -webkit-linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%);
   background: linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%);
-  text-indent: 50px;
-  text-align: justify;
-  justify-content: center;
+  /* text-indent: 50px; */
   font-size: 1.4rem;
   padding: 40px;
   /* font-family: inside_text; */

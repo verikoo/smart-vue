@@ -77,7 +77,6 @@ export default {
   width: 100%;
   margin: auto;
   height: 40rem;
-  /* border: 2px solid green; */
 }
 .title h1 {
   /* border: 4px solid black; */

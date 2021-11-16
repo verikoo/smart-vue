@@ -7,32 +7,7 @@
     </div>
 
     <div class="main_content">
-      <!-- <div class="title">
-        <h1>მიიღეთ სწორი გადაწყვეტილება</h1>
-      </div>
-
-      <div class="icon">
-        <div class="exact_icon">
-          <i class="fas fa-users"></i>
-          <p>მხარდაჭერა</p>
-        </div>
-        <div class="exact_icon">
-          <i class="fas fa-project-diagram"></i>
-          <p>გადაწყვეტილება</p>
-        </div>
-        <div class="exact_icon">
-          <i class="fas fa-hands-heart"></i>
-          <p>ზრუნვა</p>
-        </div>
-        <div class="exact_icon">
-          <i class="fas fa-bolt"></i>
-          <p>ძალა</p>
-        </div>
-      </div>
-
-      <div class="title">
-        <h1>ჩვენი პარტნიორები</h1>
-      </div> -->
+     
 
       <div class="brands">
         <div v-for="(item, index) in teamData" :key="index" class="hovereffect">
@@ -322,12 +297,26 @@ export default {
   .title h1 {
     width: 70%;
   }
+
+  .overlay h5{
+    margin-top: 50px;
+    font-size: 18px;
+  }
+   .hovereffect:hover a.info{
+    width:60%;
+  }
 }
 @media all and (max-width: 414px) {
+   .overlay h5{
+     margin-top: 20px;
+   }
+    
 }
 @media all and (max-width: 400px) {
   .hovereffect img {
     height: 250px;
   }
+ 
+   
 }
 </style>

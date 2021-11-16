@@ -172,7 +172,7 @@ const VueRouter = new router({
           name: "addCareer",
           component: () => import("./components/Admin/AddCareer.vue"),
         },
-      ]
+      ],
     },
   ],
   scrollBehavior() {

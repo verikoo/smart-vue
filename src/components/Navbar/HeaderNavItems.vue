@@ -107,7 +107,7 @@ a:active {
 
 .first_line {
   display: flex;
-  box-shadow: #e3bff256 0px 2px 8px 0px;
+  box-shadow: #f2bfbf56 0px 2px 8px 0px;
 }
 
 .first_line_inside a {
@@ -150,7 +150,7 @@ a {
   height: 0.5px;
   position: absolute;
   transition: all 0.3s ease-in-out;
-  background-color: #7F5496;
+  background-color: #a705ff;
   left: 0;
   bottom: 0;
 }
@@ -196,6 +196,10 @@ input[type="text"]:focus {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+.responsive-navbar .navLinks {
+  height: 600px;
 }
 
 .responsive-navbar img {
@@ -305,6 +309,8 @@ input[type="text"]:focus {
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
+    /* border:2px solid brown; */
+    
   }
   .navLinks a {
     padding: 0px !important;

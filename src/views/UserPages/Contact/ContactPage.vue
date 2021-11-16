@@ -133,6 +133,8 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  /* border: 2px solid red; */
+  /* background-color: #E2BEF1; */
 }
 .contactUsTitle h2 {
   margin-left: auto;
@@ -152,17 +154,23 @@ export default {
   display: flex;
   justify-content: space-evenly;
   padding: 30px 0 30px 0;
+  /* border:2px solid red; */
+  /* background-color: #E2BEF1 ; */
 }
 
 .socialIcones img {
-  width: 50px;
+  width: 40px;
 }
 .socialIconeInside {
   display: flex;
+  font-size: 16px;
   align-items: center;
   flex-direction: column;
-  color: #462359;
-  padding: 50px 100px 50px 100px;
+  color: #7F5496;
+  padding:30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .socialIconeInside h3 {
@@ -392,10 +400,20 @@ select {
   }
 }
 
+@media all and (max-width: 769px) {
+ .formTitle{
+   margin-top: 30px;
+   text-align: center;
+ }
+}
+
+
+
 @media only screen and (max-width: 532px) {
   .mapIlustration img {
     width: 150px;
   }
+
 
   .socialIcones2 {
     padding-top: 20px;
@@ -429,7 +447,7 @@ select {
     padding: 0px;
   }
   .contactUsTitle {
-    display: flow-root;
+    /* display: flow-root; */
     justify-content: center;
     align-items: center;
   }
@@ -447,8 +465,8 @@ select {
   }
 
   .login-box {
-    width: 100%;
-    width: 100%;
+    width: 80%;
+    /* width: 100%; */
   }
 }
 </style>

@@ -74,6 +74,7 @@ export default {
   font-size: 20px;
   border-radius: 20px;
   margin-top: 20px;
+ 
   /* border: 2px solid black; */
 }
 .textSide {
@@ -81,7 +82,7 @@ export default {
   margin-left: 50px;
   padding: 20px;
   font-size: 20px;
-  font-family: inside_text !important;
+  text-align: justify;
 }
 .textSide h1 {
   padding-bottom: 20px;
@@ -93,9 +94,15 @@ export default {
    border-radius: 180px 60pxbox ;
 } */
 
+@media all and (max-width: 5800px) and (min-width: 474px){
+.status{
+  width: 73.5%;
+}
+}
+
 @media all and (max-width: 1444px) {
   .team {
-    padding: 50px;
+    padding: 40px;
   }
 }
 
@@ -117,6 +124,13 @@ export default {
 
   .textSide h1 {
     text-align: center;
+  }
+  .photo {
+    margin: auto !important;
+    display: table;
+  }
+  .status{
+    margin: auto;
   }
 }
 </style>
