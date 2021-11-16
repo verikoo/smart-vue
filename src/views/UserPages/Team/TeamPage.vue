@@ -14,8 +14,8 @@
           <img :src="item.image" alt="" />
           <div class="overlay">
             <h5>
-              <div>{{ item.fullName }}</div>
-              <div>{{ item.position }}</div>
+              <div>{{ item.fullNameEN }}</div>
+              <div>{{ item.positionEN }}</div>
             </h5>
             <router-link
               :to="{ name: 'teamDetail', params: { id: item.slug } }"
@@ -44,7 +44,8 @@ export default {
     axios
       .get(`${env.host}/api/get/all/teammate`)
       .then((result) => {
-        this.teamData = JSON.parse(JSON.stringify(result.data));
+        this.teamData = JSON.parse(JSON.stringify(result.data.team));
+        // console.log(result.data)
       })
       .catch((err) => {
         console.log(err);

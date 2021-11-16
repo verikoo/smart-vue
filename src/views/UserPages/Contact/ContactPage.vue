@@ -13,18 +13,8 @@
     </div>
 
     <div class="main_content">
-      <div class="socialIcones">
-        <div
-          v-for="(item, index) in contactData"
-          :key="index"
-          class="socialIconeInside"
-        >
-          <img :src="item.image" alt="" />
-          <h3>{{ item.text }}</h3>
-        </div>
-      </div>
-
-      <div class="form">
+      <div class="containerIconesForm">
+        <div class="form">
         <div class="formTitle">
           <h2>გამოაგზავნეთ შეკითხვა ფორმის მეშვეობით</h2>
         </div>
@@ -66,6 +56,8 @@
         </div>
       </div>
 
+      <div class="socialInfo"> 
+        
       <div class="socialIcones2">
         <div><img src="../../../assets/icons/linkedin.png" alt="" /></div>
         <div><img src="../../../assets/icons/youtube.png" alt="" /></div>
@@ -76,6 +68,22 @@
           <img src="../../../assets/icons/twitterCont.png" alt="" />
         </div>
       </div>
+      <div class="socialIcones">
+        <div
+          v-for="(item, index) in contactData"
+          :key="index"
+          class="socialIconeInside"
+        >
+          <img :src="item.image" alt="" />
+          <h3 v-if="lang == 'en'">{{ item.textEN }}</h3>
+          <h3  v-else >{{ item.textKA }}</h3>
+
+        </div>
+      </div>
+      </div>
+      </div>
+
+      
       <div class="locationMap">
         <div class="mapIlustration">
           <img
@@ -104,15 +112,22 @@ export default {
   data() {
     return {
       contactData: [],
+      lang: "ka",
     };
   },
   mounted() {
     axios
       .get(`${env.host}/api/get/contact/infos`)
       .then((result) => {
-        this.contactData = JSON.parse(JSON.stringify(result.data));
+        this.contactData = JSON.parse(JSON.stringify(result.data.item));
       })
       .catch((err) => console.log(err));
+
+      if (localStorage.getItem("lang") == "ka") {
+      this.lang = "ka";
+    } else {
+      this.lang = "en";
+    }
   },
 };
 </script>
@@ -121,19 +136,22 @@ export default {
 .main_content {
   width: 100%;
   max-width: 1400px;
+  display: grid;
+  grid-template-columns: auto;
   margin: auto;
   min-height: calc(100vh - 258px);
+  border:2px solid red;
 }
 /* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
 .contactUsTitle {
-  height: 10rem;
-  padding: 20px;
+  height: 7rem;
+  /* padding: 20px; */
   color: #7f5496;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  /* border: 2px solid red; */
+  border: 2px solid yellow;
   /* background-color: #E2BEF1; */
 }
 .contactUsTitle h2 {
@@ -154,7 +172,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   padding: 30px 0 30px 0;
-  /* border:2px solid red; */
+  border:2px solid black;
   /* background-color: #E2BEF1 ; */
 }
 
@@ -167,10 +185,13 @@ export default {
   align-items: center;
   flex-direction: column;
   color: #7F5496;
-  padding:30px;
+  /* padding:30px; */
   background-color: white;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  border:2px solid greenyellow;
+  align-items:center;
+  justify-content: center;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
 }
 
 .socialIconeInside h3 {
@@ -182,10 +203,11 @@ export default {
 /* contact-formmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
 .form {
   padding: 50px 0 50px 0;
+  border:2px solid blue;
 }
 .login-box {
   margin: auto !important;
-  width: 40%;
+  width: 80%;
   padding: 40px;
   margin-top: 40px !important;
   background-image: linear-gradient(to top, #E3BFF2 0%, #7F5496 100%);
@@ -274,6 +296,18 @@ select {
   height: 2px;
   background: linear-gradient(90deg, transparent, #ab4df7);
   animation: btn-anim1 1s linear infinite;
+}
+.containerIconesForm{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr !important;
+  border:4px solid pink;
+
+}
+
+.socialInfo{
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 @keyframes btn-anim1 {
@@ -368,6 +402,9 @@ select {
   display: flex;
   justify-content: space-evenly;
   padding: 50px 0 50px 0;
+  border:2px solid purple;
+  align-items: center;
+  
 }
 .socialIcones2 img {
   width: 50px;

@@ -6,12 +6,17 @@
     >
       <div>
         <div class="description">
-          <h2>
-            {{ improvement.text }}
+          <h2 v-if="lang=='ka'">
+            {{ improvement.textKA }}
+          </h2>
+          <h2 v-else>
+            {{ improvement.textEN }}
           </h2>
         </div>
         <router-link :to="{ name: 'company' }" class="info" exact-path
-          ><span>{{ improvement.buttonText }}</span></router-link
+          ><span v-if="lang=='ka'">{{ improvement.buttonTextKA }}</span>
+          <span v-else>{{ improvement.buttonTextEN }}</span>
+          </router-link
         >
       </div>
     </div>
@@ -19,7 +24,8 @@
     <div class="icon">
       <div class="exact_icon" v-for="(item, index) in heros" :key="index">
         <i :class="item.icon"></i>
-        <p>{{ item.text }}</p>
+        <p v-if="lang=='ka'">{{ item.textKA }}</p>
+        <p v-else>{{ item.textEN }}</p>
       </div>
     </div>
 
@@ -29,13 +35,16 @@
     >
       <div>
         <div class="description">
-          <h2>
-            ჩვენ ყოველთვის ვცდილობთ შემოგთავაზოთ ეფექტური, გამოცდილი და
-            გაუმჯობესებული საშუალებები თქვენი საქმიანობისთვის, ჯანმრთელობისა და
-            სიჯანსაღისთვის
+          <h2 v-if="lang=='en'">
+           {{photos[0].textEN}}
           </h2>
+          <h2 v-else>
+           {{photos[0].textKA}}
+          </h2>
+          
         </div>
-        <span class="info">პასუხისმგებლობა</span>
+        <span class="info" v-if="lang=='ka'">{{photos[0].buttonTextKA}}</span>
+        <span class="info" v-else>{{photos[0].buttonTextEN}}</span>
       </div>
     </div>
 
@@ -44,16 +53,7 @@
         <h1>
           შესაძლოა ყველას ჰქონდეს თავსართი
         </h1>
-        <div class="iframe">
-          <iframe
-            width="100%"
-            height="600"
-            src="https://www.youtube.com/embed/-z_W3yRA9I8"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+        <div class="iframe" v-html="video.url">
         </div>
       </div>
     </div>
@@ -221,14 +221,19 @@ export default {
       photos: [],
       heros: [],
       improvement: {},
+      lang: "ka",
+      video: {},
     };
   },
 
   mounted() {
+    axios.get(`${env.host}/api/get/videos`).then((videoX)=>{
+      this.video = videoX.data.item
+    })
     axios
       .get(`${env.host}/api/get/slides`)
       .then((response) => {
-        this.photos = JSON.parse(JSON.stringify(response.data));
+        this.photos = JSON.parse(JSON.stringify(response.data.item));
       })
       .catch((err) => {
         console.log(err);
@@ -236,15 +241,27 @@ export default {
 
     axios
       .get(`${env.host}/api/get/companies/heros`)
-      .then((result) => (this.heros = JSON.parse(JSON.stringify(result.data))))
+      .then((result) => {
+        if(result.data.success){
+          this.heros = JSON.parse(JSON.stringify(result.data.item))
+        }
+      })
       .catch((err) => console.log(err));
 
     axios
       .get(`${env.host}/api/get/companies/improvements`)
       .then((result) => {
-        this.improvement = result.data;
+        this.improvement = result.data.item;
+          // this.improvement = JSON.parse(JSON.stringify(result.data.item))
+          console.log(result.data.item);
       })
       .catch((err) => console.log(err));
+
+      if (localStorage.getItem("lang") == "ka") {
+      this.lang = "ka";
+    } else {
+      this.lang = "en";
+    }
   },
 };
 </script>

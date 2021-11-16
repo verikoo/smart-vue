@@ -6,8 +6,8 @@
           <img :src="detailTeamData.image" alt="" />
         </div>
         <div class="status">
-          <p>{{ detailTeamData.position }}</p>
-          <p>{{ detailTeamData.email }}</p>
+          <p>{{ detailTeamData.positionEN }}</p>
+          <p>{{ detailTeamData.emailEN }}</p>
         </div>
       </div>
       <div class="textSide">

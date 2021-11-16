@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Navbar v-if="!test.includes(this.$route.name)" />
+    <Navbar v-if="!navbar.includes(this.$route.name)" />
     <router-view style="margin-top: 133px"></router-view>
-    <Footer v-if="!test.includes(this.$route.name)" />
+    <Footer v-if="!footer.includes(this.$route.name)" />
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   components: { Navbar, Footer },
   data() {
     return {
-      test: [
+      navbar: [
         "NewsDetails",
         "News",
         "BlogMain",
@@ -31,6 +31,26 @@ export default {
         "addBlogs",
         "addCsr",
         "addCareer",
+      ],
+       footer: [
+        "NewsDetails",
+        "News",
+        "BlogMain",
+        "BlogsDetails",
+        "NotFound",
+        "adminpage",
+        "adminlogin",
+        "adminpage",
+        "addteam",
+        "addLocalPartners",
+        "addForeignPartners",
+        "addExclusiveBrands",
+        "addNews",
+        "addBlogs",
+        "addCsr",
+        "addCareer",
+        "contact",
+
       ],
     };
   },
