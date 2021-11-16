@@ -1,5 +1,5 @@
 {
-  "name": "smartpharm-vue",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,15 +8,21 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@nestjs/mongoose": "^9.0.1",
+    "aos": "^2.3.4",
+    "axios": "^0.23.0",
     "core-js": "^3.6.5",
+    "mongoose": "^6.0.12",
+    "sweetalert2": "^11.1.10",
+    "vee-validate": "^3.4.12",
     "vue": "^2.6.11",
-    "vue-info-card": "^0.1.4",
+    "vue-i18n": "^8.25.1",
     "vue-router": "^3.5.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "^3.1.1",
-    "@vue/cli-service": "^3.12.1",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",

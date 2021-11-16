@@ -1,34 +1,85 @@
 <template>
   <div id="app">
-    <NavbarContent/>
-      <router-view ></router-view>
-    <FooterContent/>
+    <Navbar v-if="!test.includes(this.$route.name)" />
+    <router-view style="margin-top: 133px"></router-view>
+    <Footer v-if="!test.includes(this.$route.name)" />
   </div>
 </template>
 
 <script>
-
-import NavbarContent from './../src/components/Header/Navbar/NavbarContent.vue'
-import FooterContent from './../src/components/FooterContent.vue';
+import Navbar from "./components/Navbar/Navbar.vue";
+import Footer from "./components/Footer/Footer.vue";
 export default {
-  name: 'App',
-  components: {NavbarContent,FooterContent}
-}
+  name: "App",
+  components: { Navbar, Footer },
+  data() {
+    return {
+      test: [
+        "NewsDetails",
+        "News",
+        "BlogMain",
+        "BlogsDetails",
+        "NotFound",
+        "adminpage",
+        "adminlogin",
+        "adminpage",
+        "addteam",
+        "addLocalPartners",
+        "addForeignPartners",
+        "addExclusiveBrands",
+        "addNews",
+        "addBlogs",
+        "addCsr",
+        "addCareer",
+      ],
+    };
+  },
+  mounted() {},
+};
 </script>
 
 <style>
-body {
+@font-face {
+  font-family: dejavu;
+  src: url("./assets/fonts/DejaVuSansCondensed.ttf");
+}
+@font-face {
+  font-family: QARTULI;
+  src: url("./assets/fonts/bpg_nino_mtavruli_normal.ttf");
+}
+
+@font-face {
+  font-family: TBC Contractica CAPS Bold;
+  src: url("./assets/fonts/TBCContracticaCAPS-Bold.ttf");
+}
+
+@font-face {
+  font-family: TBC Contractica CAPS Book;
+  src: url("./assets/fonts/TBCContracticaCAPS-Book.ttf");
+}
+
+@font-face {
+  font-family: TBC Contractica CAPS regular;
+  src: url("./assets/fonts/TBCContracticaCAPS-Regular.ttf");
+}
+@font-face {
+  font-family: inside_text;
+  src: url("./assets/fonts/bpg-arial-webfont.ttf");
+}
+
+* {
+  font-family: dejavu;
   margin: 0px;
   padding: 0px;
-  
-}
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
- 
+  box-sizing: border-box;
 }
 
-
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.last_added_item,
+li {
+  -webkit-tap-highlight-color: transparent;
+}
 </style>
