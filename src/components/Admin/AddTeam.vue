@@ -5,19 +5,16 @@
     </div>
     <ValidationObserver>
       <form @submit.prevent="addTeam">
-        <h1 class="pb-10">Add Team</h1>
+        <h1 class="pb-10">ჯგუფის დამატება</h1>
         <ValidationProvider
           rules="required|max:50|min:2"
           v-slot="{ errors }"
           name="name"
         >
-          <label for="floatingInput">Fullname : </label>
           <div class="input">
             <input
               type="text"
-              class="form-control"
-              id="floatingInput"
-              placeholder="username"
+              placeholder="fullName"
               v-model="form.fullName"
               required
             />
@@ -29,13 +26,10 @@
           v-slot="{ errors }"
           name="name"
         >
-          <label for="floatingInput">descriptions : </label>
           <div class="input">
             <input
               type="text"
-              class="form-control"
-              id="floatingInput"
-              placeholder="username"
+              placeholder="description"
               v-model="form.description"
               required
             />
@@ -47,13 +41,10 @@
           v-slot="{ errors }"
           name="name"
         >
-          <label for="floatingInput">email : </label>
           <div class="input">
             <input
               type="email"
-              class="form-control"
-              id="floatingInput"
-              placeholder="username"
+              placeholder="email"
               v-model="form.email"
               required
             />
@@ -65,13 +56,10 @@
           v-slot="{ errors }"
           name="name"
         >
-          <label for="floatingInput">position : </label>
           <div class="input">
             <input
               type="text"
-              class="form-control"
-              id="floatingInput"
-              placeholder="username"
+              placeholder="position"
               v-model="form.position"
               required
             />
@@ -144,8 +132,43 @@ export default {
 
 <style scoped>
 .team {
+  margin-top: 0 !important;
+  align-items: center;
   display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
+  text-align: center;
+}
+.team form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.team .input {
+  position: relative;
+}
+.team .input input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #dadada;
+  outline: none;
+  padding-left: 20px;
+}
+.team .input input:focus {
+  border: 1px solid royalblue;
+  transition: 0.3s;
+}
+.team button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: royalblue;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  color: white;
 }
 .input span {
   color: #ef2849;

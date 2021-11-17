@@ -8,7 +8,7 @@
         exact
         class="side-btn"
       >
-        <div class="link-container">{{item.title}}</div>
+        <div class="link-container">{{ item.title }}</div>
       </router-link>
     </div>
   </div>
@@ -16,54 +16,76 @@
 
 <script>
 export default {
-  name:"sidebar",
-  data(){
-    return{
+  name: "sidebar",
+  data() {
+    return {
       path: [
         {
-          title:"addTeam",
-          path: { name: 'addteam', params: { id: 'addTeam' }},
+          title: "addTeam",
+          path: { name: "addteam", params: { id: "addTeam" } },
         },
         {
-          title:"addLocalPartners",
-          path: { name: 'addLocalPartners', params: { id: 'addLocalPartners' }},
+          title: "addLocalPartners",
+          path: {
+            name: "addLocalPartners",
+            params: { id: "addLocalPartners" },
+          },
         },
         {
-          title:"addForeignPartners",
-          path: { name: 'addForeignPartners', params: { id: 'addForeignPartners' }},
+          title: "addForeignPartners",
+          path: {
+            name: "addForeignPartners",
+            params: { id: "addForeignPartners" },
+          },
         },
         {
-          title:"addExclusiveBrands",
-          path: { name: 'addExclusiveBrands', params: { id: 'addExclusiveBrands' }},
+          title: "addExclusiveBrands",
+          path: {
+            name: "addExclusiveBrands",
+            params: { id: "addExclusiveBrands" },
+          },
         },
         {
-          title:"addNews",
-          path: { name: 'addNews', params: { id: 'addNews' }},
+          title: "addNews",
+          path: { name: "addNews", params: { id: "addNews" } },
         },
         {
-          title:"addBlogs",
-          path: { name: 'addBlogs', params: { id: 'addBlogs' }},
+          title: "addBlogs",
+          path: { name: "addBlogs", params: { id: "addBlogs" } },
         },
         {
-          title:"addCsr",
-          path: { name: 'addCsr', params: { id: 'addCsr' }},
+          title: "addCsr",
+          path: { name: "addCsr", params: { id: "addCsr" } },
         },
         {
-          title:"addCareer",
-          path: { name: 'addCareer', params: { id: 'addCareer' }},
+          title: "addCareer",
+          path: { name: "addCareer", params: { id: "addCareer" } },
         },
       ],
-    }
-  }
+    };
+  },
 };
 </script>
 
 <style scoped>
+.sidebar {
+  direction: rtl;
+  overflow: auto;
+}
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #be99ce;
+  border-radius: 5px;
+}
 .menu-items {
   display: flex;
   flex-direction: column;
-  margin-left: 6px;
-  margin-top: 15px;
+  margin: 10px 0 10px 0;
 }
 .menu-items > * {
   margin-top: 50px;
