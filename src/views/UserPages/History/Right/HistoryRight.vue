@@ -73,7 +73,7 @@ export default {
 .photoSide img {
   float: right;
   border-radius: 20px;
-  margin-left: 25px;
+  margin-left: 40px;
   margin-bottom: 10px;
 }
 
@@ -84,7 +84,8 @@ export default {
   margin: auto !important;
   align-items: center;
   align-content: center;
-  border:2px solid red;
+  /* border:2px solid red; */
+  padding: 40px;
 }
 
 /* .whole {
@@ -119,8 +120,8 @@ export default {
 .textSide p{
   font-size: 24px;
   /* height: 300px; */
- 
-  border: 2px solid red;
+ /* width: 1000px; */
+  /* border: 2px solid red; */
 }
 
 
@@ -134,6 +135,7 @@ export default {
   margin-top: 100px;
   padding-top: 100px;
   color: #7f5496;
+  margin-bottom: 20px;
   /* border:2px solid red; */
 
 }
@@ -142,7 +144,7 @@ export default {
 
 @media all and (max-width: 1670px) {
   .title {
-    padding: 80px 40px 0px 40px;
+    padding: 40px 40px 40px 0px;
     
   }
 
