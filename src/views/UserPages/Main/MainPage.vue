@@ -23,7 +23,7 @@
 
     <div class="icon">
       <div class="exact_icon" v-for="(item, index) in heros" :key="index">
-        <i :class="item.icon"></i>
+        <img :src="env+'/'+item.image">
         <p v-if="lang=='ka'">{{ item.textKA }}</p>
         <p v-else>{{ item.textEN }}</p>
       </div>
@@ -100,6 +100,12 @@
           date="2020-09-14"
         />
       </div>
+       <div class="blogButton">
+          <router-link :to="{name:'BlogMain' , params: {id: 'BlogMain'}}" class="info" exact-path>
+          
+            <span>მეტის ნახვა</span>
+        </router-link>
+       </div>
     </div>
 
     <div class="team">
@@ -223,6 +229,7 @@ export default {
       improvement: {},
       lang: "ka",
       video: {},
+      env: env.host,
     };
   },
 
@@ -344,7 +351,7 @@ export default {
 .responsibility .info,
 .values .info,
 .team .info,
-.csr .info {
+.csr .info  {
   border-radius: 10px;
   color: white;
   text-align: center;
@@ -363,11 +370,16 @@ export default {
 .responsibility .info:hover,
 .values .info:hover,
 .team .info:hover,
-.csr .info:hover {
+.csr .info:hover, .blog .info:hover {
   border: 1px solid transparent;
   color: #f2f5fa;
   background: #462359;
   transition: 0.4s;
+}
+.blogButton{
+  display: flex;
+  justify-content: center;
+  /* margin:auto; */
 }
 .icon {
   width: 100%;
@@ -385,9 +397,11 @@ export default {
   padding: 150px 0 150px 0;
 }
 .exact_icon p {
-  color: #571f8e;
-  font-weight: 600;
-  font-size: 20px;
+  margin-top: 2.4rem;
+  color: #666666 ;
+  
+  /* font-weight: 600; */
+  font-size: 22px;
 }
 .exact_icon i {
   color: #7f5496;
@@ -465,7 +479,7 @@ export default {
   padding-bottom: 20px;
 }
 .hovereffect a,
-.team_member a {
+.team_member a , .blog a{
   text-align: center;
   text-decoration: none;
   color: #462359;
@@ -494,6 +508,7 @@ export default {
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
+  /* border:2px solid red; */
 }
 .blog_header {
   color: #7f5496;

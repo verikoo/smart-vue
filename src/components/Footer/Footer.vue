@@ -9,16 +9,16 @@
            <!-- <img src="../../assets/img/logoWhite.png"> -->
              <div class="footerIcones">
               <div class="socialEl ">
-                    <img src="../../assets/icons/fbsmart.png" alt="">
+                    <img src="../../assets/icons/facebook.png" alt="">
                  </div>
                  <div class="socialEl ">
-                    <img src="../../assets/icons/linkedsmart.png" alt="">
+                    <img src="../../assets/icons/linkedin.png" alt="">
                  </div>
                  <div class="socialEl ">
-                    <img src="../../assets/icons/instasmart.png" alt="">
+                    <img src="../../assets/icons/instagram.png" alt="">
                  </div>
                  <div class="socialEl ">
-                    <img src="../../assets/icons/yousmart.png" alt="">
+                    <img src="../../assets/icons/youtube.png" alt="">
                  </div>
 
 
@@ -78,6 +78,8 @@ export default {};
 
 .footerGrid {
   /* border: 2px solid blue; */
+  /* margin: 10px; */
+  padding: 10px 10px 10px 0px;
   width: 100%;
   max-width: 1400px;
   margin: auto;

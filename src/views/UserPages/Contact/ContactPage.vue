@@ -1,19 +1,26 @@
 <template>
   <div class="contactContainer">
     <div class="contactUsTitle">
-      <!-- <div class="contactIlustrat">
-        <img
-          src="../../../assets/ilustrations/undraw_personal_information_re_vw8a.svg"
-          alt=""
-        />
-      </div> -->
+      
       <div>
         <h2>დაგვიკავშირდით</h2>
       </div>
     </div>
 
     <div class="main_content">
-      <div class="containerIconesForm">
+      <div class="socialIcones">
+        <div
+          v-for="(item, index) in contactData"
+          :key="index"
+          class="socialIconeInside"
+        >
+          <img :src="env+'/'+item.image" alt="" />
+          <h3 v-if="lang == 'en'">{{ item.textEN }}</h3>
+          <h3  v-else >{{ item.textKA }}</h3>
+
+        </div>
+      </div>
+      
         <div class="form">
         <div class="formTitle">
           <h2>გამოაგზავნეთ შეკითხვა ფორმის მეშვეობით</h2>
@@ -56,40 +63,23 @@
         </div>
       </div>
 
+      <div   class="socialIcones2">
+        <a :href="item.toLink" v-for="(item, index) in images"
+          :key="index">
+           <img :src="env+'/'+item.imageUrl" alt="">
+        </a>
+        
+    </div>
+       
+
       <div class="socialInfo"> 
         
-      <div class="socialIcones2">
-        <div><img src="../../../assets/icons/linkedin.png" alt="" /></div>
-        <div><img src="../../../assets/icons/youtube.png" alt="" /></div>
-        <div>
-          <img src="../../../assets/icons/facebookCont.png" alt="" />
-        </div>
-        <div>
-          <img src="../../../assets/icons/twitterCont.png" alt="" />
-        </div>
-      </div>
-      <div class="socialIcones">
-        <div
-          v-for="(item, index) in contactData"
-          :key="index"
-          class="socialIconeInside"
-        >
-          <img :src="item.image" alt="" />
-          <h3 v-if="lang == 'en'">{{ item.textEN }}</h3>
-          <h3  v-else >{{ item.textKA }}</h3>
-
-        </div>
-      </div>
-      </div>
-      </div>
-
+      
       
       <div class="locationMap">
-        <div class="mapIlustration">
-          <img
-            src="../../../assets/ilustrations/undraw_right_direction_tge8.svg"
-            alt=""
-          />
+        <div class="containerSocialIlust">
+          
+        
         </div>
         <div class="locationSIde">
           <iframe
@@ -100,7 +90,12 @@
           ></iframe>
         </div>
       </div>
-    </div>
+      </div>
+      
+
+      
+      
+  </div>
   </div>
 </template>
 
@@ -113,6 +108,8 @@ export default {
     return {
       contactData: [],
       lang: "ka",
+      env: env.host,
+      images: [],
     };
   },
   mounted() {
@@ -128,6 +125,12 @@ export default {
     } else {
       this.lang = "en";
     }
+
+    axios
+    .get(`${env.host}/api/get/contact/networks`).then((result)=>{
+      console.log(result.data.item)
+      this.images=JSON.parse(JSON.stringify(result.data.item))
+    })
   },
 };
 </script>
@@ -136,78 +139,68 @@ export default {
 .main_content {
   width: 100%;
   max-width: 1400px;
-  display: grid;
-  grid-template-columns: auto;
   margin: auto;
   min-height: calc(100vh - 258px);
-  border:2px solid red;
 }
 /* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
 .contactUsTitle {
-  height: 7rem;
-  /* padding: 20px; */
+  height: 10rem;
+  padding: 20px;
   color: #7f5496;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 20px;
-  border: 2px solid yellow;
+  /* border: 2px solid red; */
   /* background-color: #E2BEF1; */
 }
 .contactUsTitle h2 {
   margin-left: auto;
   letter-spacing: 3px;
-  font-weight: bold;
-  font-size:30px;
+  /* font-weight: bold; */
+  font-size:40px;
 }
-
 .contactUsTitle img {
   display: flex;
   width: 200px;
 }
 /* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
-
 /* social iconesssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
 .socialIcones {
   display: flex;
   justify-content: space-evenly;
-  padding: 30px 0 30px 0;
-  border:2px solid black;
+  /* padding: 30px 0 30px 0; */
+  border:2px solid red;
   /* background-color: #E2BEF1 ; */
 }
-
 .socialIcones img {
   width: 40px;
 }
 .socialIconeInside {
+  width: 350px;
   display: flex;
   font-size: 16px;
   align-items: center;
   flex-direction: column;
   color: #7F5496;
-  /* padding:30px; */
+  padding:30px;
   background-color: white;
+  color:#666666;
   border-radius: 20px;
-  border:2px solid greenyellow;
-  align-items:center;
-  justify-content: center;
-  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+  border:2px solid yellow;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
-
 .socialIconeInside h3 {
   margin-top: 20px;
 }
-
 /* social iconesssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */
-
 /* contact-formmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
 .form {
   padding: 50px 0 50px 0;
-  border:2px solid blue;
 }
 .login-box {
   margin: auto !important;
-  width: 80%;
+  width: 40%;
   padding: 40px;
   margin-top: 40px !important;
   background-image: linear-gradient(to top, #E3BFF2 0%, #7F5496 100%);
@@ -215,18 +208,15 @@ export default {
   box-shadow: 0 15px 25px #462359;
   border-radius: 10px;
 }
-
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
   text-align: center;
 }
-
 .login-box .user-box {
   position: relative;
 }
-
 .login-box .user-box input,
 select {
   width: 100%;
@@ -239,7 +229,6 @@ select {
   outline: none;
   background: transparent;
 }
-
 .login-box .user-box label {
   position: absolute;
   top: 0;
@@ -250,7 +239,6 @@ select {
   pointer-events: none;
   transition: 0.5s;
 }
-
 .login-box .user-box input:focus ~ label,
 .login-box .user-box input:valid ~ label {
   top: -20px;
@@ -258,11 +246,9 @@ select {
   color: #3c3441;
   font-size: 12px;
 }
-
 .contactIlustrat {
   padding: 35px;
 }
-
 .login-box form a {
   position: relative;
   display: inline-block;
@@ -276,19 +262,16 @@ select {
   margin-top: 40px;
   letter-spacing: 4px;
 }
-
 .login-box a:hover,
 select {
   background: #be98ce;
   color: rgb(255, 255, 255);
   border-radius: 1px;
 }
-
 .login-box a span {
   position: absolute;
   display: block;
 }
-
 .login-box a span:nth-child(1) {
   top: 0;
   left: -100%;
@@ -297,19 +280,6 @@ select {
   background: linear-gradient(90deg, transparent, #ab4df7);
   animation: btn-anim1 1s linear infinite;
 }
-.containerIconesForm{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr !important;
-  border:4px solid pink;
-
-}
-
-.socialInfo{
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
 @keyframes btn-anim1 {
   0% {
     left: -100%;
@@ -319,7 +289,6 @@ select {
     left: 100%;
   }
 }
-
 .login-box a span:nth-child(2) {
   top: -100%;
   right: 0;
@@ -329,7 +298,6 @@ select {
   animation: btn-anim2 1s linear infinite;
   animation-delay: 0.25s;
 }
-
 @keyframes btn-anim2 {
   0% {
     top: -100%;
@@ -339,7 +307,6 @@ select {
     top: 100%;
   }
 }
-
 .login-box a span:nth-child(3) {
   bottom: 0;
   right: -100%;
@@ -349,7 +316,6 @@ select {
   animation: btn-anim3 1s linear infinite;
   animation-delay: 0.5s;
 }
-
 @keyframes btn-anim3 {
   0% {
     right: -100%;
@@ -359,7 +325,6 @@ select {
     right: 100%;
   }
 }
-
 .login-box a span:nth-child(4) {
   bottom: -100%;
   left: 0;
@@ -369,7 +334,6 @@ select {
   animation: btn-anim4 1s linear infinite;
   animation-delay: 0.75s;
 }
-
 @keyframes btn-anim4 {
   0% {
     bottom: -100%;
@@ -379,37 +343,33 @@ select {
     bottom: 100%;
   }
 }
-
 .formTitle {
   padding: 20px;
   color: #591a92;
   display: flex;
   justify-content:center;
 }
-
 /* contact-formmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
-
 /* socialicones 22222222222222222222222222222222 */
 .locationMap {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   /* background-color: #ab4df7; */
   border-radius: 20px;
   padding: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 .socialIcones2 {
   display: flex;
   justify-content: space-evenly;
-  padding: 50px 0 50px 0;
-  border:2px solid purple;
-  align-items: center;
+  padding: 20px 0px;
   
 }
-.socialIcones2 img {
+.socialIcones2 a img {
   width: 50px;
-}
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
+}
 .mapIlustration {
   display: flex;
   align-items: center;
@@ -418,64 +378,56 @@ select {
 .mapIlustration img {
   width: 200px;
 }
-
 .locationSIde {
-  width: 1000px;
-  height: 200px;
+  width: 1400px;
+  height: 300px;
   border-radius: 20px;
 }
-
 .locationSIde iframe {
   width: 100%;
   height: 100%;
   border-radius: 20px;
 }
-
 @media all and (max-width: 1400px) {
   .contactContainer {
     margin-top: 130px !important;
   }
 }
-
+@media all and (max-width: 1150px) {
+  .socialIconeInside{
+    width:200px;
+    padding:15px;
+  }
+}
 @media all and (max-width: 769px) {
  .formTitle{
    margin-top: 30px;
    text-align: center;
  }
 }
-
-
-
 @media only screen and (max-width: 532px) {
   .mapIlustration img {
     width: 150px;
   }
-
-
   .socialIcones2 {
     padding-top: 20px;
     padding-bottom: 20px;
   }
-
   .locationSIde {
     height: 150px;
   }
 }
-
 /* socialicones 22222222222222222222222222222222 */
-
 @media only screen and (max-width: 992px) {
   .socialIcones {
     padding: 0px;
     margin-top: 30px;
-
     padding: 0px;
   }
   .socialIconeInside {
     padding: 10px;
   }
 }
-
 @media only screen and (max-width: 768px) {
   .socialIcones {
     display: flow-root;
@@ -488,19 +440,15 @@ select {
     justify-content: center;
     align-items: center;
   }
-
   .contactUsTitle h2 {
     text-align: center;
   }
-
   .contactIlustrat img {
     margin: auto !important;
   }
-
   .form {
     padding: 10px;
   }
-
   .login-box {
     width: 80%;
     /* width: 100%; */

@@ -14,8 +14,8 @@
           <img :src="item.image" alt="" />
           <div class="overlay">
             <h5>
-              <div>{{ item.fullNameEN }}</div>
-              <div>{{ item.positionEN }}</div>
+              <div>{{ item.fullNameKA }}</div>
+              <div>{{ item.positionKA }}</div>
             </h5>
             <router-link
               :to="{ name: 'teamDetail', params: { id: item.slug } }"

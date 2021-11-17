@@ -6,13 +6,13 @@
           <img :src="detailTeamData.image" alt="" />
         </div>
         <div class="status">
-          <p>{{ detailTeamData.positionEN }}</p>
-          <p>{{ detailTeamData.emailEN }}</p>
+          <p>{{ detailTeamData.positionKA }}</p>
+          <p>{{ detailTeamData.emailKA }}</p>
         </div>
       </div>
       <div class="textSide">
         <h1>{{ detailTeamData.fullName }}</h1>
-        <p v-html="detailTeamData.description"></p>
+        <p v-html="detailTeamData.descriptionKA"></p>
       </div>
     </div>
   </div>
