@@ -7,8 +7,10 @@
         </div>
       </div>
       <div class="textSide">
-        <h1>{{ exclusivesData.title }}</h1>
-        <p v-html="exclusivesData.description"></p>
+        <h1 v-if="lang == 'ka'">{{ exclusivesData.titleKA }}</h1>
+        <h1 v-else>{{ exclusivesData.titleEN }}</h1>
+        <p v-if="lang=='ka'" v-html="exclusivesData.descriptionKA"></p>
+        <p v-else v-html="exclusivesData.descriptionEN"></p>
       </div>
     </div>
   </div>
@@ -22,6 +24,7 @@ export default {
   data() {
     return {
       exclusivesData: {},
+      lang: 'ka'
     };
   },
   mounted() {
@@ -29,9 +32,15 @@ export default {
     axios
       .get(`${env.host}/api/get/once/exclusives/${url}`)
       .then((result) => {
-        this.exclusivesData = JSON.parse(JSON.stringify(result.data));
+        this.exclusivesData = JSON.parse(JSON.stringify(result.data.item));
       })
       .catch((err) => console.log(err));
+
+      if(localStorage.getItem("lang") == "ka") {
+        this.lang = "ka";
+      } else {
+        this.lang=  "en";
+      }
   },
 };
 </script>
