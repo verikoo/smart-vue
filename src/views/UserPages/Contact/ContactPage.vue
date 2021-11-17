@@ -144,13 +144,13 @@ export default {
 }
 /* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
 .contactUsTitle {
-  height: 10rem;
-  padding: 20px;
+  height: 8rem;
+  /* padding: 20px 20px 0px 20px; */
   color: #7f5496;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  /* font-size: 20px; */
   /* border: 2px solid red; */
   /* background-color: #E2BEF1; */
 }
@@ -158,7 +158,7 @@ export default {
   margin-left: auto;
   letter-spacing: 3px;
   /* font-weight: bold; */
-  font-size:40px;
+  font-size:30px;
 }
 .contactUsTitle img {
   display: flex;
@@ -170,7 +170,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   /* padding: 30px 0 30px 0; */
-  border:2px solid red;
+  /* border:2px solid red; */
   /* background-color: #E2BEF1 ; */
 }
 .socialIcones img {
@@ -187,7 +187,7 @@ export default {
   background-color: white;
   color:#666666;
   border-radius: 20px;
-  border:2px solid yellow;
+  /* border:2px solid yellow; */
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 .socialIconeInside h3 {
@@ -393,39 +393,20 @@ select {
     margin-top: 130px !important;
   }
 }
-@media all and (max-width: 1150px) {
-  .socialIconeInside{
-    width:200px;
-    padding:15px;
-  }
-}
-@media all and (max-width: 769px) {
- .formTitle{
-   margin-top: 30px;
-   text-align: center;
- }
-}
-@media only screen and (max-width: 532px) {
-  .mapIlustration img {
-    width: 150px;
-  }
-  .socialIcones2 {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .locationSIde {
-    height: 150px;
-  }
-}
+
+
+
+
 /* socialicones 22222222222222222222222222222222 */
 @media only screen and (max-width: 992px) {
   .socialIcones {
     padding: 0px;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     padding: 0px;
   }
   .socialIconeInside {
-    padding: 10px;
+    padding: 30px;
+    margin: 20px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -442,6 +423,8 @@ select {
   }
   .contactUsTitle h2 {
     text-align: center;
+    font-size: 25px;
+    padding:0px !important;
   }
   .contactIlustrat img {
     margin: auto !important;
@@ -452,6 +435,34 @@ select {
   .login-box {
     width: 80%;
     /* width: 100%; */
+  }
+  .formTitle{
+   /* margin-top: 30px; */
+   text-align: center;
+ }
+ .socialIcones{
+   margin:auto;
+   
+ }
+ .socialIconeInside{
+   margin: auto;
+   padding: 10px;
+   margin-top:10px;
+   width:250px;
+ }
+}
+
+
+@media only screen and (max-width: 532px) {
+  .mapIlustration img {
+    width: 150px;
+  }
+  .socialIcones2 {
+    padding-top: 40px;
+    padding-bottom: 20px;
+  }
+  .locationSIde {
+    height: 150px;
   }
 }
 </style>

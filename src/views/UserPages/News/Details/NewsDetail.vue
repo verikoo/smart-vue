@@ -99,6 +99,7 @@ export default {
 }
 
 .details_description {
+  text-align: justify;
   font-size: 24px;
   margin-top: 40px;
 }

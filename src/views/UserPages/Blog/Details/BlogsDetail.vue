@@ -101,7 +101,7 @@ export default {
 
 .details_description {
   font-size: 20px;
-  
+  text-align: justify;
   margin-top: 40px;
 }
 
