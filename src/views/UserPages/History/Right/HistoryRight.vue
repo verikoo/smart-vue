@@ -68,7 +68,7 @@ export default {
   min-height: calc(100vh - 258px);
   background-color: white;
   /* padding: 40px; */
-  border:2px solid black;
+  /* border:2px solid black; */
 }
 .photoSide img {
   float: right;
