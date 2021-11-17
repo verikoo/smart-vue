@@ -2,12 +2,14 @@
   <div class="exlusive_brands">
     <div class="title">
       <div class="titleInside">
-        <h1>{{ exclusiveInfo.text }}</h1>
+        <h1 v-if="lang=='ka'">{{ exclusiveInfo.textKA }}</h1>
+        <h1 v-else>{{ exclusiveInfo.textEN }}</h1>
       </div>
     </div>
     <div class="titleContainer">
       <div class="aboutMedicine">
-        <p v-html="exclusiveInfo.description"></p>
+        <p v-if="lang=='ka'" v-html="exclusiveInfo.descriptionKA"></p>
+        <p v-else v-html="exclusiveInfo.descriptionEN"></p>
       </div>
     </div>
 
@@ -21,7 +23,8 @@
           <img :src="item.defaultImage" alt="" />
           <div class="overlay">
             <h2>
-              <div>{{ item.title }}</div>
+              <div v-if="lang=='ka'">{{ item.titleKA }}</div>
+              <div v-else>{{ item.titleEN }}</div>
             </h2>
             <router-link
               :to="{ name: 'exclusiveDetail', params: { id: item.slug } }"
@@ -45,21 +48,28 @@ export default {
     return {
       exclusiveInfo: {},
       exclusiveData: [],
+      lang: 'ka'
     };
   },
   mounted() {
     axios
       .get(`${env.host}/api/get/exclusives/info`)
       .then((result) => {
-        this.exclusiveInfo = result.data;
+        this.exclusiveInfo = result.data.item;
       })
       .catch((err) => console.log(err));
     axios
       .get(`${env.host}/api/get/all/exclusives`)
       .then((result) => {
-        this.exclusiveData = JSON.parse(JSON.stringify(result.data));
+        this.exclusiveData = JSON.parse(JSON.stringify(result.data.item));
       })
       .catch((err) => console.log(err));
+
+      if(localStorage.getItem("lang") == "ka") {
+        this.lang = "ka";
+      } else {
+        this.lang = "en";
+      }
   },
 };
 </script>

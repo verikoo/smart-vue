@@ -1,8 +1,8 @@
 <template>
   <div class="csr">
-    <div class="title" :style="{ backgroundImage: `url('${csrInfo.image}')` }">
+    <div class="title">
       <div class="titleInside">
-        <h1>{{ csrInfo.text }}</h1>
+        <h1>CSR</h1>
       </div>
     </div>
 
@@ -39,16 +39,16 @@ export default {
     };
   },
   mounted() {
+    // axios
+    //   .get(`${env.host}/api/get/csr/info`)
+    //   .then((result) => {
+    //     this.csrInfo = result.data;
+    //   })
+    //   .catch((err) => console.log(err));
     axios
-      .get(`${env.host}/api/get/csr/info`)
+      .get(`${env.host}/api/get/csr`)
       .then((result) => {
-        this.csrInfo = result.data;
-      })
-      .catch((err) => console.log(err));
-    axios
-      .get(`${env.host}/api/get/all/csr`)
-      .then((result) => {
-        this.csrData = JSON.parse(JSON.stringify(result.data));
+        this.csrData = JSON.parse(JSON.stringify(result.data.item));
       })
       .catch((err) => console.log(err));
   },

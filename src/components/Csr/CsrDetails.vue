@@ -29,7 +29,7 @@ export default {
     axios
       .get(`${env.host}/api/get/once/csr/${url}`)
       .then((result) => {
-        this.csrDetailData = result.data;
+        this.csrDetailData = result.data.item;
       })
       .catch((err) => console.log(err));
   },

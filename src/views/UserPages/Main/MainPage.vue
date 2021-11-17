@@ -78,27 +78,29 @@
         <p>SmartPharm</p>
       </div>
       <div class="blog_card">
-        <BlogsCard
-          key="hgyhgjh"
-          id="value.id"
-          img="medicine_news.png"
-          header="სათაური"
-          date="2020-09-14"
-        />
-        <BlogsCard
-          key="jhgfds"
-          id="value.id"
-          img="medicine_news.png"
-          header="სათაური"
-          date="2020-09-14"
-        />
-        <BlogsCard
-          key="qwerty"
-          id="value.id"
-          img="medicine_news.png"
-          header="სათაური"
-          date="2020-09-14"
-        />
+        <div class="blogs_card_main_div"
+                v-for="(item, index) in blog" :key="index">
+    <router-link :to="{ name: 'BlogsDetails', params: { id: `${item.slug}` } }">
+      <img
+        :src="env+'/'+item.defaultImage"
+        alt="card image"
+        class="blogs_card_image"
+
+      />
+    </router-link>
+    <div class="blogs_card_title">
+      <router-link :to="{ name: 'BlogsDetails', params: { id: `${item.slug}` } }">
+        <p class="blogs_card_title_header" v-if="lang=='ka'">{{item.titleKA}}</p>
+        <p class="blogs_card_title_header" v-else>{{item.titleEN}}</p>
+      </router-link>
+    </div>
+    <div class="blogs_card_date">
+      <i class="fas fa-calendar calendar_icon"></i>
+      <p class="blogs_card_date_title">
+        {{item.date}}
+      </p>
+    </div>
+  </div>
       </div>
        <div class="blogButton">
           <router-link :to="{name:'BlogMain' , params: {id: 'BlogMain'}}" class="info" exact-path>
@@ -212,15 +214,11 @@
 </template>
 
 <script>
-import BlogsCard from "../Blog/Main/BlogsCard.vue";
 import axios from "axios";
 import env from "../../../env.json";
 
 export default {
   name: "MainPage",
-  components: {
-    BlogsCard,
-  },
 
   data() {
     return {
@@ -230,10 +228,14 @@ export default {
       lang: "ka",
       video: {},
       env: env.host,
+      blog: []
     };
   },
 
   mounted() {
+  axios.get(`${env.host}/api/get/sprint/blog/0/3`).then((res) => {
+    this.blog = JSON.parse(JSON.stringify(res.data.item))
+  })
     axios.get(`${env.host}/api/get/videos`).then((videoX)=>{
       this.video = videoX.data.item
     })
@@ -642,5 +644,64 @@ export default {
   .hovereffect a.info {
     width: 150px;
   }
+}
+
+
+.blogs_card_main_div {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.blogs_card_main_div * {
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+.blogs_card_image {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.blogs_card_title {
+  width: 100%;
+}
+
+.blogs_card_title_header {
+  font-size: 20px;
+  color: #A4A8AA;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.blogs_card_title_header:hover {
+  color: #7F5496;
+  
+}
+
+.blogs_card_date {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.blogs_card_date_title {
+  color: grey;
+  font-size: 14px;
+  text-align: left;
+  opacity: 0.7;
+  display: flex;
+  gap: 5px;
+  /* border: solid 1px red; */
+  padding-top: 6px !important;
+}
+
+.calendar_icon {
+  font-size: 16px;
+  color: grey;
 }
 </style>

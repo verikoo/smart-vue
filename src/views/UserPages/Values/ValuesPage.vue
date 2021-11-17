@@ -16,25 +16,16 @@
             src="../../../assets/ilustrations/undraw_informed_decision_p2lh.svg"
             alt=""
           />
-          
+
           <img
             src="../../../assets/ilustrations/undraw_Active_support_re_b7sj.svg"
             alt=""
           />
         </div>
-        <p>
-          <span style="font-weight: 700"></span>  ჩვენი გამბედაობა ახალი, განსხვავებული იდეების განვითარებაა,
-რომლებსაც ხშირად სხვები მიყვებიან. ჩვენი გამბედაობა ჩვენს ხასიათშია, რომელიც
-გვაძლევს ძალას არ გვეშინოდეს სიახლეების, დაბრკოლებებისა და ცვლილებების. ჩვენი
-გამბედაობა მუდმივ ქმედებაშია, რომელსაც ყოველდღე ვახორციელებთ და რომელსაც
-შედეგები მოაქვს.
-          <span class="link">
-            <router-link to="/history" exact>
-              იხილეთ <i class="fal fa-long-arrow-right"></i
-            ></router-link>
-          </span></p
-      ></tab>
-       <tab title="გონივრული გადაწყვეტილება" class="tabs_values">
+        <p v-if="lang == 'ka'" v-html="data.courage.textKA"></p>
+        <p v-else v-html="data.courage.textEN"></p>
+      </tab>
+      <tab title="გონივრული გადაწყვეტილება" class="tabs_values">
         <div class="icons">
           <img
             src="../../../assets/ilustrations/undraw_gravitas_d3ep.svg"
@@ -54,11 +45,13 @@
             alt=""
           />
         </div>
-        <p>
+        <p v-if="lang == 'ka'">
           <span style="font-weight: 700"></span>
-          ყველაფერს, რასაც ვაკეთებთ, ვაკეთებთ გონიერად, შორს
-მიმავალ შედეგებზე გათვლით, თანმიმდევრობით. ეს ეხმარება კომპანიას
-სტაბილურობის და, შესაბამისად, წარმატების შეგრძნების გაძლიერებაში.ს
+          {{ data.areasonabledecision.textKA }}
+        </p>
+        <p v-else>
+          <span style="font-weight: 700"></span>
+          {{ data.areasonabledecision.textEN }}
         </p>
       </tab>
       <tab title="პასუხისმგებლობა" class="tabs_values">
@@ -67,7 +60,7 @@
             src="../../../assets/ilustrations/undraw_gravitas_d3ep.svg"
             alt=""
           />
-           <img
+          <img
             src="../../../assets/ilustrations/undraw_solution_mindset_34bi.svg"
             alt=""
           />
@@ -76,28 +69,27 @@
             alt=""
             style="background: #A580B5"
           />
-         
+
           <img
             src="../../../assets/ilustrations/undraw_Active_support_re_b7sj.svg"
             alt=""
           />
         </div>
-        <p>
-          <span style="font-weight: 700"></span>
-         ჩვენ ვართ პასუხისმგებლიანი კომპანია და ეს აისახება ბაზრისთვის
-ეფექტური და ხელმისაწვდომი სამკურნალო საშუალებების და გადაწვეტილებების
-შეთავაზებაში, პარტნიორებთან, საზოგადობასთან და ქვეყანასთან პასუხისმგებლიანი
-ურთიერთობების ჩამოყალიბებაში.
-        </p></tab
-      >
-     
+        <p v-if="lang == 'ka'">
+          {{ data.responsibility.textKA }}
+        </p>
+        <p v-else>
+          {{ data.responsibility.textEN }}
+        </p>
+      </tab>
+
       <tab title="მხარდაჭერა" class="tabs_values">
         <div class="icons">
           <img
             src="../../../assets/ilustrations/undraw_gravitas_d3ep.svg"
             alt=""
           />
-           <img
+          <img
             src="../../../assets/ilustrations/undraw_solution_mindset_34bi.svg"
             alt=""
           />
@@ -105,17 +97,18 @@
             src="../../../assets/ilustrations/undraw_informed_decision_p2lh.svg"
             alt=""
           />
-         
+
           <img
             src="../../../assets/ilustrations/undraw_Active_support_re_b7sj.svg"
             alt=""
             style="background: #A580B5"
           />
         </div>
-        <p>
-          <span style="font-weight: 700"></span>ჩვენ მხარს ვუჭერთ ერთმანეთს, პარტნიორებს, ექიმებს, ადამიანებს,
-პაციენტებსა და მოწყვლად ჯგუფებს; კრიზისსა თუ არაკრიზისულ სიტუაციებში და
-ყოველთვის ვიზიარებთ საერთო გამოწვევებს.
+        <p v-if="lang == 'ka'">
+        {{data.support.textKA}}
+        </p>
+        <p v-else>
+        {{data.support.textEN}}
         </p>
       </tab>
     </tabs>
@@ -125,11 +118,30 @@
 <script>
 import Tab from "../../../components/tabs/Tab.vue";
 import Tabs from "../../../components/tabs/Tabs.vue";
+import axios from "axios";
+import env from "../../../env.json";
 
 export default {
   components: {
     Tab,
     Tabs,
+  },
+  data() {
+    return {
+      data: {},
+      lang: "ka",
+    };
+  },
+  mounted() {
+    if (localStorage.getItem("lang") == "ka") {
+      this.lang = "ka";
+    } else {
+      this.lang = "en";
+    }
+
+    axios.get(`${env.host}/api/get/values`).then((res) => {
+      this.data = res.data.item;
+    });
   },
 };
 </script>
@@ -143,7 +155,6 @@ export default {
   text-align: justify;
   margin-top: 145px;
   /* border: 2px solid red; */
-
 }
 
 .values p {
@@ -158,7 +169,7 @@ export default {
   display: inline-block;
   align-self: center;
   padding: 20px;
-  padding-left:100px;
+  padding-left: 100px;
 }
 
 .icons {
@@ -167,7 +178,7 @@ export default {
 }
 
 .icons img {
-  background: #A4A8AA;
+  background: #a4a8aa;
   border-radius: 20px;
   padding: 20px;
   width: 200px;
@@ -177,33 +188,28 @@ export default {
 }
 .link {
   font-weight: 700;
-  
 }
-.link a{
-  margin-left:10px;
+.link a {
+  margin-left: 10px;
   font-size: 18px;
-  
 }
 .link i {
   text-align: center;
   width: 60px;
   font-weight: 500;
   transition: 0.4s;
-  
 }
 .link i:hover {
   margin-left: 20px;
   transition: 0.4s;
 }
 
-
-
 @media all and (max-width: 1400px) {
   .values {
     padding: 20px;
   }
-  .tabs_values{
-    padding-left:20px;
+  .tabs_values {
+    padding-left: 20px;
   }
 }
 
@@ -217,10 +223,8 @@ export default {
     font-size: 20px;
     padding-bottom: 50px;
   }
-  .tabs_values
-  {
-
-    padding-left:20px;
+  .tabs_values {
+    padding-left: 20px;
   }
 }
 @media all and (max-width: 992px) {
@@ -228,8 +232,7 @@ export default {
     width: 150px;
   }
   .tabs_values {
-    padding-left:20px;
-
+    padding-left: 20px;
   }
 }
 @media all and (max-width: 780px) {
@@ -237,17 +240,16 @@ export default {
     width: 100px;
   }
   .values {
-    margin:auto;
+    margin: auto;
   }
-  
+
   .tabs ul {
     display: grid;
     /* grid-template-columns: auto auto; */
   }
-  .link a{
+  .link a {
     font-size: 18px;
   }
-
 }
 @media all and (max-width: 582px) {
   .icons {
@@ -255,7 +257,6 @@ export default {
     text-align: center;
   }
 }
-
 
 @media all and (max-width: 332px) {
   .values p {
