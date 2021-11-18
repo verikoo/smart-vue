@@ -202,15 +202,53 @@ export default {
  
 }
 
+@media all and (max-width: 769px) {
+ .textSide{
+   /* border:red 2px solid; */
+   flex-direction: column;
+ }
+ .wholeHorizontal{
+      flex-direction: column;
+
+ }
+ .textSide p{
+   font-size: 20px;
+ }
+ .title{
+   text-align: center;
+   /* padding: 0px; */
+   padding: 40px;
+ }
+ .photoSide img{
+   float:none !important;
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   margin:auto;
+   padding-bottom: 20px;
+ }
+
+
+ }
+
+
+
 
 @media all and (max-width: 425px) {
-  .textSide {
-    padding: 30px;
-  }
+ 
   .title{
     text-align: center;
   }
+ .photoSide img{
+   width: 300px;
+   
+ }
   
+  .textSide{
+   
+    padding: 40px;
+    /* border:2px solid red; */
+  }
 
   /* .photoSide {
     display: flex;
