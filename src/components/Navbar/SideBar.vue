@@ -21,44 +21,44 @@ export default {
     return {
       path: [
         {
-          title: "addTeam",
+          title: "Team",
           path: { name: "addteam", params: { id: "addTeam" } },
         },
         {
-          title: "addLocalPartners",
+          title: "LocalPartners",
           path: {
             name: "addLocalPartners",
             params: { id: "addLocalPartners" },
           },
         },
         {
-          title: "addForeignPartners",
+          title: "ForeignPartners",
           path: {
             name: "addForeignPartners",
             params: { id: "addForeignPartners" },
           },
         },
         {
-          title: "addExclusiveBrands",
+          title: "ExclusiveBrands",
           path: {
             name: "addExclusiveBrands",
             params: { id: "addExclusiveBrands" },
           },
         },
         {
-          title: "addNews",
+          title: "News",
           path: { name: "addNews", params: { id: "addNews" } },
         },
         {
-          title: "addBlogs",
+          title: "Blogs",
           path: { name: "addBlogs", params: { id: "addBlogs" } },
         },
         {
-          title: "addCsr",
+          title: "Csr",
           path: { name: "addCsr", params: { id: "addCsr" } },
         },
         {
-          title: "addCareer",
+          title: "Career",
           path: { name: "addCareer", params: { id: "addCareer" } },
         },
       ],

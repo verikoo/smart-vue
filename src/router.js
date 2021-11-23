@@ -133,44 +133,44 @@ const VueRouter = new router({
       component: () => import("./views/AdminPage/AdminPage.vue"),
       children: [
         {
-          path: ":id",
+          path: "",
           name: "addteam",
-          component: () => import("./components/Admin/AddTeam.vue"),
+          component: () => import("./components/Admin/GetComponents/Team.vue"),
         },
         {
           path: "addLocalPartners",
           name: "addLocalPartners",
-          component: () => import("./components/Admin/AddLocalPartners.vue"),
+          component: () => import("./components/Admin/GetComponents/LocalPartners.vue"),
         },
         {
           path: "addForeignPartners",
           name: "addForeignPartners",
-          component: () => import("./components/Admin/AddForeignPartners.vue"),
+          component: () => import("./components/Admin/GetComponents/ForeignPartners.vue"),
         },
         {
           path: "addExclusiveBrands",
           name: "addExclusiveBrands",
-          component: () => import("./components/Admin/AddExclusiveBrands.vue"),
+          component: () => import("./components/Admin/GetComponents/ExclusiveBrands.vue"),
         },
         {
           path: "addNews",
           name: "addNews",
-          component: () => import("./components/Admin/AddNews.vue"),
+          component: () => import("./components/Admin/GetComponents/News.vue"),
         },
         {
           path: "addBlogs",
           name: "addBlogs",
-          component: () => import("./components/Admin/AddBlogs.vue"),
+          component: () => import("./components/Admin/GetComponents/Blogs.vue"),
         },
         {
           path: "addCsr",
           name: "addCsr",
-          component: () => import("./components/Admin/AddCsr.vue"),
+          component: () => import("./components/Admin/GetComponents/Csr.vue"),
         },
         {
           path: "addCareer",
           name: "addCareer",
-          component: () => import("./components/Admin/AddCareer.vue"),
+          component: () => import("./components/Admin/GetComponents/Career.vue"),
         },
       ],
     },

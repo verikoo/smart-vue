@@ -1,11 +1,11 @@
 <template>
-  <div class="exclusive_brands">
+  <div class="csr">
     <div v-if="error">
       {{ error }}
     </div>
     <ValidationObserver>
       <form @submit.prevent="addTeam">
-        <h1 class="pb-10">ექსკლუზიური ბრენდების დამატება</h1>
+        <h1 class="pb-10">CSR-ის დამატება</h1>
         <ValidationProvider
           rules="required|max:50|min:2"
           v-slot="{ errors }"
@@ -85,7 +85,7 @@
 <script>
 import axios from "axios";
 
-import env from "../../env.json";
+import env from "../../../env.json";
 
 export default {
   name: "login",
@@ -131,7 +131,7 @@ export default {
 </script>
 
 <style scoped>
-.exclusive_brands {
+.csr {
   margin-top: 0 !important;
   align-items: center;
   display: flex;
@@ -140,15 +140,15 @@ export default {
   justify-content: center;
   text-align: center;
 }
-.exclusive_brands form {
+.csr form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.exclusive_brands .input {
+.csr .input {
   position: relative;
 }
-.exclusive_brands .input input {
+.csr .input input {
   width: 100%;
   height: 50px;
   border-radius: 10px;
@@ -156,11 +156,11 @@ export default {
   outline: none;
   padding-left: 20px;
 }
-.exclusive_brands .input input:focus {
+.csr .input input:focus {
   border: 1px solid royalblue;
   transition: 0.3s;
 }
-.exclusive_brands button {
+.csr button {
   width: 100%;
   height: 45px;
   border: none;
