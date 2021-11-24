@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div class="Head">
     <div class="navbarContainer">
       <div class="first_line">
@@ -93,12 +93,41 @@
                 </ul>
               </div>
             </li>
+            <li class="aboutUs">
+                <div>
+                   <ul class="menu">
+                 
+            <li
+              @click="listThree = !listThree"
+              @mouseover="listThree = true"
+              @mouseleave="listThree= false">
+               
+              <p>{{$t("exclusive") }}</p>
+              <transition>
 
-            <li>
-              <router-link to="/exclusive">
-                {{ $t("exclusive_brands") }}</router-link
-              >
-            </li>
+               <ul class="dropItems"  v-if="listThree">
+                  <li>
+                    <router-link to="/exclusive" exact="">
+                    {{$t("exclusive_brands")}}
+                    </router-link>
+                  </li>
+
+            
+                          <li>
+                    <router-link to="/exclusiveMedicaments">
+                      {{$t("exclusiveMedicaments")}}
+                    </router-link>
+                  </li>
+
+                </ul>
+                </transition>    
+                
+                 
+                  </li>
+                   </ul>
+                </div>
+                </li>
+            
             <li>
               <router-link to="/news" exact> {{ $t("news") }}</router-link>
             </li>
@@ -130,6 +159,8 @@ export default {
     return {
       listOne: false,
       listTwo: false,
+      listThree: false,
+
     };
   },
   mounted() {

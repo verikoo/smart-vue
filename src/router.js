@@ -87,6 +87,12 @@ const VueRouter = new router({
       component: () => import("./views/UserPages/Brands/ExclusiveBrand.vue"),
     },
     {
+      path: "/exclusiveMedicaments",
+      name: "exclusiveMedicaments",
+      component: () =>
+        import("./views/UserPages/Brands/ExclusiveMedicaments.vue"),
+    },
+    {
       path: "/exclusive/:id",
       name: "exclusiveDetail",
       component: () =>
@@ -140,17 +146,20 @@ const VueRouter = new router({
         {
           path: "addLocalPartners",
           name: "addLocalPartners",
-          component: () => import("./components/Admin/GetComponents/LocalPartners.vue"),
+          component: () =>
+            import("./components/Admin/GetComponents/LocalPartners.vue"),
         },
         {
           path: "addForeignPartners",
           name: "addForeignPartners",
-          component: () => import("./components/Admin/GetComponents/ForeignPartners.vue"),
+          component: () =>
+            import("./components/Admin/GetComponents/ForeignPartners.vue"),
         },
         {
           path: "addExclusiveBrands",
           name: "addExclusiveBrands",
-          component: () => import("./components/Admin/GetComponents/ExclusiveBrands.vue"),
+          component: () =>
+            import("./components/Admin/GetComponents/ExclusiveBrands.vue"),
         },
         {
           path: "addNews",
@@ -170,7 +179,8 @@ const VueRouter = new router({
         {
           path: "addCareer",
           name: "addCareer",
-          component: () => import("./components/Admin/GetComponents/Career.vue"),
+          component: () =>
+            import("./components/Admin/GetComponents/Career.vue"),
         },
       ],
     },

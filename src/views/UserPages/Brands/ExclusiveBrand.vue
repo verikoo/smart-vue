@@ -1,33 +1,52 @@
 <template>
   <div class="exlusive_brands">
-    <div class="title">
-      <div class="titleInside">
-        <h1 v-if="lang=='ka'">{{ exclusiveInfo.textKA }}</h1>
-        <h1 v-else>{{ exclusiveInfo.textEN }}</h1>
-      </div>
-    </div>
-    <div class="titleContainer">
-      <div class="aboutMedicine">
-        <p v-if="lang=='ka'" v-html="exclusiveInfo.descriptionKA"></p>
-        <p v-else v-html="exclusiveInfo.descriptionEN"></p>
-      </div>
-    </div>
+    
+    
+  <div class="slider">
+             <hooper :progress="true" :autoPlay="true" :playSpeed="2000" style="border-radius:20px" >
+ <slide>
+   <div class="conatiner">
+        <img src="https://i.insider.com/5d8e6ec26f24eb50bc6d292a?width=700" alt="">
+        <div class="sliderText"><p>1 good better best never never res till your good is better and your better best</p></div>
+        
+   </div>
+  </slide>
+  
+  <slide>
+   <div class="conatiner">
+        <img src="https://i.insider.com/5d8e6ec26f24eb50bc6d292a?width=700" alt="">
+        <div class="sliderText"><p>2 good bsdfdfzsdfzSEFFFF sdfvj,h sdkvbdfj  vefhajlskvj anl ersfszdfcvdfdfgetter best never never res till your good is better and your better best</p></div>
+        
+   </div>
+  </slide>
+  <slide>
+   <div class="conatiner">
+        <img src="../../../assets/img/careerTablet.jpg" alt="">
+        <div class="sliderText"><p>3 good better best never never res till your good is better and your better best</p></div>
+        
+   </div>
+  </slide>
 
-    <div class="main_content">
+  <hooper-navigation slot="hooper-addons"></hooper-navigation>
+  
+</hooper>
+        </div>
+
+
+    
+<div class="main_content">
       <div class="brands">
         <div
-          v-for="(item, index) in exclusiveData"
-          :key="index"
+          
           class="hovereffect"
         >
-          <img :src="item.defaultImage" alt="" />
+          <img src="../../../assets/img/abbvie-man-blue-test-tubes-1920x987 1.png" alt="" />
           <div class="overlay">
             <h2>
-              <div v-if="lang=='ka'">{{ item.titleKA }}</div>
-              <div v-else>{{ item.titleEN }}</div>
+              <div>saxeli</div>
             </h2>
             <router-link
-              :to="{ name: 'exclusiveDetail', params: { id: item.slug } }"
+              
               class="info"
               exact-path
               ><span class="seeMore">მეტის ნახვა</span></router-link
@@ -40,37 +59,19 @@
 </template>
 
 <script>
-import axios from "axios";
-import env from "../../../env.json";
+
+import { Hooper, Slide, Navigation as HooperNavigation } from 'hooper';
+import 'hooper/dist/hooper.css';
+
 export default {
   name: "partners",
-  data() {
-    return {
-      exclusiveInfo: {},
-      exclusiveData: [],
-      lang: 'ka'
-    };
+    components: {
+    Hooper,
+    Slide,
+    HooperNavigation
   },
-  mounted() {
-    axios
-      .get(`${env.host}/api/get/exclusives/info`)
-      .then((result) => {
-        this.exclusiveInfo = result.data.item;
-      })
-      .catch((err) => console.log(err));
-    axios
-      .get(`${env.host}/api/get/all/exclusives`)
-      .then((result) => {
-        this.exclusiveData = JSON.parse(JSON.stringify(result.data.item));
-      })
-      .catch((err) => console.log(err));
-
-      if(localStorage.getItem("lang") == "ka") {
-        this.lang = "ka";
-      } else {
-        this.lang = "en";
-      }
-  },
+ 
+ 
 };
 </script>
 
@@ -128,46 +129,10 @@ export default {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.titleInside {
-  max-width: 1400px;
-  float: unset;
-  display: flex;
-  width: 100%;
-  margin: auto;
-  height: 40rem;
-  /* border: 2px solid blue; */
-}
-.title {
-  background-image: url("../../../assets/img/great.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
-.titleInside h1 {
-  /* border: 4px solid black; */
-  padding: 20px 00px 20px 0px;
-  /* margin: 20px; */
-  display: block;
-  margin-bottom: 150px;
-  align-self: flex-end;
-  margin-left: auto;
-  margin-right: 10;
-  border-radius: 20px;
-  color: white;
-}
 
-/* .titleInside h1 {
-  margin-top: -80px;
-  padding: 20px 30px 20px 0px;
-  margin-top: 0px;
-  display: inline-block;
-  align-self: flex-end;
-  margin-left: auto;
-  margin-right: 10;
-  border-radius: 20px;
-  color: white;
-} */
+
+
 
 .hovereffect {
   border-radius: 20px;
@@ -261,14 +226,91 @@ export default {
 
 .hovereffect a.info:hover {
   box-shadow: 0 0 5px #fff;
+
+
 }
+
+/* slider */
+
+
+.productsContainer{
+ width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  min-height: calc(100vh - 258px);
+  border:2px solid red;
+}
+
+
+.container{
+ /* border: 2px solid black; */
+  position: relative;
+  text-align: center;
+  color: red;
+  width: 100%;
+}
+
+.sliderText{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(128, 128, 128, 0.295);
+}
+
+.sliderText p{
+    padding: 30px;
+}
+
+.slider{
+    /* border: 2px solid blue; */
+    position: relative;
+    width: 80%;
+    /* height: 300px; */
+    border-radius: 20px;
+    /* height: 400px; */
+    margin: auto;
+    background-size: cover;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.slider img{
+    /* background-position: center center center center; */
+    background-size: cover;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    /* border:2px solid yellow; */
+    width: 100%;
+    border-radius: 20px;
+}
+
+.hooper-slide{
+    position: relative;
+    height: 300px;
+    border-radius: 20px;
+}
+.hooper{
+        height: 300px;
+        border-radius: 20px;
+}
+
+::v-deep .hooper-list{
+    border-radius:20px;
+}
+
+/* slider */
+
+
+
+
 @media all and (max-width: 1500px) {
   .aboutMedicine p {
     padding: 50px;
   }
-  .titleInside h1 {
-    padding: 10px 50px 10px 0px;
-  }
+ 
 }
 
 @media all and (max-width: 1400px) {
@@ -294,24 +336,13 @@ export default {
     margin-top: 150px;
   }
 
-  .titleInside h1 {
-    margin-bottom: 0px;
-    margin: auto;
-    /* margin-top: 200px; */
-    margin-top: 390px;
-  }
 
   .hovereffect a.info {
     position: static;
     margin: auto;
     margin-top: 40px;
   }
-  .titleInside h1 {
-    margin: auto;
-    margin-top: 480px;
-    padding: 0px;
-    margin-top: 380px;
-  }
+ 
 }
 @media all and (max-width: 768px) {
   .hovereffect img {
@@ -333,9 +364,7 @@ export default {
   .hovereffect img {
     height: 300px;
   }
-  .title h1 {
-    width: 70%;
-  }
+  
 
   .hovereffect h2 {
     font-size: 25px;
