@@ -51,7 +51,7 @@ export default {
     axios
       .get(`${env.host}/api/get/local/partners`)
       .then((result) => {
-        this.PartnersData = JSON.parse(JSON.stringify(result.data));
+        this.PartnersData = JSON.parse(JSON.stringify(result.data.item));
       })
       .catch((err) => {
         console.log(err);

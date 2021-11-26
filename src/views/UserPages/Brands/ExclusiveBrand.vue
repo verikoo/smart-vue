@@ -39,59 +39,24 @@
 
 
     
-<div class="main_content">
+   <div class="main_content">
       <div class="brands">
         <div
-          
+          v-for="(item, index) in exclusiveData"
+          :key="index"
           class="hovereffect"
         >
-          <img src="../../../assets/img/abbvie-man-blue-test-tubes-1920x987 1.png" alt="" />
+          <img :src="item.image" alt="" />
           <div class="overlay">
             <h2>
-              <div>saxeli1</div>
+              <div>{{ item.titleKA }}</div>
             </h2>
             <router-link
-            to="/teamDetail"
-              
+              :to="{ name: 'exclusiveDetail', params: { id: item.slug } }"
               class="info"
               exact-path
               ><span class="seeMore">მეტის ნახვა</span></router-link
             >
-          </div>
-        </div>
-         <div
-          
-          class="hovereffect"
-        >
-          <img src="../../../assets/img/abbvie-man-blue-test-tubes-1920x987 1.png" alt="" />
-          <div class="overlay">
-            <h2>
-              <div>saxeli</div>
-            </h2>
-            <router-link
-            to="/teamDetail"
-             
-              
-              class="info"
-              exact-path
-              ><span class="seeMore">მეტის ნახვა</span></router-link
-            >
-          </div>
-        </div>
-         <div
-          
-          class="hovereffect"
-        >
-          <img src="../../../assets/img/abbvie-man-blue-test-tubes-1920x987 1.png" alt="" />
-          <div class="overlay">
-            <h2>
-              <div>saxeli</div>
-            </h2>
-            <router-link to="/teamDetail"
-              
-              class="info"
-              exact-path
-              ><span class="seeMore">მეტის ნახვა</span></router-link>
           </div>
         </div>
       </div>
@@ -100,7 +65,8 @@
 </template>
 
 <script>
-
+import axios from "axios";
+import env from "../../../env.json";
 import { Hooper,
           Slide, Navigation as HooperNavigation,
           Pagination as HooperPagination,
@@ -118,6 +84,21 @@ export default {
     HooperProgress,
     HooperPagination,
 
+  },
+   data() {
+    return {
+      exclusiveInfo: {},
+      exclusiveData: [],
+    };
+  },
+    mounted() {
+    
+    axios
+      .get(`${env.host}/api/get/exclusives/partners`)
+      .then((result) => {
+        this.exclusiveData = JSON.parse(JSON.stringify(result.data.item));
+      })
+      .catch((err) => console.log(err));
   },
  
  

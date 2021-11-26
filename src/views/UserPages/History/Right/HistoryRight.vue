@@ -6,15 +6,7 @@
           <h1 class="title" v-if="lang=='ka'">{{ historyData.titleKA }}</h1>
           <h1 class="title" v-else>{{ historyData.titleEN }}</h1>
         </div>
-
-       <!-- <div class="wholeHorizontal">
-          <div class="textSide">
-            <p v-html="historyData.textKA"></p>
-          </div>
-          <div class="photoSide">
-            <img :src="historyData.image" alt="" />
-          </div>
-        </div> -->
+     
          <div class="wholeHorizontal">
           
           <div class="textSide" >
@@ -67,14 +59,13 @@ export default {
   width: 100%;
   min-height: calc(100vh - 258px);
   background-color: white;
-  /* padding: 40px; */
-  /* border:2px solid black; */
+  
 }
 .photoSide img {
-  float: right;
   border-radius: 20px;
   margin-left: 40px;
   margin-bottom: 10px;
+  /* border:2px solid blue; */
 }
 
 .containerForSize {
@@ -84,59 +75,29 @@ export default {
   margin: auto !important;
   align-items: center;
   align-content: center;
-  /* border:2px solid red; */
   padding: 40px;
 }
 
-/* .whole {
-  display: grid;
-  grid-template-columns: auto;
-  font-size: 20px;
-} */
 
-/* .wholeHorizontal {
-  display: grid;
-  grid-template-columns: 0.7fr 1fr;
-} */
-
- /* .textSide {
-  display: flex;
-  margin: auto; 
-  margin-top: 30px;
-  padding: 0px 0px 0px 30px;
-  padding-top:30px;
-}  */
 .textSide{
   text-align: justify;
   display: flex;
-  /* width:550px; */
   margin:auto;
-   /* width:1200px; */
+   /* border:2px solid red; */
    padding-bottom: 60px;
-    /* height: 400px; */
-  /* margin-left: 20px; */
 }
 
 .textSide p{
   font-size: 24px;
-  /* height: 300px; */
- /* width: 1000px; */
-  /* border: 2px solid red; */
 }
 
 
-
-/* .photoSide {
-  display: flex;
-  margin: auto;
-} */
 
 .title {
   margin-top: 100px;
   padding-top: 100px;
   color: #7f5496;
   margin-bottom: 20px;
-  /* border:2px solid red; */
 
 }
 
@@ -144,45 +105,15 @@ export default {
 
 @media all and (max-width: 1670px) {
   .title {
-    padding: 40px 40px 40px 0px;
+    padding: 40px 40px 20px 0px;
     
   }
 
-
-  /* .textSide {
-    padding-left: 40px;
-    padding-right: 200px;
-  } */
-  /* .textSide {
-    margin-bottom: 20px;
-  } */
-  /* .wholeHorizontal {
-    border:2px solid blue;
-    grid-template-columns: 2fr 1fr;
-  } */
- 
 }
 
-@media all and (max-width: 1343px) {
-  /* .wholeHorizontalpadding {
-    padding-left: 60px;
-    padding-right: 60px;
-  } */
-
-  /* .photoSide{
-   display: flex;
-   justify-content: center;
-  } */
-
- 
-}
 
 @media all and (max-width: 1080px) {
-  /* .textSide {
-    margin-top: -20px;
-    padding-left: 40px;
-    padding-right: 40px;
-  } */
+  
   .title h1 {
     padding: 0px;
   }
@@ -191,20 +122,11 @@ export default {
     margin-bottom: 20px;
     justify-content: center;
   }
-  /* .wholeHorizontal {
-    display: grid;
-    grid-template-columns: auto;
-  } */
-  /* .photoSide{
-    margin:0px;
-  } */
-
  
 }
 
 @media all and (max-width: 769px) {
  .textSide{
-   /* border:red 2px solid; */
    flex-direction: column;
  }
  .wholeHorizontal{
@@ -216,8 +138,7 @@ export default {
  }
  .title{
    text-align: center;
-   /* padding: 0px; */
-   padding: 40px;
+   padding: 40px 40px 10px 40px;
  }
  .photoSide img{
    float:none !important;
@@ -245,18 +166,9 @@ export default {
  }
   
   .textSide{
-   
-    padding: 40px;
-    /* border:2px solid red; */
+    padding: 0px 40px 40px  40px;
   }
 
-  /* .photoSide {
-    display: flex;
-    justify-content: center;
-  } */
-  /* .photoSide img {
-    width: 80%;
-    justify-content: center;
-  } */
+  
 }
 </style>

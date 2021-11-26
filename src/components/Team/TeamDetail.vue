@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="textSide">
-        <h1>{{ detailTeamData.fullName }}</h1>
+        <h1>{{ detailTeamData.fullNameKA }}</h1>
         <p v-html="detailTeamData.descriptionKA"></p>
       </div>
     </div>
@@ -33,7 +33,7 @@ export default {
     axios
       .get(`${env.host}/api/get/once/teammate/${url}`)
       .then((result) => {
-        this.detailTeamData = JSON.parse(JSON.stringify(result.data));
+        this.detailTeamData = JSON.parse(JSON.stringify(result.data.onceTeam));
       })
       .catch((err) => console.log(err));
   },
