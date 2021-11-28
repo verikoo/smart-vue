@@ -144,7 +144,8 @@ export default {
 
 .brands {
   padding: 50px 0 50px 0;
-  width: 100%;
+  width: 80%;
+  height: 60%;
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
