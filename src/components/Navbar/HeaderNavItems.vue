@@ -45,7 +45,7 @@ export default {
   color: #462359;
   background: transparent;
   font-size: 15px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 .hide_links {
   text-align: center;

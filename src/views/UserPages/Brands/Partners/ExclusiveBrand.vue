@@ -116,6 +116,7 @@ export default {
       .get(`${env.host}/api/get/exclusives/partners`)
       .then((result) => {
         this.exclusiveData = JSON.parse(JSON.stringify(result.data.item));
+        console.log(result);
       })
       .catch((err) => console.log(err));
   },

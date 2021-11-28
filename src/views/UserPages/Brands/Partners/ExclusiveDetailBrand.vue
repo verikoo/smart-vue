@@ -40,6 +40,7 @@ export default {
       .get(`${env.host}/api/get/once/exclusives/partners/${url}`)
       .then((result) => {
         this.exclusivesData = JSON.parse(JSON.stringify(result.data.item));
+        console.log(result);
       })
       .catch((err) => console.log(err));
 

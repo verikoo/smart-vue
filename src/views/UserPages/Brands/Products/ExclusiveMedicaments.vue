@@ -4,16 +4,16 @@
       <div class="filter">
         <input type="text" placeholder="სახელი" v-model="searchName" />
 
-        <!-- <select v-model="searchCategory">
-          <option value="choose category" selected disabled></option>
+        <select v-model="searchCategory">
+          <option value="">ყველა</option>
           <option
             v-for="category in categories"
-            :value="category.category"
+            value="ანტიბიოტიკი"
             :key="category.id"
           >
             {{ category.category }}
           </option>
-        </select> -->
+        </select>
       </div>
 
       <div class="brands">
@@ -59,39 +59,22 @@ export default {
     return {
       PartnersData: [],
       searchName: "",
-      // categories: [
-      //   { category: "gulis wamali" },
-      //   { category: "fexis wamali" },
-      //   { category: "xelis wamali" },
-      //   { category: "tavis wamali" },
-      //   { category: "yuris wamali" },
-      // ],
-      // searchCategory: "",
+      // categories: [],
+      categories: [{ category: "ანტიბიოტიკი" }, { category: "დერმატოლოგია" }],
+      searchCategory: "",
     };
   },
   mounted() {
-    axios
-      .get(`${env.host}/api/get/local/partners`)
-      .then((result) => {
-        this.PartnersData = JSON.parse(JSON.stringify(result.data.item));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    if (localStorage.getItem("lang") == "ka") {
-      this.lang = "ka";
-    } else {
-      this.lang = "en";
-    }
+    this.test();
+    this.getCategories();
   },
   computed: {
     filterProducts: function () {
-      return this.filterProductsByName(this.PartnersData);
+      // return this.filterProductsByName(this.PartnersData);
       // filter if we have another filter parameter
-      // return this.filterProductsByName(
-      //   this.filterProductsByCategory(this.PartnersData)
-      // );
+      return this.filterProductsByName(
+        this.filterProductsByCategory(this.PartnersData)
+      );
     },
   },
   methods: {
@@ -100,12 +83,35 @@ export default {
         (product) => !product.titleKA.indexOf(this.searchName)
       );
     },
+    getCategories() {
+      axios
+        .get(`${env.host}/api/get/exclusive/products/:category`)
+        .then((res) => {
+          console.log(res);
+        });
+    },
+    test() {
+      axios
+        .get(`${env.host}/api/get/local/partners`)
+        .then((result) => {
+          this.PartnersData = JSON.parse(JSON.stringify(result.data.item));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      if (localStorage.getItem("lang") == "ka") {
+        this.lang = "ka";
+      } else {
+        this.lang = "en";
+      }
+    },
     // filter if we have another filter parameter
-    // filterProductsByCategory: function (products) {
-    //   return products.filter(
-    //     (product) => !product.category.indexOf(this.searchCategory)
-    //   );
-    // },
+    filterProductsByCategory: function (products) {
+      return products.filter(
+        (product) => !product.titleKA.indexOf(this.searchCategory)
+      );
+    },
   },
 };
 </script>
@@ -128,6 +134,7 @@ export default {
   height: 50px;
   width: 200px;
   outline: none;
+  border: 1px solid black;
   border-radius: 5px;
   padding-left: 10px;
 }
@@ -137,7 +144,7 @@ export default {
 
 .brands {
   padding: 50px 0 50px 0;
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);

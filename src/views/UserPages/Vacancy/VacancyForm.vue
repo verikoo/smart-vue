@@ -2,7 +2,7 @@
   <div class="vacancy_form">
     <ValidationObserver>
       <form @submit.prevent="submit">
-          <h1>შეავსეთ ფორმა</h1>
+        <h1>შეავსეთ ფორმა</h1>
         <ValidationProvider
           rules="required|max:50|min:2"
           v-slot="{ errors }"
@@ -53,15 +53,12 @@
           v-slot="{ errors }"
           name="name"
         >
-          <div class="input">
-            <textarea
-              placeholder="message"
-              v-model="form.message"
-              required
-            ></textarea>
+          <div class="file">
+            <input type="file" placeholder="file" required />
             <span>{{ errors[0] }}</span>
           </div>
         </ValidationProvider>
+
         <button type="submit">submit</button>
       </form>
     </ValidationObserver>
@@ -77,7 +74,7 @@ export default {
         fullName: "",
         email: "",
         phone: "",
-        message: "",
+        file: [],
       },
     };
   },
@@ -85,43 +82,51 @@ export default {
 </script>
 
 <style scoped>
-form h1{
-    margin:50px 0 20px 0;
+form h1 {
+  margin: 50px 0 20px 0;
 }
-.input{
-    width: 50%;
-    margin-bottom:20px;
+.input {
+  width: 50%;
+  margin-bottom: 20px;
 }
-.input input, .input textarea {
+.input input,
+.input textarea {
   width: 100%;
   height: 50px;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
   outline: none;
-  padding-left:10px;
+  padding-left: 10px;
+  border:1px solid black;
 }
-.input input:focus, textarea{
-    border:1px solid #7F5496;
+.input input:focus,
+textarea {
+  border: 1px solid #7f5496;
 }
 .input textarea {
   height: 200px;
-  padding-top:10px;
+  padding-top: 10px;
 }
-.input span{
-    color: #F02849;
+.input span {
+  color: #f02849;
 }
-button{
-    height: 50px;
-    width:50%;
-    background: #7F5496;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+button {
+  height: 50px;
+  width: 50%;
+  background: #7f5496;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  border:none;
+  transition: 0.3s;
 }
-button:hover{
-    background: #a16dbd;
-    transition: 0.3s;
+button:hover {
+  background: #a16dbd;
+  transition: 0.3s;
+}
+
+.file {
+  margin-bottom: 20px;
 }
 </style>

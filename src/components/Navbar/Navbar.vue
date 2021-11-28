@@ -220,7 +220,7 @@ a:active {
   border-top: 1px solid #e8b1ff;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 15px -3px,
     rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
-  margin: 10px 0 0 5px !important;
+  margin: 5px 0 0 5px !important;
   background: #7f5496;
   border-radius: 5px;
 }
