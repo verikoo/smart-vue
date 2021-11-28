@@ -84,8 +84,8 @@ export default {
   justify-content: center;
   align-items: center;
   /* padding: 40px; */
-  padding-left: 40px;
-  padding-right: 40px;
+  /* padding-left: 40px;
+  padding-right: 40px; */
   
   margin-top: 30px;
   margin-bottom: 30px;
@@ -152,10 +152,11 @@ export default {
    border-radius: 180px 60px ;
 } */
 
-@media all and (max-width: 1444px) {
-  /* .team {
-    padding: 50px;
-  } */
+@media all and (max-width:1501px) {
+  .team {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 
 @media all and (max-width: 1130px) {

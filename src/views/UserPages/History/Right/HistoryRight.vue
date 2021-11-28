@@ -75,7 +75,7 @@ export default {
   margin: auto !important;
   align-items: center;
   align-content: center;
-  padding: 40px;
+  /* padding: 40px; */
 }
 
 
@@ -103,11 +103,11 @@ export default {
 
 
 
-@media all and (max-width: 1670px) {
-  .title {
-    padding: 40px 40px 20px 0px;
-    
-  }
+@media all and (max-width: 1500px) {
+ .containerForSize{
+   padding-left: 40px;
+   padding-right: 40px;
+ }
 
 }
 
@@ -125,7 +125,7 @@ export default {
  
 }
 
-@media all and (max-width: 769px) {
+@media all and (max-width: 771px) {
  .textSide{
    flex-direction: column;
  }
@@ -147,6 +147,9 @@ export default {
    justify-content: center;
    margin:auto;
    padding-bottom: 20px;
+ }
+ .containerForSize{
+   margin-top: 40px !important;
  }
 
 

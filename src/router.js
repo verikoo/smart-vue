@@ -93,6 +93,12 @@ const VueRouter = new router({
         import("./views/UserPages/Brands/ExclusiveMedicaments.vue"),
     },
     {
+      path: "/exclusiveMedicamentsDetail",
+      name: "exclusiveMedicamentsDetail",
+      component: () =>
+        import("./views/UserPages/Brands/ExclusiveMedicamentsDetail.vue"),
+    },
+    {
       path: "/exclusive/:id",
       name: "exclusiveDetail",
       component: () =>
