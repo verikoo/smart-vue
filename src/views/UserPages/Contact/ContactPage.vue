@@ -1,7 +1,6 @@
 <template>
   <div class="contactContainer">
     <div class="contactUsTitle">
-      
       <div>
         <h2>დაგვიკავშირდით</h2>
       </div>
@@ -14,14 +13,13 @@
           :key="index"
           class="socialIconeInside"
         >
-          <img :src="env+'/'+item.image" alt="" />
+          <img :src="env + '/' + item.image" alt="" />
           <h3 v-if="lang == 'en'">{{ item.textEN }}</h3>
-          <h3  v-else >{{ item.textKA }}</h3>
-
+          <h3 v-else>{{ item.textKA }}</h3>
         </div>
       </div>
-      
-        <div class="form">
+
+      <div class="form">
         <div class="formTitle">
           <h2>გამოაგზავნეთ შეკითხვა ფორმის მეშვეობით</h2>
         </div>
@@ -63,39 +61,26 @@
         </div>
       </div>
 
-      <div   class="socialIcones2">
-        <a :href="item.toLink" v-for="(item, index) in images"
-          :key="index">
-           <img :src="env+'/'+item.imageUrl" alt="">
+      <div class="socialIcones2">
+        <a :href="item.toLink" v-for="(item, index) in images" :key="index">
+          <img :src="env + '/' + item.imageUrl" alt="" />
         </a>
-        
+      </div>
+
+      <div class="socialInfo">
+        <div class="locationMap">
+          <div class="containerSocialIlust"></div>
+          <div class="locationSIde">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.368546245063!2d41.63369701543379!3d41.6477785792411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406787a6b8a7e515%3A0xf66f06747969ee30!2sLLC%20Cyber%20Solutions!5e0!3m2!1ska!2sge!4v1631194349265!5m2!1ska!2sge"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
-       
-
-      <div class="socialInfo"> 
-        
-      
-      
-      <div class="locationMap">
-        <div class="containerSocialIlust">
-          
-        
-        </div>
-        <div class="locationSIde">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2981.368546245063!2d41.63369701543379!3d41.6477785792411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406787a6b8a7e515%3A0xf66f06747969ee30!2sLLC%20Cyber%20Solutions!5e0!3m2!1ska!2sge!4v1631194349265!5m2!1ska!2sge"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
-      </div>
-      </div>
-      
-
-      
-      
-  </div>
   </div>
 </template>
 
@@ -120,17 +105,16 @@ export default {
       })
       .catch((err) => console.log(err));
 
-      if (localStorage.getItem("lang") == "ka") {
+    if (localStorage.getItem("lang") == "ka") {
       this.lang = "ka";
     } else {
       this.lang = "en";
     }
 
-    axios
-    .get(`${env.host}/api/get/contact/networks`).then((result)=>{
-      console.log(result.data.item)
-      this.images=JSON.parse(JSON.stringify(result.data.item))
-    })
+    axios.get(`${env.host}/api/get/contact/networks`).then((result) => {
+      console.log(result.data.item);
+      this.images = JSON.parse(JSON.stringify(result.data.item));
+    });
   },
 };
 </script>
@@ -158,7 +142,7 @@ export default {
   margin-left: auto;
   letter-spacing: 3px;
   /* font-weight: bold; */
-  font-size:30px;
+  font-size: 30px;
 }
 .contactUsTitle img {
   display: flex;
@@ -182,13 +166,14 @@ export default {
   font-size: 16px;
   align-items: center;
   flex-direction: column;
-  color: #7F5496;
-  padding:30px;
+  color: #7f5496;
+  padding: 30px;
   background-color: white;
-  color:#666666;
+  color: #666666;
   border-radius: 20px;
   /* border:2px solid yellow; */
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 .socialIconeInside h3 {
   margin-top: 20px;
@@ -203,7 +188,7 @@ export default {
   width: 40%;
   padding: 40px;
   margin-top: 40px !important;
-  background-image: linear-gradient(to top, #E3BFF2 0%, #7F5496 100%);
+  background-image: linear-gradient(to top, #e3bff2 0%, #7f5496 100%);
   box-sizing: border-box;
   box-shadow: 0 15px 25px #462359;
   border-radius: 10px;
@@ -347,7 +332,7 @@ select {
   padding: 20px;
   color: #591a92;
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 /* contact-formmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm */
 /* socialicones 22222222222222222222222222222222 */
@@ -363,12 +348,11 @@ select {
   display: flex;
   justify-content: space-evenly;
   padding: 20px 0px;
-  
 }
 .socialIcones2 a img {
   width: 50px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 .mapIlustration {
   display: flex;
@@ -393,9 +377,6 @@ select {
     margin-top: 130px !important;
   }
 }
-
-
-
 
 /* socialicones 22222222222222222222222222222222 */
 @media only screen and (max-width: 992px) {
@@ -424,7 +405,7 @@ select {
   .contactUsTitle h2 {
     text-align: center;
     font-size: 25px;
-    padding:0px !important;
+    padding: 0px !important;
   }
   .contactIlustrat img {
     margin: auto !important;
@@ -436,22 +417,20 @@ select {
     width: 80%;
     /* width: 100%; */
   }
-  .formTitle{
-   /* margin-top: 30px; */
-   text-align: center;
- }
- .socialIcones{
-   margin:auto;
-   
- }
- .socialIconeInside{
-   margin: auto;
-   padding: 10px;
-   margin-top:10px;
-   width:250px;
- }
+  .formTitle {
+    /* margin-top: 30px; */
+    text-align: center;
+  }
+  .socialIcones {
+    margin: auto;
+  }
+  .socialIconeInside {
+    margin: auto;
+    padding: 10px;
+    margin-top: 10px;
+    width: 250px;
+  }
 }
-
 
 @media only screen and (max-width: 532px) {
   .mapIlustration img {

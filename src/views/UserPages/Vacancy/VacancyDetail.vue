@@ -15,14 +15,21 @@
       <button class="vacancy_detail_responsive_button">
         <p>შეავსე ახლა</p>
       </button>
+
+      <VacancyForm />
     </div>
   </div>
 </template>
 
 <script>
+import VacancyForm from "./VacancyForm.vue";
+
 export default {
   name: "VacancyDetail",
   props: ["vacancy"],
+  components: {
+    VacancyForm,
+  },
 };
 </script>
 
@@ -66,15 +73,13 @@ export default {
   color: #462359;
   /* font-family: TBC Contractica CAPS book; */
   font-weight: bold;
-  
 }
 
 .vacancy_detail_button {
   text-align: center;
   text-decoration: none;
-  color:  #462359;
-;
-  border: 1px solid  #462359;
+  color: #462359;
+  border: 1px solid #462359;
   background-color: transparent;
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
@@ -83,11 +88,10 @@ export default {
   padding: 10px 10px 6px 10px;
   transition: 0.4s;
 }
-.vacancy_detail_button:hover{
- color: #f2f5fa;
+.vacancy_detail_button:hover {
+  color: #f2f5fa;
   background: #462359;
   transition: 0.4s;
-
 }
 /* Responsive button */
 
@@ -101,15 +105,12 @@ export default {
   display: none;
   border: 1px solid #462359;
   background-color: white;
-  
 }
 
-
-
 .vacancy_detail_responsive_button p {
- color: #462359;
+  color: #462359;
   font-size: 20px;
-  
+
   text-align: center;
 }
 
@@ -120,7 +121,6 @@ export default {
   margin: auto;
   margin-top: 30px;
   margin-bottom: 30px;
- 
 }
 
 .vacancy_detail_description_div p {
