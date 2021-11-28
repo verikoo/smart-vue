@@ -240,7 +240,7 @@ tr:nth-child(odd) {
 }
 /* tableee endddddddddddddddddddd */
 .description {
-  margin: auto;
+  /* margin: auto; */
   align-items: center;
   font-size: 18px;
   margin-top: 30px;
