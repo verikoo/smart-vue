@@ -6,7 +6,7 @@
           <div>
             <languageSwitcher />
           </div>
-          <HeaderNavItems :isInput="true" :className="`first_line_right`" />
+          <HeaderNavItems :isInput="true" :class="`first_line_right`" />
         </div>
       </div>
       <div class="Second_line">
@@ -19,14 +19,14 @@
                 style="border: none"
             /></router-link>
             <div class="responsive-navbar">
-              <button class="button" style="background: none; border: none">
+              <button class="button">
                 <img src="../../assets/icons/burger31.png" alt="" />
               </button>
             </div>
           </div>
 
           <ul class="navLinks">
-            <HeaderNavItems :isInput="false" :className="`hide_links`" />
+            <HeaderNavItems :isInput="false" :class="`hide_links`" />
             <li class="aboutUs">
               <div>
                 <ul class="menu">
@@ -94,40 +94,33 @@
               </div>
             </li>
             <li class="aboutUs">
-                <div>
-                   <ul class="menu">
-                 
-            <li
-              @click="listThree = !listThree"
-              @mouseover="listThree = true"
-              @mouseleave="listThree= false">
-               
-              <p>{{$t("exclusive") }}</p>
-              <transition>
-
-               <ul class="dropItems"  v-if="listThree">
-                  <li>
-                    <router-link to="/exclusive" exact="">
-                    {{$t("exclusive_brands")}}
-                    </router-link>
+              <div>
+                <ul class="menu">
+                  <li
+                    @click="listThree = !listThree"
+                    @mouseover="listThree = true"
+                    @mouseleave="listThree = false"
+                  >
+                    <p>{{ $t("exclusive") }}</p>
+                    <transition>
+                      <ul class="dropItems" v-if="listThree">
+                        <li>
+                          <router-link to="/exclusive" exact="">
+                            {{ $t("exclusive_brands") }}
+                          </router-link>
+                        </li>
+                        <li>
+                          <router-link to="/exclusiveMedicaments">
+                            {{ $t("exclusiveMedicaments") }}
+                          </router-link>
+                        </li>
+                      </ul>
+                    </transition>
                   </li>
-
-            
-                          <li>
-                    <router-link to="/exclusiveMedicaments">
-                      {{$t("exclusiveMedicaments")}}
-                    </router-link>
-                  </li>
-
                 </ul>
-                </transition>    
-                
-                 
-                  </li>
-                   </ul>
-                </div>
-                </li>
-            
+              </div>
+            </li>
+
             <li>
               <router-link to="/news" exact> {{ $t("news") }}</router-link>
             </li>
@@ -160,7 +153,6 @@ export default {
       listOne: false,
       listTwo: false,
       listThree: false,
-
     };
   },
   mounted() {
@@ -185,7 +177,7 @@ export default {
   z-index: 99999999999;
   position: fixed;
   margin: 0;
-  background-color: #7F5496;
+  background-color: #7f5496;
   grid-column: 1/3;
   top: 0;
   left: 0;
@@ -201,7 +193,7 @@ export default {
   padding-top: 17px;
 }
 .navLinks {
-  transition: transform 1s ease-out;
+  transition: 0.3s;
   align-items: center;
   display: flex;
   gap: 25px;
@@ -228,9 +220,9 @@ a:active {
   border-top: 1px solid #e8b1ff;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 15px -3px,
     rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
-  margin-left: -20px !important;
-  background: #7F5496;
-  border-radius: 10px;
+  margin: 10px 0 0 5px !important;
+  background: #7f5496;
+  border-radius: 5px;
 }
 
 /*drop down   */
@@ -252,14 +244,12 @@ a:active {
 /*drop down   */
 
 .first_line {
-  background-color:#e6e6e6;
+  background-color: #e6e6e6;
   display: flex;
-  
-
 }
 
 .first_line_inside a {
-  color:#3b174e;
+  color: #3b174e;
   font-size: 13px !important;
 }
 ::v-deep.language span {
@@ -287,9 +277,7 @@ a:active {
 }
 
 a {
-  /* display:flex; */
   text-align: center;
-  /* display: flex; */
   position: relative;
 }
 a::after {
@@ -350,7 +338,11 @@ input[type="text"]:focus {
   width: 100%;
   height: auto;
 }
-
+.responsive-navbar button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
 .responsive-navbar svg {
   z-index: 999;
 }
@@ -375,7 +367,6 @@ input[type="text"]:focus {
   position: relative;
   color: #e6e6e6;
   padding-bottom: 2px;
-  /* border: 2px solid rgb(0, 255, 64); */
 }
 
 .menu li ul {
@@ -392,8 +383,7 @@ input[type="text"]:focus {
 }
 
 .menu li ul li {
-  transition: background 0.2s;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 .fade-enter-active,
 .fade-leave-active {
