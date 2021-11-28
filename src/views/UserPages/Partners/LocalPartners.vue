@@ -68,7 +68,6 @@ export default {
 
 <style scoped>
 .main_content {
-  /* border: 2px solid yellow; */
   width: 100%;
   max-width: 1400px;
   margin: auto;
@@ -76,11 +75,10 @@ export default {
 }
 
 .brands {
-  /* border:2px solid red; */
   padding: 50px 0 50px 0;
-  width: 100%;
+  width: 80%;
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -105,12 +103,9 @@ export default {
   width: 100%;
   margin: auto;
   height: 40rem;
-  /* border: 2px solid green; */
 }
 
 .titleInside h1 {
-  /* border: 4px solid black; */
-  /* padding: 20px 0px 20px 0px; */
   margin-top: 20px;
   margin-bottom: 20px;
   display: inline-block;
@@ -135,7 +130,7 @@ export default {
 
 .hovereffect {
   border-radius: 20px;
-  width: 100%;
+  /* width: 100%; */
   height: auto;
   float: left;
   overflow: hidden;

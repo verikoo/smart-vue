@@ -1,29 +1,47 @@
 <template>
-  <div class="local_partners">
-    <div class="title">
-      <div class="titleInside">
-        <h1>უცხოელი პარტნიორები</h1>
-      </div>
-    </div>
+  <div class="productsContainer">
     <div class="main_content">
+      <div class="filter">
+        <input type="text" placeholder="სახელი" v-model="searchName" />
+
+        <!-- <select v-model="searchCategory">
+          <option value="choose category" selected disabled></option>
+          <option
+            v-for="category in categories"
+            :value="category.category"
+            :key="category.id"
+          >
+            {{ category.category }}
+          </option>
+        </select> -->
+      </div>
+
       <div class="brands">
         <div
-          v-for="(item, index) in partnersData"
+          v-for="(item, index) in filterProducts"
           :key="index"
           class="hovereffect"
         >
           <img :src="item.defaultImage" alt="" />
           <div class="overlay">
             <h2>
-              <div v-if="lang == 'ka'">{{ item.titleKA }}</div>
-              <div v-else>{{ item.titleEN }}</div>
+              <div v-if="lang == 'ka'">
+                {{ item.titleKA }}
+              </div>
+              <div v-else>
+                {{ item.titleEN }}
+              </div>
             </h2>
             <router-link
-              :to="{ name: 'partnersForeignDetail', params: { id: item.slug } }"
+              :to="{
+                name: 'exclusiveMedicamentsDetail',
+                params: { id: item.slug },
+              }"
               class="info"
               exact-path
-              ><span class="seeMore">მეტის ნახვა</span></router-link
             >
+              <span class="seeMore">მეტის ნახვა</span>
+            </router-link>
           </div>
         </div>
       </div>
@@ -33,21 +51,29 @@
 
 <script>
 import axios from "axios";
-import env from "../../../env.json";
+import env from "../../../../env.json";
+
 export default {
-  name: "partners",
+  name: "App",
   data() {
     return {
-      partnersData: [],
-      lang: "ka",
+      PartnersData: [],
+      searchName: "",
+      // categories: [
+      //   { category: "gulis wamali" },
+      //   { category: "fexis wamali" },
+      //   { category: "xelis wamali" },
+      //   { category: "tavis wamali" },
+      //   { category: "yuris wamali" },
+      // ],
+      // searchCategory: "",
     };
   },
-
   mounted() {
     axios
-      .get(`${env.host}/api/get/foreign/partners`)
+      .get(`${env.host}/api/get/local/partners`)
       .then((result) => {
-        this.partnersData = JSON.parse(JSON.stringify(result.data.item));
+        this.PartnersData = JSON.parse(JSON.stringify(result.data.item));
       })
       .catch((err) => {
         console.log(err);
@@ -59,24 +85,76 @@ export default {
       this.lang = "en";
     }
   },
+  computed: {
+    filterProducts: function () {
+      return this.filterProductsByName(this.PartnersData);
+      // filter if we have another filter parameter
+      // return this.filterProductsByName(
+      //   this.filterProductsByCategory(this.PartnersData)
+      // );
+    },
+  },
+  methods: {
+    filterProductsByName: function (products) {
+      return products.filter(
+        (product) => !product.titleKA.indexOf(this.searchName)
+      );
+    },
+    // filter if we have another filter parameter
+    // filterProductsByCategory: function (products) {
+    //   return products.filter(
+    //     (product) => !product.category.indexOf(this.searchCategory)
+    //   );
+    // },
+  },
 };
 </script>
 
 <style scoped>
-.main_content {
-  /* border: 2px solid yellow; */
+.hooper * {
+  border-radius: 20px;
+}
+.productsContainer {
   width: 100%;
   max-width: 1400px;
   margin: auto;
   min-height: calc(100vh - 258px);
 }
+.filter {
+  padding-top: 50px;
+}
+.filter input,
+.filter select {
+  height: 50px;
+  width: 200px;
+  outline: none;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.filter select {
+  margin-left: 20px;
+}
+
 .brands {
-  /* border:2px solid red; */
   padding: 50px 0 50px 0;
   width: 80%;
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.test {
+  background: #9629ac41;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.title {
+  background-image: url("../../../../assets/img/testPhoto.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .titleInside {
@@ -86,18 +164,9 @@ export default {
   width: 100%;
   margin: auto;
   height: 40rem;
-  /* border: 2px solid green; */
-}
-.title {
-  background-image: url("../../../assets/img/testPhoto.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .titleInside h1 {
-  /* border: 4px solid black; */
-  /* padding: 20px 00px 20px 0px; */
   margin-top: 20px;
   margin-bottom: 20px;
   display: inline-block;
@@ -108,16 +177,27 @@ export default {
   color: white;
 }
 
+.titleContainer h1 {
+  display: flex;
+  color: #462359;
+  justify-content: right;
+  display: inline-block;
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 10;
+  border-radius: 20px;
+  color: white;
+}
+
 .hovereffect {
   border-radius: 20px;
-  /* width: 100%; */
+  /* width: 80%; */
   height: auto;
   float: left;
   overflow: hidden;
   position: relative;
   text-align: center;
   cursor: default;
-  margin: auto;
 }
 
 .hovereffect .overlay {
@@ -203,6 +283,7 @@ export default {
 .hovereffect a.info:hover {
   box-shadow: 0 0 5px #fff;
 }
+
 @media all and (max-width: 1500px) {
   .titleInside h1 {
     padding: 10px 50px 10px 0px;
@@ -275,8 +356,7 @@ export default {
     font-size: 25px;
   }
 }
-@media all and (max-width: 414px) {
-}
+
 @media all and (max-width: 400px) {
   .hovereffect img {
     height: 250px;

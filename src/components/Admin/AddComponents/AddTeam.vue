@@ -127,7 +127,7 @@ export default {
 
       this.form.slug = randomSlug;
       axios
-        .post(`${env.host}/add/teammate`, this.form)
+        .post(`${env.host}/api/add/teammate`, this.form)
         .then((res) => {
           alert("succs");
           console.log(res);
