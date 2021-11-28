@@ -187,6 +187,7 @@ export default {
   width: 500px;
   width: 100%;
   display: block;
+  margin: auto;
   /* -webkit-margin-start: 0px;
     -webkit-margin-end: 30px;
     -webkit-margin-before: 0em; */
@@ -239,6 +240,8 @@ tr:nth-child(odd) {
 }
 /* tableee endddddddddddddddddddd */
 .description {
+  margin: auto;
+  align-items: center;
   font-size: 18px;
   margin-top: 30px;
 }
@@ -293,6 +296,11 @@ strong {
 ::v-deep .hooper .ul .li {
   transform: translate(0px, 666.6667px) !important;
 }
+
+::v-deep .hooper.button.hooper-next {
+  align-content: center !important;
+  justify-content: center;
+}
 /* ::v-deep .hooper .hooper-slide li {
     height: 0px !important;
 } */
@@ -322,6 +330,7 @@ strong {
   .slider {
     margin-top: 30px;
     width: 70%;
+    padding-left: 0px !important;
   }
   .mainContent {
     display: grid;
