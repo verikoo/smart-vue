@@ -101,12 +101,21 @@ export default {
   width: 50%;
   margin: auto;
   text-align: start;
+
+  /* margin-right: auto; */
   /* border: 2px solid red; */
   /* float: left;
   border: 2px solid red;
   justify-content: center;
   text-align: center;
   margin: auto; */
+}
+.file input {
+  width: 100%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  /* border: 2px solid red; */
 }
 
 /* .formCont {
@@ -116,14 +125,15 @@ export default {
 } */
 form h1 {
   margin: 50px 0 20px 0;
+  color: #452357;
 }
 .input {
-  width: 50%;
+  width: 70%;
   margin-bottom: 20px;
 }
 .input input,
 .input textarea {
-  width: 100%;
+  width: 72%;
   height: 50px;
   justify-content: center;
   align-items: center;
@@ -160,5 +170,12 @@ button:hover {
 
 .file {
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1033px) {
+  .input input,
+  .input textarea {
+    width: 100%;
+  }
 }
 </style>

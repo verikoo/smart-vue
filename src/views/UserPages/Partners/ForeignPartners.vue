@@ -73,7 +73,7 @@ export default {
 .brands {
   /* border:2px solid red; */
   padding: 50px 0 50px 0;
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
@@ -161,6 +161,7 @@ export default {
 }
 .seeMore {
   font-size: 20px;
+  margin: auto;
 }
 
 .hovereffect:hover h2 {

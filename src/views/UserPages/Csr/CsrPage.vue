@@ -11,8 +11,8 @@
         <div v-for="(item, index) in csrData" :key="index" class="hovereffect">
           <img :src="item.defaultImage" alt="" />
           <div class="overlay">
-            <h2>{{ item.title }}</h2>
-            <p v-html="`${item.description.substring(0, 200)}...`"></p>
+            <h2>{{ item.titleKA }}</h2>
+            <p v-html="`${item.descriptionKA.substring(0, 200)}...`"></p>
 
             <router-link
               :to="{ name: 'csrDetails', params: { id: item.slug } }"
@@ -123,7 +123,7 @@ export default {
 .hovereffect p {
   padding-bottom: 20px;
   color: #666666;
-  text-align:justify;
+  text-align: justify;
 }
 
 .hovereffect a.info {
@@ -227,7 +227,7 @@ export default {
     /* margin-top: 50px; */
     /* width: 150px; */
     font-size: 5.5vw;
-    margin:0px;
+    margin: 0px;
     /* width:100px; */
   }
 }

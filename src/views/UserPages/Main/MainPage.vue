@@ -6,7 +6,7 @@
     >
       <div>
         <div class="description">
-          <h2 v-if="lang=='ka'">
+          <h2 v-if="lang == 'ka'">
             {{ improvement.textKA }}
           </h2>
           <h2 v-else>
@@ -14,17 +14,16 @@
           </h2>
         </div>
         <router-link :to="{ name: 'company' }" class="info" exact-path
-          ><span v-if="lang=='ka'">{{ improvement.buttonTextKA }}</span>
+          ><span v-if="lang == 'ka'">{{ improvement.buttonTextKA }}</span>
           <span v-else>{{ improvement.buttonTextEN }}</span>
-          </router-link
-        >
+        </router-link>
       </div>
     </div>
 
     <div class="icon">
       <div class="exact_icon" v-for="(item, index) in heros" :key="index">
-        <img :src="env+'/'+item.image">
-        <p v-if="lang=='ka'">{{ item.textKA }}</p>
+        <img :src="env + '/' + item.image" />
+        <p v-if="lang == 'ka'">{{ item.textKA }}</p>
         <p v-else>{{ item.textEN }}</p>
       </div>
     </div>
@@ -35,26 +34,24 @@
     >
       <div>
         <div class="description">
-          <h2 v-if="lang=='en'">
-           {{photos[0].textEN}}
+          <h2 v-if="lang == 'en'">
+            {{ photos[0].textEN }}
           </h2>
           <h2 v-else>
-           {{photos[0].textKA}}
+            {{ photos[0].textKA }}
           </h2>
-          
         </div>
-        <span class="info" v-if="lang=='ka'">{{photos[0].buttonTextKA}}</span>
-        <span class="info" v-else>{{photos[0].buttonTextEN}}</span>
+        <span class="info" v-if="lang == 'ka'">{{
+          photos[0].buttonTextKA
+        }}</span>
+        <span class="info" v-else>{{ photos[0].buttonTextEN }}</span>
       </div>
     </div>
 
     <div class="video">
       <div style="margin: 150px 0 150px 0">
-        <h1>
-          შესაძლოა ყველას ჰქონდეს თავსართი
-        </h1>
-        <div class="iframe" v-html="video.url">
-        </div>
+        <h1>შესაძლოა ყველას ჰქონდეს თავსართი</h1>
+        <div class="iframe" v-html="video.url"></div>
       </div>
     </div>
 
@@ -78,36 +75,47 @@
         <p>SmartPharm</p>
       </div>
       <div class="blog_card">
-        <div class="blogs_card_main_div"
-                v-for="(item, index) in blog" :key="index">
-    <router-link :to="{ name: 'BlogsDetails', params: { id: `${item.slug}` } }">
-      <img
-        :src="env+'/'+item.defaultImage"
-        alt="card image"
-        class="blogs_card_image"
-
-      />
-    </router-link>
-    <div class="blogs_card_title">
-      <router-link :to="{ name: 'BlogsDetails', params: { id: `${item.slug}` } }">
-        <p class="blogs_card_title_header" v-if="lang=='ka'">{{item.titleKA}}</p>
-        <p class="blogs_card_title_header" v-else>{{item.titleEN}}</p>
-      </router-link>
-    </div>
-    <div class="blogs_card_date">
-      <i class="fas fa-calendar calendar_icon"></i>
-      <p class="blogs_card_date_title">
-        {{item.date}}
-      </p>
-    </div>
-  </div>
+        <div
+          class="blogs_card_main_div"
+          v-for="(item, index) in blog"
+          :key="index"
+        >
+          <router-link
+            :to="{ name: 'BlogsDetails', params: { id: `${item.slug}` } }"
+          >
+            <img
+              :src="env + '/' + item.defaultImage"
+              alt="card image"
+              class="blogs_card_image"
+            />
+          </router-link>
+          <div class="blogs_card_title">
+            <router-link
+              :to="{ name: 'BlogsDetails', params: { id: `${item.slug}` } }"
+            >
+              <p class="blogs_card_title_header" v-if="lang == 'ka'">
+                {{ item.titleKA }}
+              </p>
+              <p class="blogs_card_title_header" v-else>{{ item.titleEN }}</p>
+            </router-link>
+          </div>
+          <div class="blogs_card_date">
+            <i class="fas fa-calendar calendar_icon"></i>
+            <p class="blogs_card_date_title">
+              {{ item.date }}
+            </p>
+          </div>
+        </div>
       </div>
-       <div class="blogButton">
-          <router-link :to="{name:'BlogMain' , params: {id: 'BlogMain'}}" class="info" exact-path>
-          
-            <span>მეტის ნახვა</span>
+      <div class="blogButton">
+        <router-link
+          :to="{ name: 'BlogMain', params: { id: 'BlogMain' } }"
+          class="info"
+          exact-path
+        >
+          <span>მეტის ნახვა</span>
         </router-link>
-       </div>
+      </div>
     </div>
 
     <div class="team">
@@ -228,17 +236,17 @@ export default {
       lang: "ka",
       video: {},
       env: env.host,
-      blog: []
+      blog: [],
     };
   },
 
   mounted() {
-  axios.get(`${env.host}/api/get/sprint/blog/0/3`).then((res) => {
-    this.blog = JSON.parse(JSON.stringify(res.data.item))
-  })
-    axios.get(`${env.host}/api/get/videos`).then((videoX)=>{
-      this.video = videoX.data.item
-    })
+    axios.get(`${env.host}/api/get/sprint/blog/0/3`).then((res) => {
+      this.blog = JSON.parse(JSON.stringify(res.data.item));
+    });
+    axios.get(`${env.host}/api/get/videos`).then((videoX) => {
+      this.video = videoX.data.item;
+    });
     axios
       .get(`${env.host}/api/get/slides`)
       .then((response) => {
@@ -251,8 +259,8 @@ export default {
     axios
       .get(`${env.host}/api/get/companies/heros`)
       .then((result) => {
-        if(result.data.success){
-          this.heros = JSON.parse(JSON.stringify(result.data.item))
+        if (result.data.success) {
+          this.heros = JSON.parse(JSON.stringify(result.data.item));
         }
       })
       .catch((err) => console.log(err));
@@ -261,12 +269,12 @@ export default {
       .get(`${env.host}/api/get/companies/improvements`)
       .then((result) => {
         this.improvement = result.data.item;
-          // this.improvement = JSON.parse(JSON.stringify(result.data.item))
-          console.log(result.data.item);
+        // this.improvement = JSON.parse(JSON.stringify(result.data.item))
+        console.log(result.data.item);
       })
       .catch((err) => console.log(err));
 
-      if (localStorage.getItem("lang") == "ka") {
+    if (localStorage.getItem("lang") == "ka") {
       this.lang = "ka";
     } else {
       this.lang = "en";
@@ -353,7 +361,7 @@ export default {
 .responsibility .info,
 .values .info,
 .team .info,
-.csr .info  {
+.csr .info {
   border-radius: 10px;
   color: white;
   text-align: center;
@@ -372,13 +380,14 @@ export default {
 .responsibility .info:hover,
 .values .info:hover,
 .team .info:hover,
-.csr .info:hover, .blog .info:hover {
+.csr .info:hover,
+.blog .info:hover {
   border: 1px solid transparent;
   color: #f2f5fa;
   background: #462359;
   transition: 0.4s;
 }
-.blogButton{
+.blogButton {
   display: flex;
   justify-content: center;
   /* margin:auto; */
@@ -400,8 +409,8 @@ export default {
 }
 .exact_icon p {
   margin-top: 2.4rem;
-  color: #666666 ;
-  
+  color: #666666;
+
   /* font-weight: 600; */
   font-size: 22px;
 }
@@ -481,7 +490,8 @@ export default {
   padding-bottom: 20px;
 }
 .hovereffect a,
-.team_member a , .blog a{
+.team_member a,
+.blog a {
   text-align: center;
   text-decoration: none;
   color: #462359;
@@ -532,7 +542,7 @@ export default {
   color: #a3a7a9;
 }
 
-.description h2{
+.description h2 {
   font-weight: normal;
 }
 
@@ -646,7 +656,6 @@ export default {
   }
 }
 
-
 .blogs_card_main_div {
   width: 100%;
   margin-bottom: 40px;
@@ -670,15 +679,14 @@ export default {
 
 .blogs_card_title_header {
   font-size: 20px;
-  color: #A4A8AA;
+  color: #a4a8aa;
   text-align: left;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .blogs_card_title_header:hover {
-  color: #7F5496;
-  
+  color: #7f5496;
 }
 
 .blogs_card_date {

@@ -76,7 +76,7 @@ export default {
 
 .brands {
   padding: 50px 0 50px 0;
-  width: 80%;
+  width: 100%;
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
@@ -145,11 +145,13 @@ export default {
   height: 100%;
   position: absolute;
   overflow: hidden;
+
   border-radius: 20px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  margin: auto;
 }
 
 .hovereffect:hover .overlay {
@@ -180,6 +182,7 @@ export default {
 }
 .seeMore {
   font-size: 20px;
+  margin: auto;
 }
 
 .hovereffect:hover h2 {

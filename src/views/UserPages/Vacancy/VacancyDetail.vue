@@ -4,17 +4,17 @@
     <div class="vacancy_detail_div">
       <div class="vacancy_detail_header_div">
         <h1 class="vacancy_detail_subtitle">{{ vacancy.subtitle }}</h1>
-        <button class="vacancy_detail_button">
+        <!-- <button class="vacancy_detail_button">
           <p>შეავსე ახლა</p>
-        </button>
+        </button> -->
       </div>
       <div class="vacancy_detail_description_div">
         <p>{{ vacancy.description }}</p>
       </div>
-
+      <!-- 
       <button class="vacancy_detail_responsive_button">
         <p>შეავსე ახლა</p>
-      </button>
+      </button> -->
 
       <VacancyForm />
     </div>

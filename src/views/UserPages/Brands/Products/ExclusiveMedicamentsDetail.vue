@@ -399,4 +399,41 @@ strong {
     height: 400px !important    ;
   }
 }
+@media all and (max-width: 621px) {
+  ::v-deep li.hooper-slide.is-active.is-current {
+    height: 250px !important;
+  }
+
+  ::v-deep li.hooper-slide.is-prev {
+    height: 250px !important;
+  }
+  ::v-deep li.hooper-slide.is-next {
+    height: 250px !important    ;
+  }
+}
+@media all and (max-width: 447px) {
+  ::v-deep li.hooper-slide.is-active.is-current {
+    height: 200px !important;
+  }
+
+  ::v-deep li.hooper-slide.is-prev {
+    height: 200px !important;
+  }
+  ::v-deep li.hooper-slide.is-next {
+    height: 200px !important ;
+  }
+}
+
+@media all and (max-width: 368px) {
+  ::v-deep li.hooper-slide.is-active.is-current {
+    height: 150px !important;
+  }
+
+  ::v-deep li.hooper-slide.is-prev {
+    height: 150px !important;
+  }
+  ::v-deep li.hooper-slide.is-next {
+    height: 150px !important ;
+  }
+}
 </style>

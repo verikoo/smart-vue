@@ -128,24 +128,26 @@ export default {
 }
 .filter {
   padding-top: 50px;
+  /* border: 2px solid red; */
 }
 .filter input,
 .filter select {
   height: 50px;
   width: 200px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid #462359;
   border-radius: 5px;
   padding-left: 10px;
 }
 .filter select {
   margin-left: 20px;
+  /* border: 2px solid red; */
 }
 
 .brands {
   padding: 50px 0 50px 0;
-  width: 80%;
-  height: 60%;
+  width: 100%;
+  /* height: 60%; */
   display: grid;
   grid-gap: 40px;
   grid-template-columns: repeat(3, 1fr);
@@ -249,6 +251,7 @@ export default {
 }
 .seeMore {
   font-size: 20px;
+  margin: auto;
 }
 
 .hovereffect:hover h2 {
@@ -352,6 +355,15 @@ export default {
     padding-top: 0px;
   }
 }
+
+@media all and (max-width: 503px) {
+  .filter select {
+    margin-top: 20px;
+    margin-left: 0px;
+    border: 2px solid red;
+  }
+}
+
 @media all and (max-width: 450px) {
   .hovereffect img {
     height: 300px;

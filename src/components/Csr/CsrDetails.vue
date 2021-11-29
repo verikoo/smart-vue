@@ -1,14 +1,14 @@
 <template>
   <div class="team_details">
     <div class="title">
-      <h1>{{ csrDetailData.title }}</h1>
+      <h1>{{ csrDetailData.titleKA }}</h1>
     </div>
     <div class="photo">
       <img :src="csrDetailData.mainImage" alt="" />
     </div>
     <div class="description">
       <div>
-        <p v-html="csrDetailData.description"></p>
+        <p v-html="csrDetailData.descriptionKA"></p>
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ export default {
   text-align: center;
 }
 .team_details {
-  max-width:1400px;
+  max-width: 1400px;
   margin: auto;
   /* border: 2px solid rgb(0, 255, 42); */
   min-height: calc(100vh - 258px);
@@ -78,18 +78,16 @@ export default {
   padding: 20px;
   text-align: justify;
   font-size: 20px;
-  
 }
 .photo {
   /* border: 2px solid blue; */
   display: flex;
 }
-.photo img{
+.photo img {
   border-radius: 10px;
 }
 
 @media all and (max-width: 992px) {
-  
   .team_details {
     padding: 30px !important;
     padding: 30px 0px;

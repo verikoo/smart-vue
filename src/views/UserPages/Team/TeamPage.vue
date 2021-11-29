@@ -7,8 +7,6 @@
     </div>
 
     <div class="main_content">
-     
-
       <div class="brands">
         <div v-for="(item, index) in teamData" :key="index" class="hovereffect">
           <img :src="item.image" alt="" />
@@ -299,25 +297,22 @@ export default {
     width: 70%;
   }
 
-  .overlay h5{
+  .overlay h5 {
     margin-top: 50px;
     font-size: 18px;
   }
-   .hovereffect:hover a.info{
-    width:60%;
+  .hovereffect:hover a.info {
+    width: 60%;
   }
 }
 @media all and (max-width: 414px) {
-   .overlay h5{
-     margin-top: 20px;
-   }
-    
+  .overlay h5 {
+    margin-top: 20px;
+  }
 }
 @media all and (max-width: 400px) {
   .hovereffect img {
     height: 250px;
   }
- 
-   
 }
 </style>
