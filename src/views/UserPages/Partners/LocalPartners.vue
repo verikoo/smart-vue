@@ -68,7 +68,7 @@ export default {
 
 <style scoped>
 .main_content {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   width: 100%;
   max-width: 1400px;
   margin: auto;

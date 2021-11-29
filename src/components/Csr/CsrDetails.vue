@@ -57,7 +57,7 @@ export default {
   max-width: 1400px;
   margin: auto;
   /* border: 2px solid rgb(0, 255, 42); */
-  min-height: calc(100vh - 258px);
+  min-height: calc(100vh - 240px);
   display: grid;
   margin-top: 145px;
   grid-template-columns: 0.256fr 2fr 2fr;

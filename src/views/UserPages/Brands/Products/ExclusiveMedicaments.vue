@@ -212,7 +212,7 @@ export default {
 }
 
 .hovereffect .overlay {
-  /* background-color: #9e14b941; */
+  background-color: #9d14b934;
   width: 100%;
   height: 100%;
   position: absolute;

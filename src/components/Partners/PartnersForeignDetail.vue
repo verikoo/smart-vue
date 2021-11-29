@@ -49,7 +49,8 @@ export default {
 <style scoped>
 .teamContainer {
   align-content: center;
-  min-height: calc(100vh - 258px);
+  min-height: calc(100vh - 240px);
+  /* border: 2px solid red; */
   display: flex !important;
   justify-content: center;
   text-orientation: mixed;
@@ -57,7 +58,7 @@ export default {
   margin-top: 145px;
 }
 .team {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 30px 0px;
   margin-top: 100px;
 

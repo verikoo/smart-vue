@@ -48,7 +48,7 @@ export default {
 <style scoped>
 .teamContainer {
   align-content: center;
-  min-height: calc(100vh - 258px);
+  min-height: calc(100vh - 240px);
   display: flex !important;
   justify-content: center;
   text-orientation: mixed;

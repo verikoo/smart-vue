@@ -48,7 +48,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 258px);
+  min-height: calc(100vh - 240px);
   /* background: linear-gradient(90deg, rgba(164,168,170,1) 18%, rgba(255,255,255,1) 18%);  */
   /* border: 2px solid red; */
   /* margin:auto; */
@@ -74,7 +74,7 @@ export default {
   font-size: 20px;
   border-radius: 20px;
   margin-top: 20px;
- 
+
   /* border: 2px solid black; */
 }
 .textSide {
@@ -94,10 +94,10 @@ export default {
    border-radius: 180px 60pxbox ;
 } */
 
-@media all and (max-width: 5800px) and (min-width: 474px){
-.status{
-  width: 73.5%;
-}
+@media all and (max-width: 5800px) and (min-width: 474px) {
+  .status {
+    width: 73.5%;
+  }
 }
 
 @media all and (max-width: 1444px) {
@@ -129,7 +129,7 @@ export default {
     margin: auto !important;
     display: table;
   }
-  .status{
+  .status {
     margin: auto;
   }
 }
