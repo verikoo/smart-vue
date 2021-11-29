@@ -182,15 +182,18 @@ export default {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  -webkit-transition: all 0.3s cubic-bezier(0.88, -0.99, 0, 1.81);
+  transition: all 0.3s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
   font-size: 1.3vw;
   justify-content: center;
   border-radius: 20px;
   width: 200px;
   bottom: 30px;
-  right: 20px;
+  /* right: 20px; */
+  position: static;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .hovereffect:hover a.info {
@@ -281,6 +284,12 @@ export default {
 @media all and (max-width: 400px) {
   .hovereffect img {
     height: 250px;
+  }
+}
+@media all and (max-width: 350px) {
+  .hovereffect a.info {
+    margin-top: 20px;
+    width: 80%;
   }
 }
 </style>

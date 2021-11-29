@@ -202,15 +202,20 @@ export default {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  -webkit-transition: all 0.3s cubic-bezier(0.88, -0.99, 0, 1.81);
+  transition: all 0.3s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
   font-size: 1.3vw;
   justify-content: center;
   border-radius: 20px;
   width: 200px;
-  bottom: 30px;
-  right: 20px;
+  /* bottom: 30px; */
+  /* bottom: 30%; */
+  /* right: 20px; */
+  /* left: 22.5%; */
+  position: static;
+  margin: auto;
+  margin-top: 40px;
 }
 
 .hovereffect:hover a.info {
@@ -241,6 +246,9 @@ export default {
   .brands {
     grid-template-columns: repeat(2, 1fr);
   }
+  /* .hovereffect a.info {
+    left: 30%;
+  } */
 }
 @media all and (max-width: 991px) {
   .brands {
@@ -374,14 +382,11 @@ export default {
     font-size: 15px;
   }
 }
+ */
 @media all and (max-width: 350px) {
-  .hovereffect img {
-    height: 150px;
+  .hovereffect a.info {
+    margin-top: 20px;
+    width: 80%;
   }
-
-  .titleInside h1 {
-    font-size: 30px;
-    margin: 0px;
-  }
-} */
+}
 </style>
