@@ -52,7 +52,7 @@ export default {
   display: flex !important;
   justify-content: center;
   text-orientation: mixed;
-  /* border:2px solid rgb(136, 255, 0); */
+  /* border: 2px solid rgb(136, 255, 0); */
   margin-top: 145px;
 }
 .team {

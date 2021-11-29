@@ -24,14 +24,6 @@
         >
           <img :src="item.defaultImage" alt="" />
           <div class="overlay">
-            <h2>
-              <div v-if="lang == 'ka'">
-                {{ item.titleKA }}
-              </div>
-              <div v-else>
-                {{ item.titleEN }}
-              </div>
-            </h2>
             <router-link
               :to="{
                 name: 'exclusiveMedicamentsDetail',
@@ -42,6 +34,14 @@
             >
               <span class="seeMore">მეტის ნახვა</span>
             </router-link>
+            <h2>
+              <div v-if="lang == 'ka'">
+                {{ item.titleKA }}
+              </div>
+              <div v-else>
+                {{ item.titleEN }}
+              </div>
+            </h2>
           </div>
         </div>
       </div>
@@ -124,7 +124,7 @@ export default {
   width: 100%;
   max-width: 1400px;
   margin: auto;
-  min-height: calc(100vh - 258px);
+  min-height: calc(100vh - 240px);
 }
 .filter {
   padding-top: 50px;
@@ -200,6 +200,7 @@ export default {
 }
 
 .hovereffect {
+  /* border: 2px solid brown; */
   border-radius: 20px;
   /* width: 80%; */
   height: auto;
@@ -211,7 +212,7 @@ export default {
 }
 
 .hovereffect .overlay {
-  background-color: #9e14b941;
+  /* background-color: #9e14b941; */
   width: 100%;
   height: 100%;
   position: absolute;
@@ -223,6 +224,9 @@ export default {
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
 }
 
+/* .overlay {
+  border: 2px solid red;
+} */
 .hovereffect:hover .overlay {
   background-color: #4e1782a2;
 }
@@ -236,16 +240,22 @@ export default {
 }
 
 .hovereffect h2 {
+  background: #7e5493;
   margin: auto;
   color: #fff;
   position: relative;
-  width: 90%;
-  font-size: 30px;
-  margin-top: 100px;
+  width: 80%;
+  /* height: 100%; */
+  border-radius: 5px;
+  font-size: 20px;
+  /* margin-bottom: 100px; */
   padding: 10px;
-  -webkit-transform: translateY(60px);
-  -ms-transform: translateY(60px);
-  transform: translateY(60px);
+  float: left;
+  text-align: start;
+  /* -webkit-transform: translateY(60px); */
+  /* -ms-transform: translateY(60px); */
+  transform: translateY(290px);
+  padding-left: 20px;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
 }
@@ -255,15 +265,21 @@ export default {
 }
 
 .hovereffect:hover h2 {
-  -webkit-transform: translateY(5px);
+  background: #462359;
+  color: #a4a8aa;
+  /* -webkit-transform: translateY(5px);
   -ms-transform: translateY(5px);
-  transform: translateY(5px);
+  transform: translateY(5px); */
 }
 
 .hovereffect a.info {
   position: absolute;
-  display: flex;
+  display: flex !important;
   text-decoration: none;
+  justify-content: center !important ;
+  margin: auto !important;
+  align-items: center;
+  text-align: center;
   color: #fff;
   border: 1px solid #fff;
   background-color: transparent;
@@ -272,15 +288,38 @@ export default {
   -webkit-transform: scale(0);
   -ms-transform: scale(0);
   transform: scale(0);
-  -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
+  -webkit-transition: all 0.2s cubic-bezier(0.88, -0.99, 0, 1.81);
+  transition: all 0.2s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
-  font-size: 1.3vw;
-  justify-content: center;
   border-radius: 20px;
+  padding: 10px;
+  font-size: 1.3vw;
+  bottom: 40%;
+  left: 25%;
+
+  /* position: relative; */
+
   width: 200px;
-  bottom: 30px;
-  right: 20px;
+
+  /* margin-top: 40px; */
+
+  /* 
+ 
+  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+
+  
+  align-items: center;
+  right: 20px; */
 }
 
 .hovereffect:hover a.info {
@@ -296,9 +335,9 @@ export default {
 }
 
 @media all and (max-width: 1500px) {
-  .titleInside h1 {
+  /* .titleInside h1 {
     padding: 10px 50px 10px 0px;
-  }
+  } */
 }
 
 @media all and (max-width: 1400px) {
@@ -321,7 +360,8 @@ export default {
     height: 500px;
   }
   .hovereffect h2 {
-    margin-top: 150px;
+    width: 50%;
+    margin-top: 100px;
   }
 
   .titleInside h1 {
@@ -330,9 +370,10 @@ export default {
     padding: 0px;
   }
   .hovereffect a.info {
-    position: static;
-    margin: auto;
-    margin-top: 40px;
+    /* position: static; */
+    /* margin: auto; */
+    /* margin-top: 40px; */
+    left: 40%;
   }
 }
 @media all and (max-width: 768px) {
@@ -340,7 +381,10 @@ export default {
     height: 400px;
   }
   .hovereffect h2 {
-    margin-top: 100px;
+    margin-top: 30px;
+  }
+  .hovereffect a.info {
+    left: 35%;
   }
   .icon {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -356,16 +400,42 @@ export default {
   }
 }
 
+@media all and (max-width: 621px) {
+  .hovereffect h2 {
+    width: 60%;
+    margin-top: 30px;
+  }
+  .hovereffect a.info {
+    left: 30%;
+  }
+}
+
 @media all and (max-width: 503px) {
   .filter select {
     margin-top: 20px;
     margin-left: 0px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+  }
+  .hovereffect h2 {
+    width: 80%;
+    margin-top: 25px;
+  }
+  .hovereffect a.info {
+    left: 25%;
+  }
+}
+@media all and (max-width: 459px) {
+  .hovereffect h2 {
+    margin-top: -70px;
+  }
+
+  .hovereffect img {
+    height: 300px;
   }
 }
 
 @media all and (max-width: 450px) {
-  .hovereffect img {
+  /* .hovereffect img {
     height: 300px;
   }
   .title h1 {
@@ -374,12 +444,33 @@ export default {
 
   .hovereffect h2 {
     font-size: 25px;
+  } */
+  .hovereffect a.info {
+    left: 25%;
+    padding: 5px;
+    width: 45%;
   }
 }
 
 @media all and (max-width: 400px) {
   .hovereffect img {
     height: 250px;
+  }
+  .hovereffect h2 {
+    width: 80%;
+    margin-top: -120px;
+  }
+}
+
+@media all and (max-width: 374px) {
+  /* .hovereffect img {
+    height: 250px;
+  } */
+
+  .hovereffect h2 {
+    font-size: 18px;
+    width: 80%;
+    margin-top: -120px;
   }
 }
 </style>

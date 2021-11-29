@@ -68,6 +68,7 @@ export default {
 
 <style scoped>
 .main_content {
+  border: 2px solid red;
   width: 100%;
   max-width: 1400px;
   margin: auto;
@@ -145,13 +146,11 @@ export default {
   height: 100%;
   position: absolute;
   overflow: hidden;
-
   border-radius: 20px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
   transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
-  margin: auto;
 }
 
 .hovereffect:hover .overlay {

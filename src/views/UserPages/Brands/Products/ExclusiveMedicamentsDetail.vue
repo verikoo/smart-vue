@@ -74,31 +74,7 @@
           :itemsToShow="1.5"
           :centerMode="true"
         >
-          <slide>
-            <img
-              src="https://500px.com/assets/home/thumbnail-7cb446c5c5a1e1672b9a2090641c5559.png"
-              alt=""
-            />
-          </slide>
-          <slide>
-            <img
-              src="https://500px.com/assets/home/thumbnail-7cb446c5c5a1e1672b9a2090641c5559.png"
-              alt=""
-            />
-          </slide>
-          <slide>
-            <img
-              src="https://500px.com/assets/home/thumbnail-7cb446c5c5a1e1672b9a2090641c5559.png"
-              alt=""
-            />
-          </slide>
-          <slide>
-            <img
-              src="https://500px.com/assets/home/thumbnail-7cb446c5c5a1e1672b9a2090641c5559.png"
-              alt=""
-            />
-          </slide>
-          <slide>
+          <slide v-for="item in [1, 2, 3, 4, 5]" :key="item">
             <img
               src="https://500px.com/assets/home/thumbnail-7cb446c5c5a1e1672b9a2090641c5559.png"
               alt=""
@@ -124,21 +100,29 @@ export default {
   data() {
     return {
       HooperValue: true,
+      // width: 0,
+      // height: 0,
     };
   },
-  //   mounted() {
-  //     this.HooperValue = false;
-  //     console.log(this.HooperValue);
+  // mounted() {
+  //   window.addEventListener("resize", this.handleResize);
+  //   this.handleResize();
+  // },
+  // unmounted() {
+  //   window.removeEventListener("resize", this.handleResize);
+  // },
+  // methods: {
+  //   handleResize() {
+  //     this.width = window.innerWidth;
+  //     if (this.width < 600) {
+  //       this.HooperValue = false;
+  //       console.log("smalll");
+  //     } else {
+  //       this.HooperValue = true;
+  //       console.log("big");
+  //     }
   //   },
-  //   methods: {
-  //     resize() {
-  //       if (window.innerWidth < 1200) {
-  //         this.HooperValue = false;
-  //         console.log("inside");
-  //       }
-  //       console.log("textg");
-  //     },
-  //   },
+  // },
 };
 </script>
 

@@ -53,11 +53,11 @@ export default {
   display: flex !important;
   justify-content: center;
   text-orientation: mixed;
-  /* border:2px solid rgb(136, 255, 0); */
+  /* border: 2px solid rgb(136, 255, 0); */
   margin-top: 145px;
 }
 .team {
-  /* border: 2px solid red; */
+  border: 2px solid red;
   padding: 30px 0px;
   margin-top: 100px;
 
