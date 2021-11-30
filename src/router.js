@@ -84,7 +84,8 @@ const VueRouter = new router({
     {
       path: "/exclusive",
       name: "exclusive",
-      component: () => import("./views/UserPages/Brands/Partners/ExclusiveBrand.vue"),
+      component: () =>
+        import("./views/UserPages/Brands/Partners/ExclusiveBrand.vue"),
     },
     {
       path: "/exclusiveMedicaments",
@@ -96,7 +97,9 @@ const VueRouter = new router({
       path: "/exclusiveMedicamentsDetail",
       name: "exclusiveMedicamentsDetail",
       component: () =>
-        import("./views/UserPages/Brands/Products/ExclusiveMedicamentsDetail.vue"),
+        import(
+          "./views/UserPages/Brands/Products/ExclusiveMedicamentsDetail.vue"
+        ),
     },
     {
       path: "/exclusive/:id",

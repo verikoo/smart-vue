@@ -94,7 +94,10 @@
               </div>
             </li>
             <li class="aboutUs">
-              <div>
+              <router-link to="/exclusiveMedicaments" exact>
+                {{ $t("exclusive") }}</router-link
+              >
+              <!-- <div>
                 <ul class="menu">
                   <li
                     @click="listThree = !listThree"
@@ -118,7 +121,7 @@
                     </transition>
                   </li>
                 </ul>
-              </div>
+              </div> -->
             </li>
 
             <li>

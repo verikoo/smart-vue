@@ -1,10 +1,62 @@
 <template>
   <div class="local_partners">
-    <div class="title">
-      <div class="titleInside">
-        <h1>ადგილობრივი პარტნიორები</h1>
-      </div>
+    <div class="slider">
+      <hooper
+        :progress="true"
+        :autoPlay="true"
+        :playSpeed="3000"
+        style="border-radius: 20px"
+      >
+        <slide>
+          <div class="conatiner">
+            <img src="../../../../src/assets/img/careerTablet.jpg" alt="" />
+            <div class="sliderText">
+              <p>
+                ყველა ჩვენი მედიკამენტები სარგებლობს განსაკუთრებული სანდოობითა
+                და წლების მანძილზე დაგროვილი პოზიტიური გამოცდილებით ევროპულ და
+                უკვე ქართულ ბაზრებზე. მათი ეფექტურობა და ფორმულები დამტკიცებული
+                და აღიარებულია ევროპისა და ამერიკის ჯანდაცვის ორგანიზაციების
+                მიერ. ჩვენს პრეპარატებს წარმატებით იყენებენ ქვეყნის წამყვანი
+                სპეციალისტები, კლინიკები და პოლიკლინიკები. ჩვენ მუდმივად
+                ვზრუნავთ ჩვენი შეთავაზებების გაუმჯობესებაზე უკეთესი
+                გაგრძელებისთვის!
+              </p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="conatiner">
+            <img
+              src="https://i.insider.com/5d8e6ec26f24eb50bc6d292a?width=700"
+              alt=""
+            />
+            <div class="sliderText">
+              <p>
+                ყველა ჩვენი მედიკამენტები სარგებლობს განსაკუთრებული სანდოობითა
+                და წლების მანძილზე დაგროვილი პოზიტიური გამოცდილებით ევროპულ და
+                უკვე ქართულ ბაზრებზე. მათი ეფექტურობა და ფორმულები დამტკიცებული
+                და აღიარებულია ევროპისა და ამერიკის ჯანდაცვის ორგანიზაციების
+                მიერ. ჩვენს პრეპარატებს წარმატებით იყენებენ ქვეყნის წამყვანი
+                სპეციალისტები, კლინიკები და პოლიკლინიკები. ჩვენ მუდმივად
+                ვზრუნავთ ჩვენი შეთავაზებების გაუმჯობესებაზე უკეთესი
+                გაგრძელებისთვის!
+              </p>
+            </div>
+          </div>
+        </slide>
+        <slide>
+          <div class="conatiner">
+            <img src="../../../assets/img/careerTablet.jpg" alt="" />
+            <div class="sliderText"><p>partner3</p></div>
+          </div>
+        </slide>
+
+        <hooper-navigation slot="hooper-addons"></hooper-navigation>
+        <hooper-progress slot="hooper-addons"></hooper-progress>
+        <hooper-pagination slot="hooper-addons"></hooper-pagination>
+      </hooper>
     </div>
+
     <div class="main_content">
       <div class="brands">
         <div
@@ -39,8 +91,25 @@
 <script>
 import axios from "axios";
 import env from "../../../env.json";
+import {
+  Hooper,
+  Slide,
+  Navigation as HooperNavigation,
+  Pagination as HooperPagination,
+  Progress as HooperProgress,
+} from "hooper";
+
+import "hooper/dist/hooper.css";
+
 export default {
   name: "partners",
+  components: {
+    Hooper,
+    Slide,
+    HooperNavigation,
+    HooperProgress,
+    HooperPagination,
+  },
   data() {
     return {
       PartnersData: [],
@@ -67,6 +136,15 @@ export default {
 </script>
 
 <style scoped>
+.local_partners {
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  min-height: calc(100vh - 258px);
+  margin-top: 20px;
+  padding-top: 10px;
+  /* border: 2px solid red; */
+}
 .main_content {
   /* border: 2px solid red; */
   width: 100%;
@@ -83,30 +161,30 @@ export default {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.test {
+/* .test {
   background: #9629ac41;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-}
-.title {
+} */
+/* .title {
   background-image: url("../../../assets/img/testPhoto.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-}
+} */
 
-.titleInside {
+/* .titleInside {
   max-width: 1400px;
   float: unset;
   display: flex;
   width: 100%;
   margin: auto;
   height: 40rem;
-}
+} */
 
-.titleInside h1 {
+/* .titleInside h1 {
   margin-top: 20px;
   margin-bottom: 20px;
   display: inline-block;
@@ -115,8 +193,8 @@ export default {
   margin-right: 10;
   border-radius: 20px;
   color: white;
-}
-
+} */
+/* 
 .titleContainer h1 {
   display: flex;
   color: #462359;
@@ -127,17 +205,18 @@ export default {
   margin-right: 10;
   border-radius: 20px;
   color: white;
-}
+} */
 
 .hovereffect {
   border-radius: 20px;
-  /* width: 100%; */
+  width: 100%;
   height: auto;
   float: left;
   overflow: hidden;
   position: relative;
   text-align: center;
   cursor: default;
+  margin: auto;
 }
 
 .hovereffect .overlay {
@@ -230,9 +309,80 @@ export default {
   box-shadow: 0 0 5px #fff;
 }
 
+/* slider */
+.slider {
+  width: 100%;
+  position: relative;
+  height: auto;
+  border-radius: 20px;
+  margin: auto;
+  background-size: cover;
+  margin-top: 40px;
+}
+
+.sliderText {
+  /* border:2px solid red; */
+
+  position: absolute;
+  font-size: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #462359;
+  /* background-color: rgba(128, 128, 128, 0.596); */
+  background-color: rgba(255, 255, 255, 0.555);
+  justify-content: center;
+  width: 80%;
+}
+
+.sliderText p {
+  padding: 30px;
+  justify-content: center;
+  text-align: justify;
+}
+
+.slider img {
+  background-size: cover;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: auto;
+  justify-content: center center;
+  /* border:2px solid yellow; */
+  width: 100%;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.hooper-slide {
+  position: relative;
+  border-radius: 20px;
+}
+.hooper {
+  height: 400px;
+  border-radius: 20px;
+}
+
+::v-deep .hooper-list {
+  border-radius: 20px;
+}
+
+::v-deep .hooper-progress-inner {
+  background-color: #a480b7;
+}
+::v-deep .hooper-indicator.is-active {
+  background: #a480b7;
+}
+
+/* slider */
+
 @media all and (max-width: 1500px) {
-  .titleInside h1 {
+  /* .titleInside h1 {
     padding: 10px 50px 10px 0px;
+    
+  } */
+  .slider {
+    padding: 0px 30px 30px 30px;
   }
 }
 
@@ -262,11 +412,11 @@ export default {
     margin-top: 150px;
   }
 
-  .titleInside h1 {
+  /* .titleInside h1 {
     margin: auto;
     margin-top: 480px;
     padding: 0px;
-  }
+  } */
   .hovereffect a.info {
     position: static;
     margin: auto;
@@ -289,17 +439,17 @@ export default {
     padding-top: 30px;
   }
 
-  .title h1 {
+  /* .title h1 {
     padding-top: 0px;
-  }
+  } */
 }
 @media all and (max-width: 450px) {
   .hovereffect img {
     height: 300px;
   }
-  .title h1 {
+  /* .title h1 {
     width: 70%;
-  }
+  } */
 
   .hovereffect h2 {
     font-size: 25px;

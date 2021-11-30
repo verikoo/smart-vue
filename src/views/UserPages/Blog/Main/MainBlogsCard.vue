@@ -33,9 +33,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  font-family: QARTULI;
-}
 .main_blogs_div {
   width: 100%;
   height: 450px;

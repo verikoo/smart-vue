@@ -150,9 +150,7 @@ textarea {
   height: 200px;
   padding-top: 10px;
 }
-.input span {
-  color: #f02849;
-}
+
 button {
   height: 50px;
   width: 50%;
@@ -170,6 +168,12 @@ button:hover {
 
 .file {
   margin-bottom: 20px;
+}
+.input span {
+  color: #f02849;
+  display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
 @media only screen and (max-width: 1033px) {

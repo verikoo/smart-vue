@@ -125,6 +125,7 @@ export default {
 
 <style scoped>
 .exlusive_brands {
+  border: 2px solid red;
   width: 100%;
   max-width: 1400px;
   margin: auto;
@@ -132,49 +133,47 @@ export default {
   margin-top: 20px;
   padding-top: 10px;
 }
-.aboutMedicine {
+/* .aboutMedicine {
   max-width: 1400px;
   border: 2px solid rgb(0, 255, 13);
-  /* border: 2px solid red; */
+  border: 2px solid red;
   margin: auto;
   height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: auto; */
-  /* margin: 10px; */
-  /* display: flex;
-  float: left; */
+  padding: auto;
+  margin: 10px;
+  display: flex;
+ float: left; 
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-}
+} */
 
 /* .aboutMedicine p{
     font-size: 80px;
     color:white;
 } */
 
-.aboutMedicine p {
+/* .aboutMedicine p {
   background: #e6e6e6;
   background: -webkit-linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%);
   background: linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%);
-  /* text-indent: 50px; */
+  text-indent: 50px;
   font-size: 1.4rem;
   padding: 40px;
-  /* font-family: inside_text; */
+  font-family: inside_text;
   color: #462359;
-  /* font-weight:bold; */
+  font-weight:bold;
   letter-spacing: 1px;
   background-color: white;
   margin-top: -110px;
   background-color: white;
-  /* border: 5px solid #E6E6E6; */
-}
+  border: 5px solid #E6E6E6;
+} */
 .main_content {
-  /* border: 2px solid yellow; */
   width: 100%;
   max-width: 1400px;
   margin: auto;
-  /* border: 2px solid red; */
   min-height: calc(100vh - 258px);
 }
 .brands {
