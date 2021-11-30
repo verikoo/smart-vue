@@ -47,15 +47,14 @@ export default {
 
 .blogs_card_title_header {
   font-size: 20px;
-  color: #A4A8AA;
+  color: #a4a8aa;
   text-align: left;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .blogs_card_title_header:hover {
-  color: #7F5496;
-  
+  color: #7f5496;
 }
 
 .blogs_card_date {

@@ -22,7 +22,7 @@ export default {
     };
   },
   watch: {
-    "$route.params.id": function() {
+    "$route.params.id": function () {
       let blogs = allData.blogs.filter((i) => i.id == this.$route.params.id);
       this.data = blogs[0];
     },
@@ -63,8 +63,8 @@ export default {
 }
 
 .details_back_div:hover i {
-  color: #7F5496;
-  font-size:30px;
+  color: #7f5496;
+  font-size: 30px;
 }
 
 .details_back_div:hover p {
@@ -84,7 +84,7 @@ export default {
 
 .details_header {
   font-size: 36px;
-  color: #7F5496;
+  color: #7f5496;
   text-align: center;
 }
 

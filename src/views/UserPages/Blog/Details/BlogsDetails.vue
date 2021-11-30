@@ -36,9 +36,10 @@ export default {
 };
 </script>
 
+
 <style scoped>
 .blogs_details_container {
-  margin-top:0px !important;
+  margin-top: 0px !important;
   width: 100%;
   max-width: 1920px;
   margin: auto;

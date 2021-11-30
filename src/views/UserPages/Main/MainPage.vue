@@ -284,6 +284,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: QARTULI;
+}
 .main {
   width: 100%;
   margin: auto;

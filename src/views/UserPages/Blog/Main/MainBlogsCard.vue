@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: QARTULI;
+}
 .main_blogs_div {
   width: 100%;
   height: 450px;
@@ -93,7 +96,7 @@ export default {
 }
 
 .main_blogs_button:hover .main_blogs_button_label {
-  color:white;
+  color: white;
 }
 
 @media only screen and (max-width: 750px) {

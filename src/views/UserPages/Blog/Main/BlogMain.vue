@@ -30,15 +30,14 @@ export default {
     handleFilter(event, index) {
       let filteredBlogs = [];
       if (index === 1) {
-        if(event === "all") filteredBlogs = data.blogs;
+        if (event === "all") filteredBlogs = data.blogs;
         else {
           filteredBlogs = data.blogs.filter(
             (i) => i.publishedAt.slice(0, 4) == event
           );
         }
-        
       } else {
-        if(event === "all") filteredBlogs = data.blogs;
+        if (event === "all") filteredBlogs = data.blogs;
         else filteredBlogs = data.blogs.filter((i) => i.category == event);
       }
 
@@ -50,11 +49,11 @@ export default {
 
 <style scoped>
 .Blog_main_container {
-  margin-top:0px !important;
+  margin-top: 0px !important;
   width: 100%;
   max-width: 1920px;
   height: 100%;
-  margin:auto;
+  margin: auto;
   min-height: 100vh;
   display: flex;
 }

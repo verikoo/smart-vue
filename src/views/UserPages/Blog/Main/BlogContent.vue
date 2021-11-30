@@ -46,10 +46,10 @@ export default {
 }
 
 .blogs_header {
-  color: #7F5496 ;
+  color: #7f5496;
   font-size: 35px;
   text-align: left;
-  font-weight:bold;
+  font-weight: bold;
   letter-spacing: 3px;
 }
 
@@ -74,15 +74,15 @@ export default {
 }
 
 @media only screen and (max-width: 750px) {
-  .blog_content_container{
+  .blog_content_container {
     padding: 0;
   }
 
-  .blogs_header{
+  .blogs_header {
     text-align: center;
   }
 
-  .blogs_div{
+  .blogs_div {
     width: 90%;
     margin: auto;
     margin-top: 50px;
@@ -106,7 +106,6 @@ export default {
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
 </style>
 
 

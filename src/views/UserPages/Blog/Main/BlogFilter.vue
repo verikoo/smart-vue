@@ -5,21 +5,25 @@
     /></a>
 
     <div class="last_added_div">
-    <div>
+      <div>
         <p class="last_added_title">ახალი დამატებული</p>
 
-      <div v-for="item in last" :key="'last' + item.id" class="last_added_item">
-        <router-link :to="{ name: 'BlogsDetails', params: { id: item.id } }">
-          <p class="last_added_item_title">{{ item.title }}</p>
-          <div class="last_added_date">
-            <i class="fas fa-calendar calendar_icon"></i>
-            <p class="last_added_date_title">
-              {{ item.publishedAt }}
-            </p>
-          </div>
-        </router-link>
+        <div
+          v-for="item in last"
+          :key="'last' + item.id"
+          class="last_added_item"
+        >
+          <router-link :to="{ name: 'BlogsDetails', params: { id: item.id } }">
+            <p class="last_added_item_title">{{ item.title }}</p>
+            <div class="last_added_date">
+              <i class="fas fa-calendar calendar_icon"></i>
+              <p class="last_added_date_title">
+                {{ item.publishedAt }}
+              </p>
+            </div>
+          </router-link>
+        </div>
       </div>
-    </div>
     </div>
 
     <div class="filtering_div">
@@ -110,8 +114,7 @@ export default {
   top: 0px;
   left: 0px;
   padding: 0px 30px;
-  background-color: #DFDFE2;
-  
+  background-color: #dfdfe2;
 }
 
 .blog_filter_container::-webkit-scrollbar {
@@ -123,12 +126,12 @@ export default {
 }
 
 .blog_filter_container::-webkit-scrollbar-thumb {
-  background-color: #7F5496;
+  background-color: #7f5496;
   border-radius: 5px;
 }
 
 .blog_filter_logo {
-width: 100%;
+  width: 100%;
   display: block;
   margin: auto;
   margin-top: 50px !important;
@@ -147,8 +150,9 @@ width: 100%;
   margin-top: 50px;
 }
 
-.last_added_title , .fintering_title {
-  color: #7F5496;
+.last_added_title,
+.fintering_title {
+  color: #7f5496;
   font-weight: 900;
   font-size: 20px;
   text-align: center;
@@ -169,25 +173,19 @@ width: 100%;
   /* box-shadow: 5px 5px 20px grey; */
 }
 
-
-.last_added_item:hover   {
-  border-left: solid 4px #462359 ;
-  border-bottom: solid 1px #462359 ;
+.last_added_item:hover {
+  border-left: solid 4px #462359;
+  border-bottom: solid 1px #462359;
   /* box-shadow: #e3bff256 0px 30px 60px -12px inset,
     #462359 0px 18px 36px -18px inset; */
-    /* background-color: #a580b5 ; */
-  
+  /* background-color: #a580b5 ; */
 }
-
-
- 
 
 .last_added_item_title {
   color: #462359;
   font-size: 16px;
   text-align: left;
 }
-
 
 .last_added_date {
   width: 100%;
@@ -213,7 +211,6 @@ width: 100%;
   color: #462359;
 }
 
-
 /* Filtering */
 
 .filtering_div {
@@ -235,7 +232,8 @@ width: 100%;
   height: 40px;
   background-color: white;
   border: white;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
   border-radius: 10px;
   margin-top: 5px;
   outline: none;
@@ -244,7 +242,8 @@ width: 100%;
   margin-bottom: 20px;
 }
 
-.filtering_select_label, .filtering_select_label_category {
+.filtering_select_label,
+.filtering_select_label_category {
   color: #462359;
   text-align: left !important;
   font-size: 14px;
@@ -254,10 +253,11 @@ width: 100%;
 .fintering_select_category {
   width: 100%;
   height: 40px;
-  border-radius:10px;
+  border-radius: 10px;
   background-color: white;
   border: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 
   margin-top: 5px;
   outline: none;
@@ -297,5 +297,4 @@ width: 100%;
     margin-bottom: 20px;
   }
 }
- 
 </style>
