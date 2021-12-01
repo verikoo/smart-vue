@@ -1,13 +1,13 @@
 <template>
- <div :class="className">
-  <ul>
-    <li><input v-if='isInput' type="text" placeholder="Search ..." /></li>
-    <li v-for="navItem in headerLinks" :key="navItem.to">
-      <router-link :to="navItem.to" :exact="navItem.exact">
-        {{ $t(`${navItem.label}`) }}
-      </router-link>
-    </li>
-  </ul>
+  <div :class="className">
+    <ul>
+      <li><input v-if="isInput" type="text" placeholder="Search ..." /></li>
+      <li v-for="navItem in headerLinks" :key="navItem.to">
+        <router-link :to="navItem.to" :exact="navItem.exact">
+          {{ $t(`${navItem.label}`) }}
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
 import { headerLinks } from "./navigationLinks";
 export default {
   name: "HeaderNavItems",
-  props: ['isInput','className'],
+  props: ["isInput", "className"],
   data() {
     return {
       headerLinks: headerLinks,
@@ -25,7 +25,9 @@ export default {
 </script>
 
 <style>
-.first_line_right ul a { color: #666666; }
+.first_line_right ul a {
+  color: #666666;
+}
 .first_line_right ul {
   display: flex;
   gap: 10px;
@@ -81,9 +83,9 @@ a:active {
 .dropItems {
   border-top: 1px solid #e8b1ff;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 15px -3px,
-  rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
+    rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
   margin-left: -20px !important;
-  background: #462359;
+  /* background: #462359; */
   border-radius: 10px;
 }
 
@@ -127,9 +129,8 @@ a:active {
   justify-content: space-between;
 }
 
-
-.first_line .router-link-active  {
-  color: #7F5496;
+.first_line .router-link-active {
+  color: #7f5496;
   font-weight: bold;
   transition: 0.4s;
 }
@@ -144,7 +145,8 @@ a {
   /* display: flex; */
   position: relative;
 }
-.className a::after, .first_line a::after  {
+.className a::after,
+.first_line a::after {
   content: "";
   width: 0;
   height: 0.5px;
@@ -186,7 +188,6 @@ a:hover::after {
   width: 200px;
 }
 
-
 input[type="text"]:focus {
   outline: none;
 }
@@ -219,9 +220,13 @@ input[type="text"]:focus {
   list-style: none;
   text-align: center;
   cursor: pointer;
+  /* border: 2px solid red; */
 }
 
 .menu a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* border: 2px solid yellow; */
   display: block;
   color: #e6e6e6;
   text-decoration: none;
@@ -310,7 +315,6 @@ input[type="text"]:focus {
     width: 100%;
     margin-bottom: 20px;
     /* border:2px solid brown; */
-    
   }
   .navLinks a {
     padding: 0px !important;

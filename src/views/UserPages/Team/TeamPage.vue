@@ -180,7 +180,7 @@ export default {
   color: #fff;
   position: relative;
   width: 50%;
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 100px;
   padding: 10px;
   -webkit-transform: translateY(60px);

@@ -408,10 +408,10 @@ export default {
 }
 .exact_icon {
   text-align: center;
-  padding: 150px 0 150px 0;
+  padding: 100px 0 100px 0;
 }
 .exact_icon p {
-  margin-top: 2.4rem;
+  /* margin-top: 2.4rem; */
   color: #666666;
 
   /* font-weight: 600; */
@@ -434,7 +434,7 @@ export default {
   margin: auto;
   padding: 100px 0 100px 0;
   display: grid;
-  grid-gap: 20px;
+  /* grid-gap: 20px; */
   grid-template-columns: repeat(2, 1fr);
 }
 .team_description {
@@ -597,7 +597,7 @@ export default {
     grid-template-columns: repeat(2, 1fr);
   }
   .exact_icon {
-    padding: 50px 0 50px 0;
+    padding: 20px 0 20px 0;
   }
   .iframe iframe {
     height: 200px;
@@ -622,8 +622,12 @@ export default {
   .description {
     padding: 20px !important;
   }
-  .icon {
+  /* .icon {
     grid-template-columns: repeat(1, 1fr);
+  } */
+  .exact_icon p {
+    font-size: 18px;
+    margin-top: 0px;
   }
   .description {
     font-size: 18px;

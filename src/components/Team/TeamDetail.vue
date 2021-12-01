@@ -81,7 +81,7 @@ export default {
   /* border:2px solid brown; */
   margin-left: 50px;
   padding: 20px;
-  font-size: 20px;
+  font-size: 22px;
   text-align: justify;
 }
 .textSide h1 {

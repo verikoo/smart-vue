@@ -227,6 +227,10 @@ a:active {
   background: #7f5496;
   border-radius: 5px;
 }
+/* .dropItems li {
+  padding-left: 3px;
+  padding-right: 3px;
+} */
 
 /*drop down   */
 
@@ -280,7 +284,7 @@ a:active {
 }
 
 a {
-  text-align: center;
+  /* text-align: center; */
   position: relative;
 }
 a::after {
@@ -334,6 +338,10 @@ input[type="text"]:focus {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* border: 2px solid pink; */
+}
+.responsive-navbar li {
+  border: 2px solid green;
 }
 
 .responsive-navbar img {
@@ -416,11 +424,16 @@ input[type="text"]:focus {
   .dropItems {
     min-width: 100vw;
   }
+  .navLinks.activeNav {
+    font-size: 18px;
+  }
 
   .dropItems {
     box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 15px -3px,
       rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
-    margin-left: -20px !important;
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+    /* border: 2px solid red; */
     background: #543864;
     box-shadow: 0px 1px 3px #e3bff256, 0px -1px 3px #e3bff256;
   }
@@ -433,7 +446,8 @@ input[type="text"]:focus {
   }
 
   .menu li ul li {
-    padding: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .second-line-content {

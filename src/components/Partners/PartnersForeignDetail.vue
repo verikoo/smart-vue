@@ -104,7 +104,7 @@ export default {
 .textSide {
   /* border: 2px solid blue; */
   text-align: justify;
-  font-size: 20px;
+  font-size: 22px;
   margin: auto;
 }
 .textSide h1 {

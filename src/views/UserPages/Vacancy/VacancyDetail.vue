@@ -125,7 +125,7 @@ export default {
 
 .vacancy_detail_description_div p {
   text-align: justify;
-  font-size: 20px;
+  font-size: 22px;
   color: #462359;
 }
 
