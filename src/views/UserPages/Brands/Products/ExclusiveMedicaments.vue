@@ -408,14 +408,19 @@ export default {
   .hovereffect a.info {
     left: 30%;
   }
-}
-
-@media all and (max-width: 503px) {
+  .filter input,
+  .filter select {
+    /* border: 2px solid red; */
+    width: 100%;
+  }
   .filter select {
     margin-top: 20px;
     margin-left: 0px;
     /* border: 2px solid red; */
   }
+}
+
+@media all and (max-width: 503px) {
   .hovereffect h2 {
     width: 80%;
     margin-top: 25px;
