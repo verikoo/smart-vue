@@ -392,6 +392,13 @@ export default {
     margin: auto;
     margin-top: 40px;
   }
+  .sliderText {
+    width: 90%;
+  }
+
+  .sliderText p {
+    padding: 20px;
+  }
 }
 @media all and (max-width: 768px) {
   .hovereffect img {
@@ -412,6 +419,9 @@ export default {
   .title h1 {
     padding-top: 0px;
   }
+  .sliderText {
+    font-size: 18px;
+  }
 }
 @media all and (max-width: 450px) {
   .hovereffect img {
@@ -424,8 +434,14 @@ export default {
   .hovereffect h2 {
     font-size: 25px;
   }
+  .sliderText {
+    font-size: 16px;
+  }
 }
 @media all and (max-width: 414px) {
+  .sliderText {
+    font-size: 15px;
+  }
 }
 @media all and (max-width: 400px) {
   .hovereffect img {
@@ -436,6 +452,14 @@ export default {
   .hovereffect a.info {
     margin-top: 20px;
     width: 80%;
+  }
+  .sliderText {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 301px) {
+  .sliderText {
+    font-size: 12px;
   }
 }
 </style>

@@ -422,8 +422,18 @@ export default {
     margin: auto;
     margin-top: 40px;
   }
+  .sliderText {
+    width: 90%;
+  }
+
+  .sliderText p {
+    padding: 20px;
+  }
 }
 @media all and (max-width: 768px) {
+  .sliderText {
+    font-size: 18px;
+  }
   .hovereffect img {
     height: 400px;
   }
@@ -444,6 +454,9 @@ export default {
   } */
 }
 @media all and (max-width: 450px) {
+  .sliderText {
+    font-size: 16px;
+  }
   .hovereffect img {
     height: 300px;
   }
@@ -455,6 +468,11 @@ export default {
     font-size: 25px;
   }
 }
+@media all and (max-width: 414px) {
+  .sliderText {
+    font-size: 15px;
+  }
+}
 
 @media all and (max-width: 400px) {
   .hovereffect img {
@@ -462,81 +480,21 @@ export default {
   }
 }
 
-/* @media all and (max-width: 1500px) {
-  .brands {
-    grid-template-columns: repeat(3, 1fr);
-   
-  }
-}
-
-
-@media all and (max-width: 992px) {
-  .brands {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .hovereffect img {
-    height: 400px;
-  }
-
-  .hovereffect a.info {
-    font-size: 1.6vw;
-  }
-  .hovereffect a.info:hover {
-    font-size: 1.5vw;
-  }
-}
-@media all and (max-width: 830px) {
-  .hovereffect img {
-    height: 350px;
-  }
-}
-
-@media all and (max-width: 690px) {
-  .hovereffect img {
-    height: 250px;
-  }
-  .hovereffect h2 {
-    width: 90%;
-  }
-}
-@media all and (max-width: 450px) {
-  .hovereffect img {
-    height: 200px;
-  }
-
-  .hovereffect h2 {
-    font-size: 5vw;
-    margin-top: 3px;
-  }
-  .hovereffect a.info {
-    align-items: center;
-    margin: auto !important;
-    right: 0px;
-  }
-  .titleInside h1 {
-    text-align: center;
-  }
-}
 @media all and (max-width: 380px) {
-  .hovereffect img {
-    height: 180px;
-  }
-
-  .hovereffect a.info {
-    width: 150px;
-    padding: 0px;
-    margin: 0px;
-  }
-
-  .seeMore {
-    font-size: 15px;
+  .sliderText {
+    font-size: 14px;
   }
 }
- */
+
 @media all and (max-width: 350px) {
   .hovereffect a.info {
     margin-top: 20px;
     width: 80%;
+  }
+}
+@media all and (max-width: 302px) {
+  .sliderText {
+    font-size: 12px;
   }
 }
 </style>
