@@ -448,18 +448,17 @@ export default {
   justify-content: center;
 }
 .image {
+  border: 2px solid yellow !important;
   margin: auto;
-  height: 300px;
   text-align: center;
-  width: 300px;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   clip-path: circle(40%);
 }
 .image img {
-  width: 300px;
-  height: 300px;
+  width: 100%;
   border-radius: 150px;
 }
 /* sdsdf */
@@ -567,11 +566,10 @@ export default {
   .team_member {
     padding: 100px 40px 100px 40px;
   }
+  .image {
+    width: 350px;
+  }
 
-  /* 
-  .iframe {
-    padding: 0 40px 0 40px;
-  } */
   .main {
     margin-top: 130px;
   }
@@ -650,6 +648,9 @@ export default {
   .team_description p {
     font-size: 25px !important;
   }
+  .image {
+    width: 250px;
+  }
 }
 @media all and (max-width: 450px) {
   .hovereffect img {
@@ -687,6 +688,18 @@ export default {
 @media all and (max-width: 316px) {
   .hovereffect a.info {
     width: 150px;
+  }
+
+  .description {
+    padding: 0px;
+  }
+  .improvement,
+  .responsibility,
+  .values,
+  .team,
+  .blog_card,
+  .projects {
+    padding: 10px 50px 10px 50px;
   }
 }
 
