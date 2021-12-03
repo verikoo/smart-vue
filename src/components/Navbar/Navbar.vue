@@ -495,6 +495,11 @@ input[type="text"]:focus {
   .menu a {
     text-align: center;
   }
+
+  .menu {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
 }
 
 @media all and (max-width: 526px) {
