@@ -35,7 +35,9 @@
                     @mouseover="listOne = true"
                     @mouseleave="listOne = false"
                   >
-                    <p>{{ $t("about_us") }}</p>
+                    <p>
+                      {{ $t("about_us") }}
+                    </p>
                     <transition name=":fade">
                       <ul class="dropItems" v-if="listOne">
                         <li>
@@ -193,6 +195,7 @@ export default {
   display: none;
 }
 .hide_links li {
+  border: 2px solid yellow;
   padding-top: 17px;
 }
 .navLinks {
@@ -212,18 +215,11 @@ li a {
   background-color: transparent;
 }
 
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-  cursor: pointer;
-}
 .dropItems {
   border-top: 1px solid #e8b1ff;
   box-shadow: rgba(255, 255, 255, 0.1) 0px 10px 15px -3px,
     rgba(255, 255, 255, 0.05) 0px 4px 6px -2px;
-  margin: 5px 0 0 5px !important;
+  margin: 10px 0 0 5px !important;
   background: #7f5496;
   border-radius: 5px;
 }
@@ -299,8 +295,14 @@ a::after {
 }
 
 .menu .dropItems a:hover,
-a:hover {
+a:hover,
+.menu p:hover {
   color: #e8b1ff;
+}
+.menu {
+  /* border: 2px solid yellow; */
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 a:hover::after {
   width: 100%;
@@ -364,13 +366,16 @@ input[type="text"]:focus {
   padding: 0;
   list-style: none;
   text-align: center;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .menu a {
+  /* border: 2px solid red; */
   display: block;
+  text-align: start;
   color: #e6e6e6;
   text-decoration: none;
+  /* margin-right: 2px; */
 }
 
 .menu li {
@@ -486,6 +491,9 @@ input[type="text"]:focus {
 
   .first_line_right li {
     display: block;
+  }
+  .menu a {
+    text-align: center;
   }
 }
 

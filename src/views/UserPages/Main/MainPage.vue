@@ -137,7 +137,7 @@
         <img src="../../../assets/img/team.png" alt="" />
       </div>
       <div class="team_description hovereffect">
-        <div>
+        <div class="responsiveTeamDesc">
           <p style="font-weight: 700; font-size: 30px; padding-bottom: 20px">
             “ჩვენი გაუმჯობესებითვის (გუნდის რომელიმე წევრის წინადადება ან
             ისტორია გამოტანილი)”
@@ -434,11 +434,15 @@ export default {
   margin: auto;
   padding: 100px 0 100px 0;
   display: grid;
+  /* border: 2px solid red; */
   /* grid-gap: 20px; */
+  /* margin: 0px 30px 0px 30px; */
   grid-template-columns: repeat(2, 1fr);
 }
 .team_description {
+  /* border: 2px solid green; */
   color: #7f5496;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -451,6 +455,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  clip-path: circle(40%);
 }
 .image img {
   width: 300px;
@@ -559,6 +564,10 @@ export default {
     padding: 10px 40px 10px 40px;
   }
 
+  .team_member {
+    padding: 100px 40px 100px 40px;
+  }
+
   /* 
   .iframe {
     padding: 0 40px 0 40px;
@@ -582,9 +591,15 @@ export default {
   .projects {
     grid-template-columns: repeat(1, 1fr);
   }
-  .team_member {
+  /* .team_member {
     width: 80%;
     margin: auto;
+  } */
+  .responsiveTeamDesc {
+    text-align: center;
+    /* border: 2px solid pink; */
+    width: 80%;
+    padding-top: 20px;
   }
   .hovereffect img {
     height: 500px;
@@ -632,6 +647,9 @@ export default {
   .description {
     font-size: 18px;
   }
+  .team_description p {
+    font-size: 25px !important;
+  }
 }
 @media all and (max-width: 450px) {
   .hovereffect img {
@@ -655,6 +673,15 @@ export default {
   }
   .blog_title {
     border: none !important;
+  }
+  .team_member {
+    padding: 100px 0px 100px 0px;
+    width: 100%;
+  }
+
+  .team_member p {
+    /* border: 2px solid yellow; */
+    font-size: 20px !important;
   }
 }
 @media all and (max-width: 316px) {

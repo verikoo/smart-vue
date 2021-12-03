@@ -6,7 +6,7 @@
           <img
             src="../../../assets/ilustrations/undraw_gravitas_d3ep.svg"
             alt=""
-            style="background: #A580B5"
+            style="background: #a580b5"
           />
           <img
             src="../../../assets/ilustrations/undraw_solution_mindset_34bi.svg"
@@ -34,7 +34,7 @@
           <img
             src="../../../assets/ilustrations/undraw_solution_mindset_34bi.svg"
             alt=""
-            style="background: #A580B5"
+            style="background: #a580b5"
           />
           <img
             src="../../../assets/ilustrations/undraw_informed_decision_p2lh.svg"
@@ -67,7 +67,7 @@
           <img
             src="../../../assets/ilustrations/undraw_informed_decision_p2lh.svg"
             alt=""
-            style="background: #A580B5"
+            style="background: #a580b5"
           />
 
           <img
@@ -101,14 +101,14 @@
           <img
             src="../../../assets/ilustrations/undraw_Active_support_re_b7sj.svg"
             alt=""
-            style="background: #A580B5"
+            style="background: #a580b5"
           />
         </div>
         <p v-if="lang == 'ka'">
-        {{data.support.textKA}}
+          {{ data.support.textKA }}
         </p>
         <p v-else>
-        {{data.support.textEN}}
+          {{ data.support.textEN }}
         </p>
       </tab>
     </tabs>
@@ -202,6 +202,14 @@ export default {
 .link i:hover {
   margin-left: 20px;
   transition: 0.4s;
+}
+@media all and (max-width: 1633px) {
+  .values {
+    padding: 20px;
+  }
+  .tabs_values {
+    padding-left: 20px;
+  }
 }
 
 @media all and (max-width: 1400px) {
