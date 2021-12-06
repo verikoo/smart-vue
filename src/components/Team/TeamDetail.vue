@@ -68,6 +68,7 @@ export default {
   border-radius: 20px;
 }
 .status {
+  /* width: 370px; */
   padding: 30px;
   background-color: #7f5496;
   color: white;
@@ -95,9 +96,9 @@ export default {
 } */
 
 @media all and (max-width: 5800px) and (min-width: 474px) {
-  .status {
+  /* .status {
     width: 73.5%;
-  }
+  } */
 }
 
 @media all and (max-width: 1444px) {
@@ -129,8 +130,8 @@ export default {
     margin: auto !important;
     display: table;
   }
-  .status {
+  /* .status {
     margin: auto;
-  }
+  } */
 }
 </style>

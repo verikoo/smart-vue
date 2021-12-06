@@ -34,7 +34,7 @@
               <label>გვარი</label>
             </div>
             <div class="user-box">
-              <input type="email" name="" required="" />
+              <input type="email" name="" required />
               <label>ფოსტა</label>
             </div>
             <div class="user-box">

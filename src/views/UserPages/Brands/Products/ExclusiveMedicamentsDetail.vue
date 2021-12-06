@@ -69,7 +69,7 @@
       </div>
       <div class="medicamentsBlog slider">
         <hooper
-          :vertical="HooperValue"
+          :vertical="true"
           style="height: 400px"
           :itemsToShow="1.5"
           :centerMode="true"
@@ -82,7 +82,6 @@
           </slide>
           <hooper-navigation slot="hooper-addons"></hooper-navigation>
         </hooper>
-        <!-- <button @click="resize">click</button> -->
       </div>
     </div>
   </div>
@@ -97,32 +96,6 @@ export default {
     Slide,
     HooperNavigation,
   },
-  data() {
-    return {
-      HooperValue: true,
-      // width: 0,
-      // height: 0,
-    };
-  },
-  // mounted() {
-  //   window.addEventListener("resize", this.handleResize);
-  //   this.handleResize();
-  // },
-  // unmounted() {
-  //   window.removeEventListener("resize", this.handleResize);
-  // },
-  // methods: {
-  //   handleResize() {
-  //     this.width = window.innerWidth;
-  //     if (this.width < 600) {
-  //       this.HooperValue = false;
-  //       console.log("smalll");
-  //     } else {
-  //       this.HooperValue = true;
-  //       console.log("big");
-  //     }
-  //   },
-  // },
 };
 </script>
 
@@ -238,10 +211,18 @@ tr:nth-child(odd) {
 strong {
   font-weight: 700;
 }
+.medicamentsBlog {
+  /* border: 2px solid red; */
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 
 /*sliderrrrrrrrrrrrrrrrrrrrr */
 .hooper * {
   border-radius: 20px;
+}
+::v-deep .hooper-slide {
+  margin-bottom: 6px;
 }
 .slider {
   /* border: 2px solid blue; */
@@ -261,6 +242,48 @@ strong {
   /* height: 300px; */
   border-radius: 20px;
 }
+/* 
+::v-deep .hooper.button.hooper-navigation.is-vertical.hooper-prev {
+  left: 0px !important;
+} */
+/* ::v-deep button {
+  border: 2px solid yellow;
+} */
+::v-deep button.hooper-prev {
+  width: 20%;
+  left: 0px !important;
+  display: flex;
+  justify-content: center;
+  margin-top: -60px !important;
+}
+::v-deep button.hooper-next {
+  width: 20%;
+  left: 0px !important;
+  display: flex;
+  right: 0px !important;
+  justify-content: center;
+  margin-bottom: -60px !important;
+}
+::v-deep .hooper.button {
+  left: 0px !important;
+}
+
+::v-deep button.hooper-prev {
+  background-color: #7f5496d3;
+  border-radius: 20px;
+  margin-left: auto;
+  display: flex;
+  margin: auto;
+}
+::v-deep button.hooper-next {
+  background-color: #7f5496d3;
+  /* clip-path: circle(40%); */
+  border-radius: 20px;
+  margin-left: auto;
+  display: flex;
+  margin: auto;
+}
+
 ::v-deep .hooper-list {
   border-radius: 20px;
 }
@@ -274,12 +297,13 @@ strong {
   justify-content: center;
   /* border:2px solid yellow; */
   width: 100%;
+  height: 100%;
   border-radius: 20px;
 }
 
-::v-deep .hooper .ul .li {
+/* ::v-deep .hooper .ul .li {
   transform: translate(0px, 666.6667px) !important;
-}
+} */
 
 ::v-deep .hooper.button.hooper-next {
   align-content: center !important;
@@ -298,42 +322,46 @@ strong {
   }
 }
 @media all and (max-width: 1390px) {
-  ::v-deep li.hooper-slide.is-active.is-current {
-    height: 250px !important;
-  }
+  /* ::v-deep li.hooper-slide.is-active.is-current {
+    height: 800px !important;
+  } */
+  /* ::v-deep li.hooper-slide.is-prev {
+    height: 450px !important;
+  } */
 
-  ::v-deep li.hooper-slide.is-prev {
-    height: 250px !important;
-  }
-  ::v-deep li.hooper-slide.is-next {
-    height: 250px !important    ;
-  }
+  /* ::v-deep li.hooper-slide.is-next {
+    margin-top: 100px !important;
+  } */
 }
 
 @media all and (max-width: 1200px) {
+  .slider img {
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid blue; */
+  }
   .slider {
+    /* border: 2px solid black; */
     margin-top: 30px;
     width: 70%;
     padding-left: 0px !important;
   }
+
   .mainContent {
     display: grid;
     grid-template-columns: auto;
   }
-  ::v-deep li.hooper-slide.is-active.is-current {
-    height: 550px !important;
-  }
+  /* ::v-deep li.hooper-slide.is-active.is-current {
+    border: 2px solid green;
+  } */
 
-  ::v-deep li.hooper-slide.is-prev {
-    height: 550px !important;
-  }
-  ::v-deep li.hooper-slide.is-next {
-    height: 550px !important    ;
-  }
+  /* ::v-deep li.hooper-slide.is-prev {
+    border: 2px solid red;
+  } */
 }
 
 @media all and (max-width: 1080px) {
-  ::v-deep li.hooper-slide.is-active.is-current {
+  /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 450px !important;
   }
 
@@ -342,11 +370,11 @@ strong {
   }
   ::v-deep li.hooper-slide.is-next {
     height: 450px !important    ;
-  }
+  } */
 }
 
 @media all and (max-width: 980px) {
-  ::v-deep li.hooper-slide.is-active.is-current {
+  /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 400px !important;
   }
 
@@ -355,7 +383,7 @@ strong {
   }
   ::v-deep li.hooper-slide.is-next {
     height: 400px !important    ;
-  }
+  } */
 }
 
 @media all and (max-width: 730px) {
@@ -372,7 +400,7 @@ strong {
   .mainContent img {
     margin: auto;
   }
-  ::v-deep li.hooper-slide.is-active.is-current {
+  /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 400px !important;
   }
 
@@ -381,10 +409,10 @@ strong {
   }
   ::v-deep li.hooper-slide.is-next {
     height: 400px !important    ;
-  }
+  } */
 }
-@media all and (max-width: 621px) {
-  ::v-deep li.hooper-slide.is-active.is-current {
+@media all and (max-width: 641px) {
+  /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 250px !important;
   }
 
@@ -393,10 +421,14 @@ strong {
   }
   ::v-deep li.hooper-slide.is-next {
     height: 250px !important    ;
+  } */
+
+  .slider {
+    width: 100%;
   }
 }
 @media all and (max-width: 447px) {
-  ::v-deep li.hooper-slide.is-active.is-current {
+  /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 200px !important;
   }
 
@@ -405,11 +437,11 @@ strong {
   }
   ::v-deep li.hooper-slide.is-next {
     height: 200px !important ;
-  }
+  } */
 }
 
 @media all and (max-width: 368px) {
-  ::v-deep li.hooper-slide.is-active.is-current {
+  /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 150px !important;
   }
 
@@ -418,6 +450,9 @@ strong {
   }
   ::v-deep li.hooper-slide.is-next {
     height: 150px !important ;
+  } */
+  .slider {
+    width: 100%;
   }
 }
 </style>
