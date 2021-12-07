@@ -1,5 +1,19 @@
 <template>
   <div class="vacancy_form">
+    <div class="downloadCV">
+      <p>
+        სურვილის შემთხვევაში შეგიძლიათ გადმოტვირთოთ კომპანიის
+        <a
+          class="linkCV"
+          style="cursor: pointer"
+          href="http://logisticssolutions.ge/res/docs/Logistics_Solutions_Application.docx"
+          download="file"
+        >
+          რეზიუმე
+        </a>
+      </p>
+    </div>
+
     <div class="formCont">
       <ValidationObserver>
         <form @submit.prevent="submit">
@@ -78,6 +92,9 @@ export default {
         phone: "",
         file: [],
       },
+      // item: {
+      //   loc: require("../../../assets/file/Downloading_form.docx"),
+      // },
     };
   },
 };
@@ -86,20 +103,18 @@ export default {
 <style scoped>
 .vacancy_form {
   /* display: flex; */
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   /* border: 2px solid red; */
-}
-.input {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  /* border: 2px solid red; */
+  /* align-items: center;
+  justify-content: center;
+  text-align: center; */
+  /* border: 2px solid red; */
 }
 
 .file {
   width: 50%;
-  margin: auto;
+  /* margin: 0 auto; */
   text-align: start;
 
   /* margin-right: auto; */
@@ -119,13 +134,12 @@ export default {
 }
 
 /* .formCont {
-  width: 50%;
-  margin: auto;
   border: 2px solid yellow;
 } */
 form h1 {
-  margin: 50px 0 20px 0;
+  margin: 20px 0 20px 0;
   color: #452357;
+  font-size: 21px;
 }
 .input {
   width: 70%;
@@ -176,10 +190,42 @@ button:hover {
   margin: auto;
 }
 
+.downloadCV {
+  padding: 10px 0px;
+  /* border: 2px solid blue; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.linkCV {
+  /* border: 2px solid red; */
+  color: #452357;
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 1033px) {
   .input input,
   .input textarea {
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 801px) {
+  .vacancy_form {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .input {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .file {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 </style>

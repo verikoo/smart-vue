@@ -286,9 +286,6 @@ strong {
   margin: auto;
 }
 
-::v-deep .hooper-list {
-  /* border-radius: 20px; */
-}
 .slider img {
   /* background-position: center center center center; */
   background-size: cover;
@@ -303,19 +300,10 @@ strong {
   border-radius: 10px;
 }
 
-/* ::v-deep .hooper .ul .li {
-  transform: translate(0px, 666.6667px) !important;
-} */
-
 ::v-deep .hooper.button.hooper-next {
   align-content: center !important;
   justify-content: center;
 }
-/* ::v-deep .hooper .hooper-slide li {
-    height: 0px !important;
-} */
-
-/*sliderrrrrrrrrrrrrrrrrrrrr */
 
 @media all and (max-width: 1501px) {
   .mainContent {

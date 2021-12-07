@@ -1,4 +1,4 @@
- <template>
+<template>
   <div class="Head">
     <div class="navbarContainer">
       <div class="first_line">
