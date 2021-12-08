@@ -50,9 +50,11 @@ export default {
   width: 100%;
   padding: 50px;
   position: relative;
+  /* border: 2px solid red; */
 }
 
 .details_back_div {
+  /* border: 2px solid red; */
   cursor: pointer;
   position: absolute;
   top: 20px;
@@ -113,10 +115,10 @@ export default {
     height: 100%;
   }
 
-  .details_back_div {
+  /* .details_back_div {
     top: 5px;
     left: 3px;
-  }
+  } */
 
   .details_image_div {
     width: 90%;

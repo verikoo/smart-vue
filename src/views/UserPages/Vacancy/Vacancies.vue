@@ -37,9 +37,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  font-family: inside_text;
-}
 .vacancies_container {
   width: 100%;
   max-width: 300px;
@@ -55,6 +52,7 @@ export default {
   font-size: 24px;
   color: #a580b5;
   text-align: center;
+  font-family: inside_text;
 }
 
 .vacansies_sub_div {
@@ -83,6 +81,7 @@ export default {
 }
 
 .vacancies_title_div {
+  font-family: inside_text;
   width: 90%;
   margin: auto;
   cursor: pointer;
@@ -104,6 +103,7 @@ export default {
 } */
 
 .vacancy_title {
+  font-family: inside_text;
   font-size: 20px;
   color: #462359;
   text-align: center;
@@ -130,6 +130,7 @@ export default {
   font-size: 30px;
   /* background-color: #FEFBF3; */
   color: #e3bff2;
+
   padding: 5px 0 5px 0;
   margin-left: -15px;
 }

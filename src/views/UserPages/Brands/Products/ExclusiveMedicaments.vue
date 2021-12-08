@@ -135,9 +135,11 @@ export default {
   height: 50px;
   width: 200px;
   outline: none;
-  border: 1px solid #462359;
+  border: 1px solid #7e5493;
   border-radius: 5px;
   padding-left: 10px;
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 .filter select {
   margin-left: 20px;
