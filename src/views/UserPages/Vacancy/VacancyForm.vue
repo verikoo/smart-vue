@@ -104,6 +104,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: inside_text;
+}
 .vacancy_form {
   /* display: flex; */
   /* border: 2px solid red; */

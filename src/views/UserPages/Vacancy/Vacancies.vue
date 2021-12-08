@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: inside_text;
+}
 .vacancies_container {
   width: 100%;
   max-width: 300px;

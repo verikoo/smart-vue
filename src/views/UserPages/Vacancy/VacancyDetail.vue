@@ -34,6 +34,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: inside_text;
+}
 .vacancy_detail_container {
   width: 100%;
   height: 100%;
@@ -72,7 +75,7 @@ export default {
 .vacancy_detail_subtitle {
   font-size: 24px;
   color: #462359;
-  /* font-family: TBC Contractica CAPS book; */
+  /* font-family: inside_text; */
   font-weight: bold;
 }
 

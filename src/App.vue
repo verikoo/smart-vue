@@ -32,7 +32,7 @@ export default {
         "addCsr",
         "addCareer",
       ],
-       footer: [
+      footer: [
         "NewsDetails",
         "News",
         "BlogMain",
@@ -50,7 +50,6 @@ export default {
         "addCsr",
         "addCareer",
         "contact",
-
       ],
     };
   },
