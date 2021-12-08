@@ -3,7 +3,7 @@
     <div class="downloadCV">
       <p class="wishTitle">
         სურვილის შემთხვევაში შეგიძლიათ გადმოტვირთოთ კომპანიის რეზიუმე
-        <a :href="careerFile"> <b>Download application</b> </a>
+        <a :href="careerFile"> <br /><b>Download application</b> </a>
       </p>
     </div>
 

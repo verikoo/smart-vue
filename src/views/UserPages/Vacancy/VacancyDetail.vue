@@ -121,6 +121,7 @@ export default {
 /* Responsive button */
 
 .vacancy_detail_description_div {
+  word-break: break-all;
   width: 100%;
   margin: auto;
   margin-top: 30px;
