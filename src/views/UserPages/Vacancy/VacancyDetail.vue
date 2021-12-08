@@ -169,16 +169,21 @@ export default {
     margin-left: 0px;
   }
 }
+@media only screen and (max-width: 620px) {
+  .vacancy_detail_description_div p {
+    text-align: left;
+  }
+}
 
 @media only screen and (max-width: 490px) {
   .vacancy_detail_div {
     width: 100%;
   }
-}
-
-@media only screen and (max-width: 490px) {
   .vacancy_detail_description_div p {
     font-size: 18px;
   }
+}
+
+@media only screen and (max-width: 490px) {
 }
 </style>

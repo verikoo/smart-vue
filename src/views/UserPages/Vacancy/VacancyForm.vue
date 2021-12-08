@@ -1,16 +1,13 @@
 <template>
   <div class="vacancy_form">
-    <div class="downloadCV">
-      <p class="wishTitle">
-        სურვილის შემთხვევაში შეგიძლიათ გადმოტვირთოთ კომპანიის რეზიუმე
-        <a :href="careerFile"> <br /><b>Download application</b> </a>
-      </p>
-    </div>
-
     <div class="formCont">
       <ValidationObserver>
         <form @submit.prevent="submit">
           <h1>შეავსეთ ფორმა</h1>
+          <p class="wishTitle">
+            სურვილის შემთხვევაში შეგიძლიათ გადმოტვირთოთ კომპანიის რეზიუმე
+            <a :href="careerFile"> <br /><b>Download application</b> </a>
+          </p>
           <ValidationProvider
             rules="required|max:50|min:2"
             v-slot="{ errors }"
@@ -108,9 +105,15 @@ export default {
   font-family: inside_text;
 }
 .vacancy_form {
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* border: 2px solid red; */
+  width: 70%;
   /* display: flex; */
   /* border: 2px solid red; */
-  margin: 0 auto;
+  margin-left: 0 auto;
   /* border: 2px solid red; */
   /* align-items: center;
   justify-content: center;
@@ -139,21 +142,22 @@ export default {
   /* border: 2px solid red; */
 }
 
-/* .formCont {
-  border: 2px solid yellow;
-} */
+.formCont {
+  /* border: 2px solid yellow; */
+  width: 100%;
+}
 form h1 {
-  margin: 20px 0 20px 0;
+  /* margin: 20px 0 20px 0; */
   color: #452357;
   font-size: 21px;
 }
 .input {
-  width: 70%;
+  width: 100%;
   margin-bottom: 20px;
 }
 .input input,
 .input textarea {
-  width: 72%;
+  width: 100%;
   height: 50px;
   justify-content: center;
   align-items: center;
@@ -173,7 +177,7 @@ textarea {
 
 button {
   height: 50px;
-  width: 50%;
+  width: 100%;
   background: #7f5496;
   border-radius: 5px;
   color: white;
@@ -199,7 +203,11 @@ button:hover {
   padding-top: 5px;
 }
 .wishTitle {
+  text-align: justify;
+  padding: 20px 0px;
+  /* border: 2px solid orange; */
   color: #666666;
+  font-size: 16px;
 }
 
 .downloadCV {
@@ -215,6 +223,11 @@ button:hover {
   color: #452357;
   font-weight: bold;
 }
+@media only screen and (max-width: 1500px) {
+  .vacancy_form {
+    width: 70%;
+  }
+}
 
 @media only screen and (max-width: 1033px) {
   .input input,
@@ -222,12 +235,13 @@ button:hover {
     width: 100%;
   }
   button {
-    width: 70%;
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 801px) {
   .vacancy_form {
+    width: 80%;
     margin: auto;
     align-items: center;
     justify-content: center;

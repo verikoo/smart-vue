@@ -91,7 +91,7 @@ export default {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 a {
