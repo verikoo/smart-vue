@@ -120,8 +120,18 @@ export default {
   text-align: center; */
   /* border: 2px solid red; */
 }
+::-webkit-file-upload-button {
+  /* width: 40%; */
+  border-radius: 4px;
+  background: #7f5496;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+}
 
 .file {
+  /* border: 2px solid orange; */
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   width: 50%;
   /* margin: 0 auto; */
   text-align: start;
@@ -139,6 +149,7 @@ export default {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+
   /* border: 2px solid red; */
 }
 
@@ -164,7 +175,7 @@ form h1 {
   border-radius: 5px;
   outline: none;
   padding-left: 10px;
-  border: 1px solid black;
+  border: 1px solid #7f5496;
 }
 .input input:focus,
 textarea {
@@ -205,6 +216,7 @@ button:hover {
 .wishTitle {
   text-align: justify;
   padding: 20px 0px;
+
   /* border: 2px solid orange; */
   color: #666666;
   font-size: 16px;
@@ -229,12 +241,15 @@ button:hover {
   }
 }
 
-@media only screen and (max-width: 1033px) {
+@media only screen and (max-width: 1080px) {
   .input input,
   .input textarea {
     width: 100%;
   }
   button {
+    width: 100%;
+  }
+  .vacancy_form {
     width: 100%;
   }
 }
@@ -259,5 +274,10 @@ button:hover {
   .input span {
     justify-content: center;
   }
+  .wishTitle {
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 620px) {
 }
 </style>
