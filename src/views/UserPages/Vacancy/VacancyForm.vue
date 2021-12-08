@@ -130,6 +130,8 @@ export default {
 }
 
 .file {
+  /* border: 2px solid red; */
+  margin-left: 0px;
   /* border: 2px solid orange; */
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   width: 50%;
@@ -262,15 +264,18 @@ button:hover {
     justify-content: center;
     text-align: center;
   }
+  .file {
+    width: 200px;
+  }
 
   .input {
     margin-left: auto;
     margin-right: auto;
   }
-  .file {
+  /* .file {
     margin-left: auto;
     margin-right: auto;
-  }
+  } */
   .input span {
     justify-content: center;
   }
@@ -278,6 +283,10 @@ button:hover {
     text-align: center;
   }
 }
-@media only screen and (max-width: 620px) {
+
+@media only screen and (max-width: 388px) {
+  .file {
+    width: 150px;
+  }
 }
 </style>
