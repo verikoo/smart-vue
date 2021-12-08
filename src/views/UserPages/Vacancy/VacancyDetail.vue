@@ -121,7 +121,6 @@ export default {
 /* Responsive button */
 
 .vacancy_detail_description_div {
-  word-break: break-all;
   width: 100%;
   margin: auto;
   margin-top: 30px;
@@ -179,7 +178,7 @@ export default {
 
 @media only screen and (max-width: 490px) {
   .vacancy_detail_description_div p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 </style>
