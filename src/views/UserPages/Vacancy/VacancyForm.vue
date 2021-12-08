@@ -1,16 +1,9 @@
 <template>
   <div class="vacancy_form">
     <div class="downloadCV">
-      <p>
-        სურვილის შემთხვევაში შეგიძლიათ გადმოტვირთოთ კომპანიის
-        <a
-          class="linkCV"
-          style="cursor: pointer"
-          href="http://logisticssolutions.ge/res/docs/Logistics_Solutions_Application.docx"
-          download="file"
-        >
-          რეზიუმე
-        </a>
+      <p class="wishTitle">
+        სურვილის შემთხვევაში შეგიძლიათ გადმოტვირთოთ კომპანიის რეზიუმე
+        <a :href="careerFile"> <b>Download application</b> </a>
       </p>
     </div>
 
@@ -82,6 +75,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import env from ".././../../env.json";
 export default {
   name: "vacancyform",
   data() {
@@ -92,10 +87,18 @@ export default {
         phone: "",
         file: [],
       },
-      // item: {
-      //   loc: require("../../../assets/file/Downloading_form.docx"),
-      // },
+      careerFile: "",
     };
+  },
+
+  mounted() {
+    axios
+      .get(`${env.host}/api/get/career/file`)
+      .then((result) => {
+        this.careerFile = result.data.item[0].url;
+        console.log(result.data.item[0].url);
+      })
+      .catch((err) => console.log(err));
   },
 };
 </script>
@@ -188,6 +191,12 @@ button:hover {
   display: flex;
   justify-content: center;
   margin: auto;
+  font-size: 12px;
+  justify-content: left;
+  padding-top: 5px;
+}
+.wishTitle {
+  color: #666666;
 }
 
 .downloadCV {
@@ -209,6 +218,9 @@ button:hover {
   .input textarea {
     width: 100%;
   }
+  button {
+    width: 70%;
+  }
 }
 
 @media only screen and (max-width: 801px) {
@@ -226,6 +238,9 @@ button:hover {
   .file {
     margin-left: auto;
     margin-right: auto;
+  }
+  .input span {
+    justify-content: center;
   }
 }
 </style>

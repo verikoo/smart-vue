@@ -40,13 +40,17 @@ export default {
 .vacancies_container {
   width: 100%;
   max-width: 300px;
-  padding-top: 100px;
-  padding-bottom: 30px;
+  padding-top: 130px;
+  /* padding-bottom: 30px; */
+
+  /* border: 2px solid red; */
+  align-items: center;
+  margin: 0 auto;
 }
 
 .vacancies_main_title {
-  font-size: 25px;
-  color: #A580B5;
+  font-size: 24px;
+  color: #a580b5;
   text-align: center;
 }
 
@@ -70,7 +74,7 @@ export default {
 }
 
 .vacansies_sub_div::-webkit-scrollbar-thumb {
-  background-color: #A580B5;
+  background-color: #a580b5;
   /* outline: 1px solid #ee6c58; */
   border-radius: 5px;
 }
@@ -122,8 +126,8 @@ export default {
 .triangle_icon {
   font-size: 30px;
   /* background-color: #FEFBF3; */
-  color: #E3BFF2;
-  padding:5px 0 5px 0;
+  color: #e3bff2;
+  padding: 5px 0 5px 0;
   margin-left: -15px;
 }
 

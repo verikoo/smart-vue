@@ -57,19 +57,18 @@ export default {
 </script>
 
 <style scoped>
-
 .vacancy_main_div_container {
   width: 100%;
   /* height:40rem; */
   /* height: auto; */
   /* padding:42%; */
   height: 40rem;
-  background-image:url("../../../assets/img/career1.png");
+  background-image: url("../../../assets/img/career1.png");
   background-repeat: no-repeat;
-  background-position: center center  ;
-  
+  background-position: center center;
+
   background-size: cover;
-/*   
+  /*   
   object-fit: contain;
  
   
@@ -93,15 +92,14 @@ export default {
 
 .vacancy_main_container {
   /* border: 2px solid black; */
+  /* padding: 40px 0px; */
   width: 100%;
   max-width: 1400px;
   height: 100%;
   min-height: 100vh;
   display: flex;
   margin: auto;
-
 }
-
 
 .vacancy_content_div {
   width: 100%;
@@ -110,15 +108,12 @@ export default {
   /* justify-content: center; */
   /* border: 2px solid red; */
 }
-@media all and (max-width:1400px) {
-  .vacancy_main_container{
-    padding:0 40px 0 40px;
+
+@media all and (max-width: 1500px) {
+  .vacancy_main_container {
+    padding: 10px 50px 10px 50px;
   }
- 
 }
-
-
-
 
 @media only screen and (max-width: 800px) {
   .vacancy_main_div {
@@ -127,9 +122,20 @@ export default {
   /* .vacancy_main_svg {
     margin: auto;
   } */
-
+  .vacancy_main_container {
+    padding: 10px 35px 10px 35px;
+  }
   .vacancy_content_div {
     display: block;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .vacancy_main_container {
+    padding: 10px 30px 10px 30px;
+  }
+
+  .vacancy_main_div {
+    justify-content: space-around;
   }
 }
 </style>

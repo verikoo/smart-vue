@@ -39,18 +39,19 @@ export default {
   height: 100%;
   padding-top: 30px;
   padding-bottom: 30px;
-  /* border: solid 1px green; */
+  /* border: solid 5px green; */
+  margin-left: 30px;
 }
 
 .vacancy_detail_title {
-  font-size: 24px;
-  width: 80%;
+  /* font-size: 24px; */
+  width: 100%;
   margin: auto;
   color: #462359;
 }
 
 .vacancy_detail_div {
-  width: 80%;
+  width: 100%;
   height: 80%;
   margin: auto;
   margin-top: 30px;
@@ -125,13 +126,13 @@ export default {
 
 .vacancy_detail_description_div p {
   text-align: justify;
-  font-size: 22px;
+  font-size: 21px;
   color: #462359;
 }
 
 @media only screen and (max-width: 800px) {
   .vacancy_detail_div {
-    width: 90%;
+    width: 100%;
   }
 
   .vacancy_detail_title {
@@ -160,6 +161,21 @@ export default {
 
   .vacancy_detail_responsive_button {
     display: block;
+  }
+  .vacancy_detail_container {
+    margin-left: 0px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .vacancy_detail_div {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .vacancy_detail_description_div p {
+    font-size: 16px;
   }
 }
 </style>
