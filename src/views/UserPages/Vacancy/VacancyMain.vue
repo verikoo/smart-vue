@@ -57,9 +57,6 @@ export default {
 </script>
 
 <style scoped>
-* {
-  font-family: inside_text;
-}
 .vacancy_main_div_container {
   font-family: QARTULI;
   width: 100%;

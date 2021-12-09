@@ -73,6 +73,7 @@
           style="height: 400px"
           :itemsToShow="1.5"
           :centerMode="true"
+          :wheelControl="false"
         >
           <slide v-for="item in [1, 2, 3, 4, 5]" :key="item">
             <img
@@ -121,7 +122,6 @@ export default {
 .medicamentSide {
   display: grid;
   grid-template-columns: auto;
-  /* border: 2px solid brown; */
 }
 .tableWithPhoto {
   display: grid;
