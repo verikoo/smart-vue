@@ -14,12 +14,12 @@
               <img :src="personalData.mainImage" alt="" />
             </span>
             <span
-              class="photoSide"
+              class="photoSide videoSide"
               style="float: left"
               v-if="personalData.video != null"
               v-html="personalData.video"
             >
-              <iframe frameborder="0"></iframe>
+              <iframe style="border-radius: 10px" frameborder="0"></iframe>
             </span>
           </span>
           <span
@@ -67,53 +67,39 @@ export default {
 .teamContainer {
   align-content: center;
   width: 100%;
+  max-width: 1400px;
   min-height: calc(100vh - 240px);
   display: flex !important;
   justify-content: center;
   text-orientation: mixed;
   /* border: 2px solid rgb(136, 255, 0); */
   margin-top: 145px;
+  margin: auto;
 }
 .team {
-  /* border: 2px solid yellow; */
   max-width: 1400px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 40px; */
-  /* padding-left: 40px;
-  padding-right: 40px; */
-
-  margin-top: 30px;
-  margin-bottom: 30px;
 }
-/* .photo {
-  max-width: 100%;
-} */
-/* .photo img {
-  max-width: 100%;
-  border-radius: 20px;
-} */
+
 .status {
   padding: 30px;
   background-color: #7f5496;
   color: white;
   font-size: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 20px;
 }
 .textSide {
-  /* border: 2px solid blue; */
   text-align: justify;
-  font-size: 22px;
+  font-size: 21px;
   margin: auto;
   align-items: center;
 }
-.textSide.text {
-  border: 2px solid pink;
-  /* margin-top: 30px; */
-}
+
 .textSide h1 {
+  font-size: 24px;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -123,57 +109,50 @@ export default {
 }
 .textSide p {
   margin: auto;
-  /* border: 2px solid red; */
-  /* align-items: center; */
 }
-/* .teamContainer img {
-  padding: 10px;
-} */
-
-/* .photo img{
-  box-shadow: -2px -4px 0px 0px #462359 inset, 2px 2px 0px 0px #fff7 inset;
-   border-radius: 180px 60px ;
-} */
 
 .photoSide {
-  width: 600px;
-  height: 482px;
-  /* height: 500px; */
+  width: 40%;
   /* border: 2px solid red; */
+  height: 50%;
+  margin-right: 20px;
+  margin-bottom: 5px;
 }
+
 .photoSide img {
   width: 100%;
-  height: 100%;
-  /* border-radius: 20px; */
-  /* height: 400px; */
-  padding-right: 30px;
+  height: 350px;
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: auto;
+  border-radius: 5px;
+}
+.videoSide {
+  width: inherit !important;
+  height: 350px;
+}
 
-  padding-bottom: 10px;
+.videoSide video {
+  border-radius: 10px;
 }
 
 @media all and (max-width: 1501px) {
   .team {
     padding-left: 40px;
     padding-right: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
-
 @media all and (max-width: 1130px) {
   .textSide {
     padding: 0px;
   }
 }
 
-@media all and (max-width: 999px) {
-  .team {
-    display: grid;
-    grid-template-columns: auto;
-  }
-}
-@media all and (max-width: 878px) {
-  .photoSide img {
-    padding: 10px;
-  }
+@media all and (max-width: 930px) {
   .photoSide {
     float: none !important;
     align-items: center;
@@ -181,7 +160,57 @@ export default {
     justify-content: center;
     margin: auto;
     padding-bottom: 20px;
+    padding-right: 0px;
+    width: 80%;
   }
+}
+
+@media all and (max-width: 652px) {
+  /* .team {
+    margin-left: 30px;
+    margin-right: 30px;
+  } */
+
+  .videoSide {
+    width: 450px !important;
+  }
+
+  .photoSide img {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 543px) {
+  .videoSide {
+    width: 400px !important;
+  }
+}
+@media all and (max-width: 527px) {
+  .videoSide {
+    width: 400px !important;
+  }
+  .team {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media all and (max-width: 468px) {
+  .videoSide {
+    width: 350px !important;
+  }
+}
+@media all and (max-width: 440px) {
+  .videoSide {
+    width: 100px !important;
+  }
+}
+
+/* 
+
+
+
+@media all and (max-width: 878px) {
+  
 }
 @media all and (max-width: 727px) {
   .team {
@@ -189,9 +218,7 @@ export default {
   }
 
   .textSide {
-    width: 90%;
     padding: 0px;
-    /* border:2px solid rgb(0, 255, 34); */
   }
   .photoSide {
     width: 100%;
@@ -200,59 +227,38 @@ export default {
     padding: 0px;
   }
 }
-@media all and (max-width: 570px) {
+@media all and (max-width: 640px) {
+  .textSide {
+    font-size: 18px;
+  }
+  .videoSide {
+    border: 2px solid green;
+  }
+}
+@media all and (max-width: 579px) {
   .team {
     width: 90%;
   }
-  .textSide {
-    width: 85%;
-    /* 
-    padding-left: 40px;
-    padding-right: 40px; */
-  }
+
   .photoSide {
     width: 100%;
   }
 }
 
-@media all and (max-width: 512px) {
-  .textSide {
-    width: 80%;
-  }
-}
-
-@media all and (max-width: 490px) {
-  .textSide {
-    width: 70%;
-  }
-}
-
-@media all and (max-width: 463px) {
-  .textSide {
-    width: 70%;
-  }
+@media all and (max-width: 518px) {
 }
 
 @media all and (max-width: 449px) {
-  .textSide {
-    width: 60%;
+  .team {
+    border: 2px solid red;
   }
-
-  @media all and (max-width: 449px) {
-    .textSide {
-      width: 60%;
-    }
-    .textSide p {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+  .textSide {
+    width: 100%;
+    border: 2px solid yellow;
   }
 }
 
-@media all and (max-width: 368px) {
-  .textSide {
-    width: 55%;
-  }
+@media all and (max-width: 378px) {
   .textSide p {
     padding-left: 10px;
     padding-right: 10px;
@@ -260,9 +266,6 @@ export default {
 }
 
 @media all and (max-width: 368px) {
-  .textSide {
-    width: 55%;
-  }
   .textSide p {
     padding-left: 10px;
     padding-right: 10px;
@@ -270,13 +273,9 @@ export default {
 }
 
 @media all and (max-width: 328px) {
-  .textSide {
-    width: 50%;
-  }
-
   .textSide p {
     padding-left: 10px;
     padding-right: 10px;
   }
-}
+} */
 </style>

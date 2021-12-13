@@ -89,7 +89,6 @@ export default {
   align-self: flex-end;
   margin-left: auto;
   margin-right: 10;
-  border-radius: 20px;
   color: white;
 }
 
@@ -140,7 +139,7 @@ export default {
   grid-template-columns: repeat(3, 1fr);
 }
 .hovereffect {
-  border-radius: 20px;
+  border-radius: 10px;
   width: 100%;
   height: auto;
   float: left;
@@ -156,7 +155,7 @@ export default {
   height: 100%;
   position: absolute;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 5px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
@@ -213,7 +212,7 @@ export default {
   font-weight: normal;
   font-size: 20px;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 7px;
   width: 200px;
   bottom: 30px;
   right: 20px;

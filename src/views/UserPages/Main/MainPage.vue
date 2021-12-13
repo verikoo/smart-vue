@@ -300,6 +300,7 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  margin: auto;
   align-items: center;
   justify-content: center;
 }
@@ -355,7 +356,7 @@ export default {
   /* background: #6d08a76c; */
   padding: 50px 100px 50px 100px;
   color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 50px;
   font-size: 25px;
   letter-spacing: 2px;
@@ -459,7 +460,7 @@ export default {
 }
 .image img {
   width: 100%;
-  border-radius: 150px;
+  /* border-radius: 150px; */
 }
 /* sdsdf */
 .csr_projects {
@@ -485,7 +486,7 @@ export default {
   height: 350px;
   display: block;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .hovereffect h2 {
   margin: auto;
@@ -715,7 +716,7 @@ export default {
 
 .blogs_card_image {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 20px;
   cursor: pointer;
 }

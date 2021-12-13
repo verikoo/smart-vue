@@ -117,9 +117,6 @@ export default {
 </script>
 
 <style scoped>
-.hooper * {
-  border-radius: 20px;
-}
 .productsContainer {
   width: 100%;
   max-width: 1400px;
@@ -185,7 +182,7 @@ export default {
   align-self: flex-end;
   margin-left: auto;
   margin-right: 10;
-  border-radius: 20px;
+  border-radius: 10px;
   color: white;
 }
 
@@ -197,13 +194,13 @@ export default {
   align-self: flex-end;
   margin-left: auto;
   margin-right: 10;
-  border-radius: 20px;
+  border-radius: 10px;
   color: white;
 }
 
 .hovereffect {
   /* border: 2px solid brown; */
-  border-radius: 20px;
+  border-radius: 10px;
   /* width: 80%; */
   height: auto;
   float: left;
@@ -219,7 +216,7 @@ export default {
   height: 100%;
   position: absolute;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
@@ -293,7 +290,7 @@ export default {
   -webkit-transition: all 0.2s cubic-bezier(0.88, -0.99, 0, 1.81);
   transition: all 0.2s cubic-bezier(0.88, -0.99, 0, 1.81);
   font-weight: normal;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px;
   font-size: 1.3vw;
   bottom: 40%;

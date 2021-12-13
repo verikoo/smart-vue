@@ -162,7 +162,7 @@ export default {
 form h1 {
   /* margin: 20px 0 20px 0; */
   color: #452357;
-  font-size: 21px;
+  font-size: 20px;
 }
 .input {
   width: 100%;
@@ -258,7 +258,7 @@ button:hover {
 
 @media only screen and (max-width: 801px) {
   .vacancy_form {
-    width: 80%;
+    /* width: 80%; */
     margin: auto;
     align-items: center;
     justify-content: center;
@@ -281,6 +281,11 @@ button:hover {
   }
   .wishTitle {
     text-align: center;
+  }
+}
+@media only screen and (max-width: 388px) {
+  .file {
+    width: 150px;
   }
 }
 

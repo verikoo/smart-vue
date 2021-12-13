@@ -47,7 +47,7 @@ export default {
 }
 
 .vacancy_detail_title {
-  /* font-size: 24px; */
+  font-size: 24px;
   width: 100%;
   margin: auto;
   color: #462359;
@@ -169,9 +169,9 @@ export default {
     margin-left: 0px;
   }
 }
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 640px) {
   .vacancy_detail_description_div p {
-    text-align: left;
+    font-size: 18px;
   }
 }
 
@@ -180,7 +180,7 @@ export default {
     width: 100%;
   }
   .vacancy_detail_description_div p {
-    font-size: 18px;
+    text-align: left;
   }
 }
 </style>

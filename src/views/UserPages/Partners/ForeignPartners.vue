@@ -5,7 +5,7 @@
         :progress="true"
         :autoPlay="true"
         :playSpeed="3000"
-        style="border-radius: 20px"
+        style="border-radius: 10px"
       >
         <slide>
           <div class="conatiner">
@@ -185,7 +185,7 @@ export default {
 } */
 
 .hovereffect {
-  border-radius: 20px;
+  border-radius: 10px;
   /* width: 100%; */
   height: auto;
   float: left;
@@ -202,7 +202,7 @@ export default {
   height: 100%;
   position: absolute;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
@@ -263,7 +263,7 @@ export default {
   font-weight: normal;
   font-size: 1.3vw;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 200px;
   bottom: 30px;
   /* right: 20px; */
@@ -289,7 +289,7 @@ export default {
   width: 100%;
   position: relative;
   height: auto;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: auto;
   background-size: cover;
   margin-top: 40px;
@@ -326,20 +326,20 @@ export default {
   /* border:2px solid yellow; */
   width: 100%;
   height: 500px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .hooper-slide {
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .hooper {
   height: 400px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 ::v-deep .hooper-list {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 ::v-deep .hooper-progress-inner {

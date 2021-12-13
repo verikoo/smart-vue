@@ -107,7 +107,7 @@ export default {
 }
 
 .hovereffect img {
-  border-radius: 20px;
+  border-radius: 10px;
 
   width: 100%;
   height: 350px;
@@ -208,6 +208,12 @@ export default {
     font-size: 3.5vw;
   } */
 }
+@media all and (max-width: 640px) {
+  .hovereffect p {
+    font-size: 18px;
+  }
+}
+
 @media all and (max-width: 450px) {
   .hovereffect img {
     height: 300px;

@@ -179,7 +179,7 @@ export default {
 
 .icons img {
   background: #a4a8aa;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 20px;
   width: 200px;
   height: auto;

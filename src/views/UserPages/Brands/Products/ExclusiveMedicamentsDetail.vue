@@ -73,7 +73,6 @@
           style="height: 400px"
           :itemsToShow="1.5"
           :centerMode="true"
-          :wheelControl="false"
         >
           <slide v-for="item in [1, 2, 3, 4, 5]" :key="item">
             <img
@@ -128,16 +127,17 @@ export default {
   grid-template-columns: 1fr 1fr;
 }
 .medicamentsPhoto {
+  /* border: 2px solid red; */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background: #ffffff
-    url(https://worldmedicine.com.tr/wp-content/uploads/urun-fonu-4-1.png);
+  background: #ffffff url("../../../../assets/img/Shiny.svg");
   position: relative;
   -webkit-margin-start: 0px;
   -webkit-margin-end: 30px;
   -webkit-margin-before: 0em;
   width: 90%;
+  border-radius: 10px;
   transition: all cubic-bezier(0.795, -0.035, 0, 1) 0.5s;
 }
 .medicamentsPhoto img {
@@ -145,6 +145,7 @@ export default {
   width: 100%;
   display: block;
   margin: auto;
+  border-radius: 10px;
   /* -webkit-margin-start: 0px;
     -webkit-margin-end: 30px;
     -webkit-margin-before: 0em; */
@@ -176,7 +177,7 @@ export default {
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
 }
 /* th {
     font-weight: unset;
@@ -197,7 +198,9 @@ tr:nth-child(odd) {
 }
 /* tableee endddddddddddddddddddd */
 .description {
-  /* margin: auto; */
+  /* border: 2px solid red; */
+
+  letter-spacing: 0.5px;
   align-items: center;
   font-size: 18px;
   margin-top: 30px;
@@ -219,10 +222,14 @@ strong {
 
 /*sliderrrrrrrrrrrrrrrrrrrrr */
 .hooper * {
-  border-radius: 20px;
+  border-radius: 10px;
 }
+
 ::v-deep .hooper-slide {
   margin-bottom: 6px;
+}
+::v-deep .hooper-list {
+  border-radius: 10px;
 }
 .slider {
   /* border: 2px solid blue; */
@@ -231,7 +238,7 @@ strong {
   padding-left: 20px;
   /* height: 100%; */
   /* height: 300px; */
-  border-radius: 20px;
+  border-radius: 10px;
   /* height: 400px; */
   margin: auto;
   margin-top: 0px;
@@ -240,7 +247,7 @@ strong {
 .hooper-slide {
   position: relative;
   /* height: 300px; */
-  border-radius: 20px;
+  border-radius: 10px;
 }
 /* 
 ::v-deep .hooper.button.hooper-navigation.is-vertical.hooper-prev {
@@ -390,6 +397,10 @@ strong {
   .mainContent img {
     margin: auto;
   }
+  .description {
+    margin: auto;
+    margin-top: 25px;
+  }
   /* ::v-deep li.hooper-slide.is-active.is-current {
     height: 400px !important;
   }
@@ -401,18 +412,7 @@ strong {
     height: 400px !important    ;
   } */
 }
-@media all and (max-width: 641px) {
-  /* ::v-deep li.hooper-slide.is-active.is-current {
-    height: 250px !important;
-  }
-
-  ::v-deep li.hooper-slide.is-prev {
-    height: 250px !important;
-  }
-  ::v-deep li.hooper-slide.is-next {
-    height: 250px !important    ;
-  } */
-
+@media all and (max-width: 640px) {
   .slider {
     width: 100%;
   }

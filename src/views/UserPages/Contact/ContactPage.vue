@@ -169,11 +169,22 @@ export default {
   color: #7f5496;
   padding: 30px;
   background-color: white;
-  color: #666666;
-  border-radius: 20px;
+  color: #a4a8aa;
+  border-radius: 5px;
   /* border:2px solid yellow; */
+  background-image: url("../../../assets/img/rose-petals.svg");
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  cursor: pointer;
+}
+
+.socialIconeInside:hover img,
+.socialIconeInside:hover h3 {
+  transform: scale(1.3);
+}
+.socialIconeInside img,
+.socialIconeInside h3 {
+  transition: transform 0.5s ease;
 }
 .socialIconeInside h3 {
   margin-top: 20px;
@@ -340,7 +351,7 @@ select {
   display: flex;
   justify-content: center;
   /* background-color: #ab4df7; */
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
 }
@@ -365,12 +376,12 @@ select {
 .locationSIde {
   width: 1400px;
   height: 300px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .locationSIde iframe {
   width: 100%;
   height: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 @media all and (max-width: 1400px) {
   .contactContainer {

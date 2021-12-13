@@ -61,19 +61,22 @@ export default {
   grid-template-columns: auto auto;
 }
 .photo {
+  /* border: 2px solid red; */
   max-width: 100%;
 }
 .photo img {
   max-width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .status {
   /* width: 370px; */
+  /* border: 2px solid red; */
+  width: 75%;
   padding: 30px;
   background-color: #7f5496;
   color: white;
   font-size: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 20px;
 
   /* border: 2px solid black; */
@@ -129,6 +132,10 @@ export default {
   .photo {
     margin: auto !important;
     display: table;
+  }
+  .status {
+    margin-left: auto;
+    margin-right: auto;
   }
   /* .status {
     margin: auto;

@@ -61,7 +61,7 @@ export default {
   display: grid;
   margin-top: 145px;
   grid-template-columns: 0.256fr 2fr 2fr;
-  padding: 30px !important;
+  /* padding: 30px !important; */
 }
 .team_details img {
   width: 100%;
@@ -75,7 +75,8 @@ export default {
   align-items: center;
 }
 .description p {
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
   text-align: justify;
   font-size: 20px;
 }
@@ -85,6 +86,14 @@ export default {
 }
 .photo img {
   border-radius: 10px;
+}
+@media all and (max-width: 1500px) {
+  .team_details {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 }
 
 @media all and (max-width: 992px) {
@@ -99,6 +108,9 @@ export default {
   }
   .description {
     margin-top: 30px;
+  }
+  .description p {
+    padding-left: 0px;
   }
 }
 
@@ -120,12 +132,23 @@ export default {
   .photo {
     margin: auto;
   }
+  .description p {
+    padding: 0px;
+  }
 }
+@media all and (max-width: 640px) {
+  .description p {
+    font-size: 18px;
+  }
+
+  .title h1 {
+    font-size: 24px;
+  }
+}
+
 @media all and (max-width: 400px) {
-  /* .photo {
-    width: 250px;
-  } */
-}
-@media all and (max-width: 531px) {
+  .description p {
+    text-align: left;
+  }
 }
 </style>

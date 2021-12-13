@@ -85,7 +85,7 @@ export default {
 }
 
 .details_header {
-  font-size: 36px;
+  font-size: 24px;
   color: #7f5496;
   text-align: center;
 }
@@ -132,5 +132,7 @@ export default {
     margin-top: 30px;
     font-size: 18px;
   }
+}
+@media only screen and (max-width: 640px) {
 }
 </style>

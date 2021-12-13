@@ -36,7 +36,7 @@ export default {
 
 .blogs_card_image {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-bottom: 20px;
   cursor: pointer;
 }

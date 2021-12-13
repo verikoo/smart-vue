@@ -161,54 +161,8 @@ export default {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* .test {
-  background: #9629ac41;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-} */
-/* .title {
-  background-image: url("../../../assets/img/testPhoto.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
-/* .titleInside {
-  max-width: 1400px;
-  float: unset;
-  display: flex;
-  width: 100%;
-  margin: auto;
-  height: 40rem;
-} */
-
-/* .titleInside h1 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: inline-block;
-  align-self: flex-end;
-  margin-left: auto;
-  margin-right: 10;
-  border-radius: 20px;
-  color: white;
-} */
-/* 
-.titleContainer h1 {
-  display: flex;
-  color: #462359;
-  justify-content: right;
-  display: inline-block;
-  align-self: flex-end;
-  margin-left: auto;
-  margin-right: 10;
-  border-radius: 20px;
-  color: white;
-} */
-
 .hovereffect {
-  border-radius: 20px;
+  border-radius: 10px;
   width: 100%;
   height: auto;
   float: left;
@@ -225,7 +179,7 @@ export default {
   height: 100%;
   position: absolute;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 10px;
   top: 0;
   left: 0;
   -webkit-transition: all 0.4s cubic-bezier(0.88, -0.99, 0, 1.81);
@@ -249,7 +203,7 @@ export default {
   color: #fff;
   position: relative;
   width: 90%;
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 100px;
   padding: 10px;
   -webkit-transform: translateY(60px);
@@ -286,7 +240,7 @@ export default {
   font-weight: normal;
   font-size: 1.3vw;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 10px;
   width: 200px;
   /* bottom: 30px; */
   /* bottom: 30%; */
@@ -314,7 +268,7 @@ export default {
   width: 100%;
   position: relative;
   height: auto;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: auto;
   background-size: cover;
   margin-top: 40px;
@@ -351,20 +305,20 @@ export default {
   /* border:2px solid yellow; */
   width: 100%;
   height: 500px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .hooper-slide {
   position: relative;
-  border-radius: 20px;
+  border-radius: 10px !important;
 }
 .hooper {
   height: 400px;
-  border-radius: 20px;
+  border-radius: 10px !important;
 }
 
 ::v-deep .hooper-list {
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 ::v-deep .hooper-progress-inner {

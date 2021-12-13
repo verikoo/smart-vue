@@ -58,7 +58,7 @@ export default {
   /* border: 2px solid red; */
 }
 .photoSide img {
-  border-radius: 20px;
+  border-radius: 10px;
   margin-left: 40px;
   margin-bottom: 10px;
   /* border:2px solid blue; */
