@@ -1,16 +1,14 @@
 <template>
   <div class="history_main_container">
-    <HistoryLeft />
     <HistoryRight />
   </div>
 </template>
 
 <script>
-import HistoryLeft from "./Left/HistoryLeft.vue";
 import HistoryRight from "./Right/HistoryRight.vue";
 export default {
   name: "HistoryMain",
-  components: { HistoryLeft, HistoryRight },
+  components: { HistoryRight },
 };
 </script>
 

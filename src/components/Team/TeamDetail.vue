@@ -50,28 +50,33 @@ export default {
   align-items: center;
   min-height: calc(100vh - 240px);
   /* background: linear-gradient(90deg, rgba(164,168,170,1) 18%, rgba(255,255,255,1) 18%);  */
-  /* border: 2px solid red; */
+
   /* margin:auto; */
   margin-top: 145px;
   /* padding: 20px; */
 }
 .team {
+  /* border: 2px solid green; */
   display: grid;
   place-items: center;
   grid-template-columns: auto auto;
 }
 .photo {
-  /* border: 2px solid red; */
-  max-width: 100%;
+  width: 350px;
+  height: 450px;
+  /* border: 2px solid blue; */
 }
 .photo img {
   max-width: 100%;
+  height: 100%;
   border-radius: 10px;
 }
 .status {
   /* width: 370px; */
   /* border: 2px solid red; */
-  width: 75%;
+  /* width: 75%; */
+  width: 350px;
+
   padding: 30px;
   background-color: #7f5496;
   color: white;
@@ -82,13 +87,14 @@ export default {
   /* border: 2px solid black; */
 }
 .textSide {
-  /* border:2px solid brown; */
+  /* border: 2px solid brown; */
   margin-left: 50px;
   padding: 20px;
   font-size: 22px;
   text-align: justify;
 }
 .textSide h1 {
+  font-size: 28px;
   padding-bottom: 20px;
   color: #7f5496;
 }
@@ -98,15 +104,9 @@ export default {
    border-radius: 180px 60pxbox ;
 } */
 
-@media all and (max-width: 5800px) and (min-width: 474px) {
-  /* .status {
-    width: 73.5%;
-  } */
-}
-
-@media all and (max-width: 1444px) {
+@media all and (max-width: 1500px) {
   .team {
-    padding: 40px;
+    margin: 40px;
   }
 }
 
@@ -140,5 +140,28 @@ export default {
   /* .status {
     margin: auto;
   } */
+}
+@media only screen and (max-width: 640px) {
+  .textSide {
+    font-size: 18px;
+  }
+  .textSide h1 {
+    font-size: 24px !important;
+  }
+}
+@media all and (max-width: 527px) {
+  .team {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+@media all and (max-width: 418px) {
+  .photo {
+    width: 100%;
+    height: 100%;
+  }
+  .status {
+    width: 100%;
+  }
 }
 </style>

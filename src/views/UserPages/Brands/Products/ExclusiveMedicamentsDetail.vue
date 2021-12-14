@@ -150,6 +150,13 @@ export default {
     -webkit-margin-end: 30px;
     -webkit-margin-before: 0em; */
 }
+.medicamentsPhoto img:hover {
+  transform: scale(1.1);
+}
+
+.medicamentsPhoto img {
+  transition: transform 0.5s ease;
+}
 .medicamentName {
   margin-top: 20px;
   margin-bottom: 50px;

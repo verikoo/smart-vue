@@ -74,7 +74,8 @@ const VueRouter = new router({
     {
       path: "/history",
       name: "HistoryMain",
-      component: () => import("./views/UserPages/History/HistoryMain.vue"),
+      component: () =>
+        import("./views/UserPages/History/Right/HistoryRight.vue"),
     },
     {
       path: "/team",

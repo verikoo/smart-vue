@@ -120,6 +120,13 @@ export default {
 </script>
 
 <style scoped>
+.contactContainer {
+  /* border: 2px solid red; */
+  width: 100%;
+  max-width: 1400px;
+  margin: auto;
+  min-height: calc(100vh - 58px);
+}
 .main_content {
   width: 100%;
   max-width: 1400px;
@@ -128,12 +135,13 @@ export default {
 }
 /* contact us titleeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee */
 .contactUsTitle {
-  height: 8rem;
   /* padding: 20px 20px 0px 20px; */
   color: #7f5496;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 40px 0px;
+  margin-top: 200px;
   /* font-size: 20px; */
   /* border: 2px solid red; */
   /* background-color: #E2BEF1; */
@@ -383,9 +391,19 @@ select {
   height: 100%;
   border-radius: 10px;
 }
+
 @media all and (max-width: 1400px) {
   .contactContainer {
     margin-top: 130px !important;
+  }
+}
+@media all and (max-width: 1200px) {
+  .socialIcones {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .socialIconeInside {
+    width: 300px;
   }
 }
 
@@ -401,15 +419,24 @@ select {
     margin: 20px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 858px) {
+  .socialIconeInside h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 780px) {
   .socialIcones {
     display: flow-root;
     padding: 0px;
     margin-top: 30px;
     padding: 0px;
   }
+  .socialIconeInside {
+    margin-top: 15px !important;
+  }
   .contactUsTitle {
     /* display: flow-root; */
+    margin-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
@@ -440,6 +467,10 @@ select {
     padding: 10px;
     margin-top: 10px;
     width: 250px;
+  }
+  .socialIconeInside:hover img,
+  .socialIconeInside:hover h3 {
+    transform: scale(1.2);
   }
 }
 

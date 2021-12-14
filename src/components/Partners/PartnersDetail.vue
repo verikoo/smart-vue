@@ -88,7 +88,7 @@ export default {
   background-color: #7f5496;
   color: white;
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-top: 20px;
 }
 .textSide {
