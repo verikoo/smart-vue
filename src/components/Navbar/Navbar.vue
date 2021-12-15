@@ -40,22 +40,22 @@
                     </p>
                     <transition name=":fade">
                       <ul class="dropItems" v-if="listOne">
-                        <li>
+                        <li v-on:click="closeNavbar()">
                           <router-link to="/team" exact>
                             {{ $t("team") }}</router-link
                           >
                         </li>
-                        <li>
+                        <li v-on:click="closeNavbar()">
                           <router-link to="/history" exact>
                             {{ $t("history") }}</router-link
                           >
                         </li>
-                        <li>
+                        <li v-on:click="closeNavbar()">
                           <router-link to="/values" exact>
                             {{ $t("values") }}</router-link
                           >
                         </li>
-                        <li>
+                        <li v-on:click="closeNavbar()">
                           <router-link to="/company" exact>
                             {{ $t("company") }}</router-link
                           >
@@ -79,12 +79,12 @@
                     <p>{{ $t("partners") }}</p>
                     <transition>
                       <ul class="dropItems" v-if="listTwo">
-                        <li>
+                        <li v-on:click="closeNavbar()">
                           <router-link to="/local" exact>
                             {{ $t("local_partners") }}</router-link
                           >
                         </li>
-                        <li>
+                        <li v-on:click="closeNavbar()">
                           <router-link to="/Foreign" exact>
                             {{ $t("foreign_partners") }}</router-link
                           >
@@ -95,7 +95,7 @@
                 </ul>
               </div>
             </li>
-            <li class="aboutUs">
+            <li v-on:click="closeNavbar()" class="aboutUs">
               <router-link to="/exclusiveMedicaments" exact>
                 {{ $t("exclusive") }}</router-link
               >
@@ -172,6 +172,10 @@ export default {
         rootBody.classList.toggle("stop-scrolling");
         navbarLinks.classList.toggle("activeNav");
       });
+    },
+    closeNavbar() {
+      const navbarLinks = document.getElementsByClassName("navLinks")[0];
+      navbarLinks.classList.remove("activeNav");
     },
   },
 };
@@ -318,6 +322,7 @@ a:hover::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* border: 2px solid blue; */
 }
 
 .first_line li a {

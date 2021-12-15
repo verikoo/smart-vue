@@ -86,6 +86,7 @@ export default {
 
   /* border: 2px solid black; */
 }
+
 .textSide {
   /* border: 2px solid brown; */
   margin-left: 50px;

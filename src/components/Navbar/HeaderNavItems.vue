@@ -2,7 +2,11 @@
   <div :class="className">
     <ul>
       <li><input v-if="isInput" type="text" placeholder="Search ..." /></li>
-      <li v-for="navItem in headerLinks" :key="navItem.to">
+      <li
+        v-on:click="closeNavbar()"
+        v-for="navItem in headerLinks"
+        :key="navItem.to"
+      >
         <router-link :to="navItem.to" :exact="navItem.exact">
           {{ $t(`${navItem.label}`) }}
         </router-link>
@@ -20,6 +24,13 @@ export default {
     return {
       headerLinks: headerLinks,
     };
+  },
+  methods: {
+    closeNavbar() {
+      console.log(1);
+      const navbarLinks = document.getElementsByClassName("navLinks")[0];
+      navbarLinks.classList.remove("activeNav");
+    },
   },
 };
 </script>
